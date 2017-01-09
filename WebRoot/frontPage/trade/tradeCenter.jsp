@@ -9,7 +9,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <head>
     <base href="<%=basePath%>">
     
-    <title>交易中心</title>
+    <title>积分交易所</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
@@ -23,7 +23,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-    <!-- ************交易中心页面***********
+    <!-- ************交易所页面***********
     iframe布局。
    1. 左侧。
    		左侧为“交易中心”，“积分买卖”、“交易记录”三个栏目。

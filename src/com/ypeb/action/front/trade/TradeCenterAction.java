@@ -1,4 +1,4 @@
-package com.ypeb.action.front.points;
+package com.ypeb.action.front.trade;
 
 import java.util.List;
 
@@ -16,7 +16,7 @@ public class TradeCenterAction extends ActionSupport {
 		/**
 		 * @author jilin
 		 * @date : 2017年1月7日 下午3:07:51
-		 * @descripe:用来查询积月K线数据的方法。
+		 * @descripe:用来查询月K线数据的方法。
 		 * 1、计算到系统时间为止有多少天，
 		 * 2、使用TradeK.cacuMonthK()方法计算出每天的数据，
 		 * 3、分装到tradeKList集合中。
@@ -53,4 +53,40 @@ public class TradeCenterAction extends ActionSupport {
 		 */
 		return "diyUrl";
 	}
+
+	public String getDestUrl() {
+		return destUrl;
+	}
+
+	public void setDestUrl(String destUrl) {
+		this.destUrl = destUrl;
+	}
+
+	public List<TradeK> getTradeKList() {
+		return tradeKList;
+	}
+
+	public void setTradeKList(List<TradeK> tradeKList) {
+		this.tradeKList = tradeKList;
+	}
+
+	public List<DealRequest> getDealRequestList() {
+		return dealRequestList;
+	}
+
+	public void setDealRequestList(List<DealRequest> dealRequestList) {
+		this.dealRequestList = dealRequestList;
+	}
+
+	public int getUserId() {
+		return userId;
+	}
+
+	public void setUserId(int userId) {
+		this.userId = userId;
+	}
+	
+	
+	
+	
 }
