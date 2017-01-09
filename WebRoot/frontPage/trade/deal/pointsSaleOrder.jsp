@@ -26,7 +26,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <!-- ************交易中心积分售卖下单页面****************
     1、售卖者ID使用隐藏表单存到pointsSale.buyID中
     2、订单单价、数量、售卖人ID等信息写到pointsTrade.saleID等中。
+<<<<<<< HEAD
     3、提交表单，提交ACTION为"front_TradeDeal_salePoints",提交之后返回状态码state,200为交易成功，201为挂卖积分超出购买申请（此时剩余售卖积分进入积分中心显示），
+=======
+    3、提交表单之后返回状态码state,200为交易成功，201为挂卖积分超出购买申请（此时剩余售卖积分进入积分中心显示），
+>>>>>>> refs/remotes/origin/master
     202为挂载积分价格过高，暂时不会在积分中心显示。205为积分不足，206为未知原因。
     
      -->

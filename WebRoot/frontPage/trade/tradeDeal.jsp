@@ -24,10 +24,17 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   
   <body>
     <!-- ********** 进行积分交易的页面**********
+<<<<<<< HEAD
     1、积分列表，数据类dealRequestList中共12个,boolean值request为1的是售卖对象6个，为0的是购买对象
     6个，尽量做道动态刷新。
     2、我要买（front_TradeDeal_buyPointsPre）,购买人和售卖人ID存在pointsTrade对象中。
     3、我要卖（front_TradeDeal_salePointsPre）,购买人和售卖人ID存在pointsTrade对象中
+=======
+    1、积分列表，数据类dealRequestList中共12个,boolean值request为1的是售卖对象6个，为2的是购买对象
+    6个，尽量做道动态刷新。
+    2、我要买（front_PointsTrade_buyPointsPre）,购买人和售卖人ID存在pointsTrade对象中。
+    3、我要卖（front_PointsTrade_salePointsPre）,购买人和售卖人ID存在pointsTrade对象中
+>>>>>>> refs/remotes/origin/master
     
     -->
   </body>
