@@ -7,9 +7,15 @@ import com.ypeb.dataClass.front.DealRequest;
 import com.ypeb.dataClass.front.TradeK;
 
 public class TradeCenterAction extends ActionSupport {
+
+	private static final long serialVersionUID = 1L;
+	
 	private String destUrl;
+	
 	private List<TradeK> tradeKList;
+	
 	private List<DealRequest> dealRequestList;
+	
 	private int userId;
 	
 	public String tradeCenter(){

@@ -3,7 +3,7 @@ package com.ypeb.action.front.trade;
 import com.opensymphony.xwork2.ActionSupport;
 import com.ypeb.model.trade.pointsTrade.Pointtrade;
 
-public class TradeDeal extends ActionSupport {
+public class TradeDealAction extends ActionSupport {
 	/**
 	 * @author jilin
 	 * @date : 2017年1月9日 上午8:30:30

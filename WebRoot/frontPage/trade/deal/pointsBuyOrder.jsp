@@ -27,7 +27,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     1、购买者ID使用隐藏表单存到pointsTrade.buyID中
     2、订单单价、数量、售卖人ID等信息写到pointsTrade.saleID等中。
     注意：订单默认的数量是pointsSale表中挂卖的剩余量，购买者输入的数量不能超过这个值。
-    表单提交处理方法：front_pointsTrade_buyPoints
+    表单提交处理方法：frontTrade_pointsTrade_buyPoints
     3、提交表单之后返回状态码state,200为交易成功，201为按此价格不能购买到足够的积分（例如订单是以
     1.1元价格购买3000，但是1.1的只有1200，则默认成交1200积分），205为现金余额不足，206为未知原因。
     
