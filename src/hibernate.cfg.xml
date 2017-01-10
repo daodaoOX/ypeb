@@ -23,9 +23,9 @@
 
 		<property name="hbm2ddl.auto">update</property>
 		<property name="connection.characterEncoding">utf8</property>
-		<mapping class="com.ypeb.model.points.pointsSale.Pointssale" />
-		<mapping class="com.ypeb.model.points.pointsTrade.Pointtrade" />
-		<mapping class="com.ypeb.model.points.pointsBuy.Pointsbuy" />
+		<mapping class="com.ypeb.model.trade.pointsSale.Pointssale" />
+		<mapping class="com.ypeb.model.trade.pointsTrade.Pointtrade" />
+		<mapping class="com.ypeb.model.trade.pointsBuy.Pointsbuy" />
 		<mapping class="com.ypeb.model.user.address.Address" />
 		<mapping class="com.ypeb.model.user.user.User" />
 		<mapping class="com.ypeb.model.user.bankCard.Bankcard" />

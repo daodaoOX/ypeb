@@ -100,6 +100,8 @@ public class UserDAO extends BaseHibernateDAO {
 			throw re;
 		}
 	}
+	
+
 
 	public List<User> findByPassword(Object password) {
 		return findByProperty(PASSWORD, password);

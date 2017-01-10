@@ -3,6 +3,7 @@ package com.ypeb.model.trade.pointsTrade;
 import com.ypeb.model.trade.pointsSale.BaseHibernateDAO;
 
 import java.sql.Timestamp;
+import java.util.Date;
 import java.util.List;
 
 import org.hibernate.LockOptions;
@@ -99,7 +100,7 @@ public class PointtradeDAO extends BaseHibernateDAO {
 			throw re;
 		}
 	}
-
+	
 	public List<Pointtrade> findBySaleId(Object saleId) {
 		return findByProperty(SALE_ID, saleId);
 	}
@@ -123,7 +124,7 @@ public class PointtradeDAO extends BaseHibernateDAO {
 	public List<Pointtrade> findByIceTime(Object iceTime) {
 		return findByProperty(ICE_TIME, iceTime);
 	}
-
+	
 	public List findAll() {
 		log.debug("finding all Pointtrade instances");
 		try {
@@ -170,4 +171,24 @@ public class PointtradeDAO extends BaseHibernateDAO {
 			throw re;
 		}
 	}
+	
+	//查询月K线图中date日期中的单价数据
+	public List<Pointtrade> findByTime(Date start,Date end) {
+		log.debug("finding Pointtrade instance");
+		try {
+			String queryString = "from Pointtrade as p where p.time between :start and :end order by p.time asc";		
+			System.out.println("**************");
+			Query queryObject = getSession().createQuery(queryString);
+			
+			System.out.println("**************");
+			queryObject.setParameter("start", start);
+			queryObject.setParameter("end", end);
+			
+			return queryObject.list();
+		} catch (RuntimeException re) {
+			log.error("find by property name failed", re);
+			throw re;
+		}
+	}
+	
 }

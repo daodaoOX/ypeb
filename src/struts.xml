@@ -3,35 +3,19 @@
 <struts>
 	<constant name="struts.multipart.saveDir" value="/tmp" />
 	<constant name="struts.multipart.maxSize" value="107010960" />
-	
-	<!-- 前台action -->
-	<package name="frontPage" namespace="/" extends="json-default">
-		<global-results>
-			<result name="ajaxdone" type="json">
-				<param name="includeProperties">secondaryUrl</param>
-			</result>
-			<result name="diyURL">${destURL}</result>
-		</global-results>
 
-		<action name="frontTrade_*_*" class="com.ypeb.action.front.trade.{1}Action"
-			method="{2}">
-			<result>index.jsp</result>
-			<result name="diyUrl">${destURL}</result>
-		</action>
-	</package>
-
-<!-- *****************交易所系统***************** -->
+	<!-- *****************交易所系统***************** -->
 	<package name="trade" namespace="/" extends="json-default">
 		<action name="frontTrade_*_*" class="com.ypeb.action.front.trade.{1}Action"
 			method="{2}">
 			<result name=""></result>
-			<result name="diyUrl" >${destURL}</result>
+			<result name="diyUrl">${destURL}</result>
 		</action>
-		
+
 		<action name="backTrade_*_*" class="com.ypeb.action.back.trade.{1}Action"
 			method="{2}">
 			<result name=""></result>
-			<result name="diyUrl" >${destURL}</result>
+			<result name="diyUrl">${destURL}</result>
 		</action>
 	</package>
 
