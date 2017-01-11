@@ -3,7 +3,9 @@
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
-
+<%@ taglib prefix="s" uri="/struts-tags"%>  
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
   <head>
@@ -208,8 +210,8 @@ $(function(){
 							
 							<li><a >挂卖和求购信息管理</a>
 								<ul>
-									<li><a href="frontTrade_PointsSale_saleInfo" target="navTab" rel="saleInfo" fresh="true">挂卖信息</a></li>
-									<li><a href="frontTrade_PointsBuy_buyInfo" target="navTab" rel="buyInfo" fresh="true">求购信息</a></li>
+									<li><a href="backTrade_PointsSale_saleInfo" target="navTab" rel="saleInfo" fresh="true">挂卖信息</a></li>
+									<li><a href="backTrade_PointsBuy_buyInfo" target="navTab" rel="buyInfo" fresh="true">求购信息</a></li>
 								</ul>
 							</li>	
 							<li><a >交易记录管理</a>
@@ -271,10 +273,18 @@ $(function(){
 				</ul>
 				<div class="navTab-panel tabsPageContent layoutBox">
 					<div class="page unitBox">
-						
-						
-						欢迎界面，用户名，权限显示 
+						<div class="accountInfo">
+							<div class="alertInfo">
+								<p><a href="https://code.csdn.net/dwzteam/dwz_jui/tree/master/doc" target="_blank" style="line-height:19px"><span>DWZ框架使用手册</span></a></p>
+								<p><a href="http://pan.baidu.com/s/18Bb8Z" target="_blank" style="line-height:19px">DWZ框架开发视频教材</a></p>
+							</div>
+							<div class="right">
+								<p style="color:red">DWZ官方微博 <a href="http://weibo.com/dwzui" target="_blank">http://weibo.com/dwzui</a></p>
+							</div>
+							<p><span>DWZ富客户端框架</span></p>
+							<p>DWZ官方微博:<a href="http://weibo.com/dwzui" target="_blank">http://weibo.com/dwzui</a></p>
 						</div>
+						
 						
 						<div style="width:230px;position: absolute;top:60px;right:0" layoutH="80">
 							<iframe width="100%" height="430" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?width=0&height=430&fansRow=2&ptype=1&skin=1&isTitle=0&noborder=1&isWeibo=1&isFans=0&uid=1739071261&verifier=c683dfe7"></iframe>
@@ -283,6 +293,7 @@ $(function(){
 					
 				</div>
 			</div>
+		</div>
 		</div>
 
 	</div>
