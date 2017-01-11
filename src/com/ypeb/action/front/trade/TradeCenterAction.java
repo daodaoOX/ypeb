@@ -44,7 +44,6 @@ public class TradeCenterAction extends ActionSupport {
 			tradeK.calcuMonthK(start, end);
 			tradeKList.add(tradeK);
 		}
-		
 		return "diyUrl";
 	}
 	

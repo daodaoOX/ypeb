@@ -39,7 +39,7 @@ ul,li{margin:0;padding:0;list-style:none;font-weight:normal}
 .shopping_cart_box{float:right;margin-top:31px}
 
 /*buttom*/
-.header_bottom_bg{background-color:#ec1d23}
+.header_bottom_bg{background-color:#ec1d23; z-index:-1;}
 .header_bottom{width:1200px;margin:0 auto;position:relative}
 .header_bottom h2{color:#FFFFFF; position:absolute; margin-top:3px; margin-left:35px;}
 .home,.deal{font-size:14px;color:#fff;line-height:40px;float:left;}
@@ -60,7 +60,7 @@ width:1000px;height:435px}
 .prosmore img{margin-left:70%; height:95%; position:absolute; top:10px;margin_top:-80%;}
 
 /*banner*/
-.banner_box{position:relative;height:450px;overflow:hidden}
+.banner_box{position:relative;height:450px;overflow:hidden; z-index:100;}
 .banner{width:12000px;position:absolute;margin-left:50%;left:-1390px}
 .banner img{position:absolute}
 

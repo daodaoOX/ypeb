@@ -14,6 +14,25 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<link rel="stylesheet" type="text/css" href="<%=path %>/frontCss/bottom.css">
 	<script type="text/javascript" src="<%=path %>/bootstrap/js/jquery-2.1.4.min.js"></script>
   </head>
+  
+  	<div class="banner_box">
+		<div class="banner">
+			<img class="banner1" src="<%=path %>/img/common/header/banner1.png">
+			<img class="banner2" src="<%=path %>/img/common/header/banner2.png">
+			<img class="banner3" src="<%=path %>/img/common/header/banner3.png">
+			<img class="banner4" src="<%=path %>/img/common/header/banner4.png">
+			<div class="clearfix"></div>
+		</div>
+		<span class="arrow_left"><img src="<%=path %>/img/common/header/left.png"></span>
+		<span class="arrow_right"><img src="<%=path %>/img/common/header/right.png"></span>
+		<div class="ctrl_span">
+			<span class="current"></span>
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+	</div>
+
 	<div class="AD_box">
 	<img class="AD_1" src="<%=path %>/img/index/ad1.png">
 	<img src="<%=path %>/img/index/ad2.png">
@@ -329,5 +348,69 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<div class="clearfix"></div>
 </div>
 
+<script>
+$(".banner img").hide()
+$(".banner img").eq(0).show(100)
+var n=0
+function toFade(){
+	if(n<3){
+		n=n+1
+	}else{
+		n=0
+	}
+	$(".banner img").fadeOut(700)
+	$(".banner img").eq(n).fadeIn(700)
+	
+	$(".ctrl_span span").removeClass("current")
+	$(".ctrl_span span").eq(n).addClass("current")
+}
+var t1=setInterval(toFade,3000)
 
+$(".arrow_left").click(
+	function(){
+		if(n>0){
+			n=n-1
+			}else{
+				n=3
+				}
+		$(".banner img").fadeOut(700)
+		$(".banner img").eq(n).fadeIn(700)
+		$(".ctrl_span span").removeClass("current")
+		$(".ctrl_span span").eq(n).addClass("current")
+	}
+)
+$(".arrow_right").click(
+	function(){
+		if(n<3){
+			n=n+1
+			}else{
+				n=0
+				}
+		$(".banner img").fadeOut(700)
+		$(".banner img").eq(n).fadeIn(700)
+		$(".ctrl_span span").removeClass("current")
+		$(".ctrl_span span").eq(n).addClass("current")
+	}
+)
+$(".ctrl_span span").click(
+	function(){
+		n=$(this).index()
+		$(".banner img").fadeOut(700)
+		$(".banner img").eq(n).fadeIn(700)
+		$(".ctrl_span span").removeClass("current")
+		$(".ctrl_span span").eq(n).addClass("current")
+	}
+)
+
+$(".banner_box").mouseenter(
+	function(){
+	clearInterval(t1)
+	}
+)
+.mouseleave(
+	function(){
+		t1=setInterval(toFade,3000)
+	}
+)
+</script>
 </html>

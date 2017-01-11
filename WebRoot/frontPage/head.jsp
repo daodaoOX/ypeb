@@ -27,7 +27,7 @@
 	<div class="header_bottom_bg">
 		<div class="header_bottom">
           <div class="pros">
-        	<h2>全部商品分类</h2>
+        	<h2 class="classification">全部商品分类</h2>
 			<ul class="classification_box prosul" id="proinfo">
 				
 				<li><a href="#">数码 / 家电</a>
@@ -313,89 +313,7 @@
 		</div>
 	</div>
 </div>
-	<div class="banner_box">
-		<div class="banner">
-			<img class="banner1" src="img/common/header/banner1.png">
-			<img class="banner2" src="img/common/header/banner2.png">
-			<img class="banner3" src="img/common/header/banner3.png">
-			<img class="banner4" src="img/common/header/banner4.png">
-			<div class="clearfix"></div>
-		</div>
-		<span class="arrow_left"><img src="img/common/header/left.png"></span>
-		<span class="arrow_right"><img src="img/common/header/right.png"></span>
-		<div class="ctrl_span">
-			<span class="current"></span>
-			<span></span>
-			<span></span>
-			<span></span>
-		</div>
-	</div>
 
-<script>
-$(".banner img").hide()
-$(".banner img").eq(0).show(100)
-var n=0
-function toFade(){
-	if(n<3){
-		n=n+1
-	}else{
-		n=0
-	}
-	$(".banner img").fadeOut(700)
-	$(".banner img").eq(n).fadeIn(700)
-	
-	$(".ctrl_span span").removeClass("current")
-	$(".ctrl_span span").eq(n).addClass("current")
-}
-var t1=setInterval(toFade,3000)
-
-$(".arrow_left").click(
-	function(){
-		if(n>0){
-			n=n-1
-			}else{
-				n=3
-				}
-		$(".banner img").fadeOut(700)
-		$(".banner img").eq(n).fadeIn(700)
-		$(".ctrl_span span").removeClass("current")
-		$(".ctrl_span span").eq(n).addClass("current")
-	}
-)
-$(".arrow_right").click(
-	function(){
-		if(n<3){
-			n=n+1
-			}else{
-				n=0
-				}
-		$(".banner img").fadeOut(700)
-		$(".banner img").eq(n).fadeIn(700)
-		$(".ctrl_span span").removeClass("current")
-		$(".ctrl_span span").eq(n).addClass("current")
-	}
-)
-$(".ctrl_span span").click(
-	function(){
-		n=$(this).index()
-		$(".banner img").fadeOut(700)
-		$(".banner img").eq(n).fadeIn(700)
-		$(".ctrl_span span").removeClass("current")
-		$(".ctrl_span span").eq(n).addClass("current")
-	}
-)
-
-$(".banner_box").mouseenter(
-	function(){
-	clearInterval(t1)
-	}
-)
-.mouseleave(
-	function(){
-		t1=setInterval(toFade,3000)
-	}
-)
-</script>
 <script type="text/javascript">
 	(function(){
 		

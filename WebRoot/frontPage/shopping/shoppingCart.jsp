@@ -3,7 +3,7 @@
 String path = request.getContextPath();
 %>
 
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTDHTML 4.01 Transitional//EN">
 <html>
 	<head>
 		<link rel="stylesheet" type="text/css" href="<%=path %>/frontCss/cart.css">
