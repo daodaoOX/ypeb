@@ -20,17 +20,24 @@
 	</property>
 	<property name="myeclipse.connection.profile">YPEB</property>
 
-	<property name="javax.persistence.validation.mode">none</property>
-	<property name="hbm2ddl.auto">update</property>
-	<property name="connection.characterEncoding">utf8</property>
-	<property name="show_sql">true</property>
-	<mapping class="com.ypeb.model.trade.pointsSale.Pointssale" />
-	<mapping class="com.ypeb.model.trade.pointsTrade.Pointtrade" />
-	<mapping class="com.ypeb.model.trade.pointsBuy.Pointsbuy" />
-	<mapping class="com.ypeb.model.user.address.Address" />
-	<mapping class="com.ypeb.model.user.user.User" />
-	<mapping class="com.ypeb.model.user.bankCard.Bankcard" />
-</session-factory>
+
+		<property name="javax.persistence.validation.mode">
+			none
+		</property>
+		<property name="hbm2ddl.auto">update</property>
+		<property name="connection.characterEncoding">utf8</property>
+		<property name="show_sql">true</property>
+		<mapping class="com.ypeb.model.trade.pointsSale.Pointssale" />
+		<mapping class="com.ypeb.model.trade.pointsTrade.Pointtrade" />
+		<mapping class="com.ypeb.model.trade.pointsBuy.Pointsbuy" />
+		<mapping class="com.ypeb.model.user.address.Address" />
+		<mapping class="com.ypeb.model.user.user.User" />
+		<mapping class="com.ypeb.model.user.bankCard.Bankcard" />
+		<mapping
+			class="com.ypeb.model.shopping.goodsCategory.Goodscategory" />
+		<mapping class="com.ypeb.model.shopping.goods.Goods" />
+	</session-factory>
+
 
 
 </hibernate-configuration>

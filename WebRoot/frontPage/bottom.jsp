@@ -1,3 +1,4 @@
+
 <%@ page language="java" pageEncoding="UTF-8"%>
 <%@ taglib prefix="s" uri="/struts-tags"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
@@ -54,4 +55,5 @@
 		<div class="copyright">&copy;&nbsp; 2005-2016 &nbsp;鑫龙港商城 &nbsp;版权所有，并保留所有权利。&nbsp; 龙港网商城&nbsp; Tel:&nbsp; 4008-111-222&nbsp;&nbsp;&nbsp;   E-mail: 1234566789@qq.com</div>
 	</div>
 </div>
+
 </html>
