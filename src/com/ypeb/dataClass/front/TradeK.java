@@ -1,50 +1,51 @@
 package com.ypeb.dataClass.front;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.Date;
-import java.util.GregorianCalendar;
 import java.util.List;
 
+import com.ypeb.model.trade.pointsTrade.Pointtrade;
 import com.ypeb.model.trade.pointsTrade.PointtradeDAO;
 
 public class TradeK {
 	/**
 	 * @author jilin
 	 * @date : 2017年1月7日 下午2:56:26
-	 * @descripe :数据类,用来传送月K线图所需的数据。
+	 * @descripe :数据类，用来传送月K线图所需的数据。
 	 */
 	public double firtTrade;
 	public double lastTrade;
 	public double maxTrade;
 	public double minTrade;
-	
-	public void calcuMonthK(Date date){
+
+	public void calcuMonthK(Date start, Date end) {
 		/**
 		 * @author jilin
 		 * @date : 2017年1月7日 下午2:58:55
 		 * @descripe: 方法用来查询date日期的K线数据,并给自身赋值
 		 */
-		
-		//获得当前date时间
-		Date currentDate=new Date();
-		DateFormat format=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-		String currentTime=format.format(date);
-		GregorianCalendar cal = new GregorianCalendar();  
-			cal.setTime(currentDate);
-		int currentDateDay = cal.get(GregorianCalendar.DAY_OF_MONTH);
-		
-		Calendar calendar = Calendar.getInstance();  
-		calendar.set(Calendar.DAY_OF_MONTH, currentDateDay);  
-		Date start = calendar.getTime(); 
-		calendar.set(Calendar.DAY_OF_MONTH, currentDateDay+1);  
-		Date end = calendar.getTime(); 
-		
+
 		PointtradeDAO dao = new PointtradeDAO();
-		
-		//List Trade = dao.findByTime();
-		
+
+		List<Pointtrade> pointtradeList = dao.findByTime(start, end);
+		if(!pointtradeList.isEmpty()){
+			System.out.println(pointtradeList.get(0).getPrice());
+			this.setFirtTrade(pointtradeList.get(0).getPrice());
+			this.setLastTrade(pointtradeList.get(pointtradeList.size()-1).getPrice());
+		}else{
+			System.out.println(0.0);
+			this.setFirtTrade(0.0);
+			this.setLastTrade(0.0);
+		}
+
+		List<Pointtrade> priceList = dao.findByPrice(start, end);
+		if (!priceList.isEmpty()){
+			this.setMaxTrade(priceList.get(0).getPrice());
+			this.setMinTrade(priceList.get(priceList.size()-1).getPrice());
+		}else{ 
+			this.setMaxTrade(0.0);
+			this.setMinTrade(0.0);
+		}
+	
 	}
 
 	public double getFirtTrade() {
@@ -78,9 +79,5 @@ public class TradeK {
 	public void setMinTrade(double minTrade) {
 		this.minTrade = minTrade;
 	}
-	
-	
-	
-	
 
 }

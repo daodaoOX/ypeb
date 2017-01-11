@@ -1,7 +1,3 @@
 eclipse.preferences.version=1
-<<<<<<< HEAD
-validator.Checked=WebRoot/bootstrap/js/jquery-2.1.4.min.js,WebRoot/xheditor
-=======
-validator.Checked=WebRoot/xheditor,WebRoot/js
->>>>>>> 17a5c6fee0798d3b9f7c33f8de101fceb97c8fb8
+validator.Checked=WebRoot/bootstrap/js/jquery-2.1.4.min.js,WebRoot/xheditor,WebRoot/js
 validator.Unchecked=

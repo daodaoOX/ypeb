@@ -19,7 +19,7 @@
 		<input class="search_button" type="submit" value="搜索">
 		<div class="shopping_cart_box">
 			<img class="shopping_cart" src="img/common/header/shopping_cart.png">
-			<h1 class="shopping_cart_text">购物车（0）</h1>
+			<a href="frontPage/payment/cart.jsp" target="myiframe" ><h1 class="shopping_cart_text">购物车(3)</h1></a>
 			<div class="classfix"></div>
 		</div>
 		<div class="clearfix"></div>
@@ -313,23 +313,23 @@
 		</div>
 	</div>
 </div>
-<div class="banner_box">
-	<div class="banner">
-		<img class="banner1" src="img/common/header/banner1.png">
-		<img class="banner2" src="img/common/header/banner2.png">
-		<img class="banner3" src="img/common/header/banner3.png">
-		<img class="banner4" src="img/common/header/banner4.png">
-		<div class="clearfix"></div>
+	<div class="banner_box">
+		<div class="banner">
+			<img class="banner1" src="img/common/header/banner1.png">
+			<img class="banner2" src="img/common/header/banner2.png">
+			<img class="banner3" src="img/common/header/banner3.png">
+			<img class="banner4" src="img/common/header/banner4.png">
+			<div class="clearfix"></div>
+		</div>
+		<span class="arrow_left"><img src="img/common/header/left.png"></span>
+		<span class="arrow_right"><img src="img/common/header/right.png"></span>
+		<div class="ctrl_span">
+			<span class="current"></span>
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
 	</div>
-	<span class="arrow_left"><img src="img/common/header/left.png"></span>
-	<span class="arrow_right"><img src="img/common/header/right.png"></span>
-	<div class="ctrl_span">
-		<span class="current"></span>
-		<span></span>
-		<span></span>
-		<span></span>
-	</div>
-</div>
 
 <script>
 $(".banner img").hide()

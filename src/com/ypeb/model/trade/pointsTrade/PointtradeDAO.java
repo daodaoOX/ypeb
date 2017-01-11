@@ -100,7 +100,7 @@ public class PointtradeDAO extends BaseHibernateDAO {
 			throw re;
 		}
 	}
-	
+
 	public List<Pointtrade> findBySaleId(Object saleId) {
 		return findByProperty(SALE_ID, saleId);
 	}
@@ -124,7 +124,7 @@ public class PointtradeDAO extends BaseHibernateDAO {
 	public List<Pointtrade> findByIceTime(Object iceTime) {
 		return findByProperty(ICE_TIME, iceTime);
 	}
-	
+
 	public List findAll() {
 		log.debug("finding all Pointtrade instances");
 		try {
@@ -172,18 +172,14 @@ public class PointtradeDAO extends BaseHibernateDAO {
 		}
 	}
 	
-	//查询月K线图中date日期中的单价数据
+	//查询月K线图中date日期一天中的交易时间升序排列放到List<Pointtrade>中
 	public List<Pointtrade> findByTime(Date start,Date end) {
 		log.debug("finding Pointtrade instance");
 		try {
 			String queryString = "from Pointtrade as p where p.time between :start and :end order by p.time asc";		
-			System.out.println("**************");
 			Query queryObject = getSession().createQuery(queryString);
-			
-			System.out.println("**************");
 			queryObject.setParameter("start", start);
 			queryObject.setParameter("end", end);
-			
 			return queryObject.list();
 		} catch (RuntimeException re) {
 			log.error("find by property name failed", re);
@@ -191,4 +187,19 @@ public class PointtradeDAO extends BaseHibernateDAO {
 		}
 	}
 	
+	//查询月K线图中date日期一天中的单价降序排列放到List<Pointtrade>中
+		public List<Pointtrade> findByPrice(Date start,Date end) {
+			log.debug("finding Pointtrade instance");
+			try {
+				String queryString = "from Pointtrade as p where p.time between :start and :end order by p.price desc";		
+				Query queryObject = getSession().createQuery(queryString);
+				queryObject.setParameter("start", start);
+				queryObject.setParameter("end", end);
+				return queryObject.list();
+			} catch (RuntimeException re) {
+				log.error("find by property name failed", re);
+				throw re;
+			}
+		}
+		
 }

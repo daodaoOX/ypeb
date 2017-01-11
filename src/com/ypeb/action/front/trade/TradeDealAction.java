@@ -4,8 +4,6 @@ import com.opensymphony.xwork2.ActionSupport;
 import com.ypeb.model.trade.pointsTrade.Pointtrade;
 
 public class TradeDealAction extends ActionSupport {
-	
-	private static final long serialVersionUID = 1L;
 	/**
 	 * @author jilin
 	 * @date : 2017年1月9日 上午8:30:30
@@ -91,5 +89,6 @@ public class TradeDealAction extends ActionSupport {
 	public void setDestUrl(String destUrl) {
 		this.destUrl = destUrl;
 	}
+
 	
 }
