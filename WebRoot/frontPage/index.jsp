@@ -3,7 +3,10 @@
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
-
+<%@ taglib prefix="s" uri="/struts-tags"%>  
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
   <head>
@@ -15,9 +18,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<meta http-equiv="expires" content="0">    
 	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 	<meta http-equiv="description" content="This is my page">
-	<!--
-	<link rel="stylesheet" type="text/css" href="styles.css">
-	-->
+	
+	<link rel="stylesheet" type="text/css" href="frontCss/index.css">
+	<link rel="stylesheet" type="text/css" href="frontCss/header.css">
+	<link rel="stylesheet" type="text/css" href="frontCss/bottom.css">
+	<script type="text/javascript" src="bootstrap/js/jquery-2.1.4.min.js"></script>
   </head>
   
   <body>
@@ -38,8 +43,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    
    bottom
    9、底部要有备案信息。其他信息UI设计，不涉及动态。
-   
-   
     -->
+    <%@ include file="head.jsp" %>
+	<iframe  frameborder=0 name="myiframe" width=100% height=321% marginheight=0 marginwidth=0 scrolling=no src="frontPage/body.jsp"></iframe>
+	<%@ include file="bottom.jsp"%>
+	
   </body>
 </html>
