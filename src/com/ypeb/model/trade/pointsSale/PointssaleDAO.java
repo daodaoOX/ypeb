@@ -1,10 +1,9 @@
 package com.ypeb.model.trade.pointsSale;
 
-import java.sql.Timestamp;
 import java.util.List;
 import org.hibernate.LockOptions;
 import org.hibernate.Query;
-import static org.hibernate.criterion.Example.create;
+import org.hibernate.criterion.Example;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -22,13 +21,6 @@ import org.slf4j.LoggerFactory;
 public class PointssaleDAO extends BaseHibernateDAO {
 	private static final Logger log = LoggerFactory
 			.getLogger(PointssaleDAO.class);
-	// property constants
-	public static final String SALE_ID = "saleId";
-	public static final String NUM = "num";
-	public static final String PRICE = "price";
-	public static final String ALL_PRICE = "allPrice";
-	public static final String STATE = "state";
-	public static final String RESIDUE = "residue";
 
 	public void save(Pointssale transientInstance) {
 		log.debug("saving Pointssale instance");
@@ -56,7 +48,7 @@ public class PointssaleDAO extends BaseHibernateDAO {
 		log.debug("getting Pointssale instance with id: " + id);
 		try {
 			Pointssale instance = (Pointssale) getSession().get(
-					"com.ypeb.model.points.pointsSale.Pointssale", id);
+					"com.ypeb.model.trade.pointsSale.Pointssale", id);
 			return instance;
 		} catch (RuntimeException re) {
 			log.error("get failed", re);
@@ -64,13 +56,13 @@ public class PointssaleDAO extends BaseHibernateDAO {
 		}
 	}
 
-	public List<Pointssale> findByExample(Pointssale instance) {
+	public List findByExample(Pointssale instance) {
 		log.debug("finding Pointssale instance by example");
 		try {
-			List<Pointssale> results = (List<Pointssale>) getSession()
+			List results = getSession()
 					.createCriteria(
-							"com.ypeb.model.points.pointsSale.Pointssale")
-					.add(create(instance)).list();
+							"com.ypeb.model.trade.pointsSale.Pointssale")
+					.add(Example.create(instance)).list();
 			log.debug("find by example successful, result size: "
 					+ results.size());
 			return results;
@@ -93,30 +85,6 @@ public class PointssaleDAO extends BaseHibernateDAO {
 			log.error("find by property name failed", re);
 			throw re;
 		}
-	}
-
-	public List<Pointssale> findBySaleId(Object saleId) {
-		return findByProperty(SALE_ID, saleId);
-	}
-
-	public List<Pointssale> findByNum(Object num) {
-		return findByProperty(NUM, num);
-	}
-
-	public List<Pointssale> findByPrice(Object price) {
-		return findByProperty(PRICE, price);
-	}
-
-	public List<Pointssale> findByAllPrice(Object allPrice) {
-		return findByProperty(ALL_PRICE, allPrice);
-	}
-
-	public List<Pointssale> findByState(Object state) {
-		return findByProperty(STATE, state);
-	}
-
-	public List<Pointssale> findByResidue(Object residue) {
-		return findByProperty(RESIDUE, residue);
 	}
 
 	public List findAll() {

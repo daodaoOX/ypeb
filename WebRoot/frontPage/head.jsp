@@ -19,7 +19,7 @@
 		<input class="search_button" type="submit" value="搜索">
 		<div class="shopping_cart_box">
 			<img class="shopping_cart" src="img/common/header/shopping_cart.png">
-			<a href="frontPage/payment/cart.jsp" target="myiframe" ><h1 class="shopping_cart_text">购物车(3)</h1></a>
+			<a href="frontPage/shopping/shoppingCar.jsp" target="index" ><h1 class="shopping_cart_text">购物车(3)</h1></a>
 			<div class="classfix"></div>
 		</div>
 		<div class="clearfix"></div>
@@ -29,7 +29,6 @@
           <div class="pros">
         	<h2 class="classification">全部商品分类</h2>
 			<ul class="classification_box prosul" id="proinfo">
-				
 				<li><a href="#">数码 / 家电</a>
                     <div class="prosmore hide">
                         <span><a href="#">火锅</a></span>
@@ -307,8 +306,8 @@
                 </li>
 			</ul>
 			</div>
-			<h1><a class="home" href"#">首页</a></h1>
-			<h1><a class="deal" href"#">交易中心</a></h1>
+			<h1><a class="home" href="frontPage/body.jsp" target="index">首页</a></h1>
+			<h1><a class="deal" href="frontPage/trade/tradeCenter.jsp" target="index">交易中心</a></h1>
 			<div class="clearfix"></div>
 		</div>
 	</div>
@@ -334,5 +333,17 @@
 		});
 	})();
 </script>
-  
+  <script>
+  		$(".classification_box").hide();
+		$(".classification").mouseover(function (){  
+            $(".classification_box").show();  
+        }).mouseout(function (){  
+            $(".classification_box").hide();  
+        }); 
+        $(".classification_box").mouseover(function (){  
+            $(".classification_box").show();  
+        }).mouseout(function (){  
+            $(".classification_box").hide();  
+        }); 
+	</script>
 </html>

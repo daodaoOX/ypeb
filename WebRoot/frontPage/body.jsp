@@ -14,7 +14,292 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<link rel="stylesheet" type="text/css" href="<%=path %>/frontCss/bottom.css">
 	<script type="text/javascript" src="<%=path %>/bootstrap/js/jquery-2.1.4.min.js"></script>
   </head>
-  
+  <body onload="window.parent.document.getElementById('index').height=document.body.scrollHeight;">
+    	<div class="" >
+		<div class="header_bottom">
+          <div class="pros">
+			<ul class="classification_box prosul" id="proinfo" style="margin-top:0px;">
+				<li><a href="#">数码 / 家电</a>
+                    <div class="prosmore hide">
+                        <span><a href="#">火锅</a></span>
+                        <span><a href="#">烧烤</a></span>
+                        <span><a href="#">西餐</a></span>
+                        <span><a href="#">海鲜</a></span>
+                        <span><a href="#">地方菜</a></span><br />
+                        <span><a href="#">日韩料理</a></span>
+                        <span><a href="#">快餐</a></span>
+                        <span><a href="#">蛋糕</a></em></span>
+                        <span><a href="#">快餐</a></span>
+                        <span><a href="#">蛋糕</a></em></span><br />
+                        <span><a href="#">火锅</a></span>
+                        <span><a href="#">烧烤</a></span>
+                        <span><a href="#">西餐</a></span>
+                        <span><a href="#">海鲜</a></span>
+                        <span><a href="#">地方菜</a></span><br />
+                        <span><a href="#">日韩料理</a></span>
+                        <span><a href="#">快餐</a></span>
+                        <span><a href="#">蛋糕</a></em></span>
+                        <span><a href="#">快餐</a></span>
+                        <span><a href="#"></a></em></span><br />
+                        <a href="#"><img src="<%=path %>/img/common/header/floor_2_ad.png" ></a>
+                    </div>
+                </li>
+				<li><a href="#">家居 / 家纺</a>
+                	<div class="prosmore hide">
+                        <span><a href="#">被子</a></span>
+                        <span><a href="#">被罩</a></span>
+                        <span><a href="#">棉绒枕头</a></span>
+                        <span><a href="#">丝绒床单</a></span>
+                        <span><a href="#">茶几</a></span><br />
+                        <span><a href="#">电视柜</a></span>
+                        <span><a href="#">被罩</a></span>
+                        <span><a href="#">棉绒枕头</a></span>
+                        <span><a href="#">丝绒床单</a></span>
+                        <span><a href="#">茶几</a></span><br />
+                        <span><a href="#">被子</a></span>
+                        <span><a href="#">被罩</a></span>
+                        <span><a href="#">棉绒枕头</a></span>
+                        <span><a href="#">丝绒床单</a></span>
+                        <span><a href="#">茶几</a></span><br />
+                        <span><a href="#">电视柜</a></span>
+                        <span><a href="#">被罩</a></span>
+                        <span><a href="#">棉绒枕头</a></span>
+                        <span><a href="#">丝绒床单</a></span>
+                        <span><a href="#"></a></span><br />
+                        <a href="#"><img src="<%=path %>/img/common/header/floor_5_ad.png" /></a>
+                    </div>
+                </li>
+				<li><a href="#">男装 / 女装 / 童装</a>
+                	<div class="prosmore hide">
+                        <span><a href="#">被子</a></span>
+                        <span><a href="#">被罩</a></span>
+                        <span><a href="#">棉绒枕头</a></span>
+                        <span><a href="#">丝绒床单</a></span>
+                        <span><a href="#">茶几</a></span><br />
+                        <span><a href="#">电视柜</a></span>
+                        <span><a href="#">被罩</a></span>
+                        <span><a href="#">棉绒枕头</a></span>
+                        <span><a href="#">丝绒床单</a></span>
+                        <span><a href="#">茶几</a></span><br />
+                        <span><a href="#">被子</a></span>
+                        <span><a href="#">被罩</a></span>
+                        <span><a href="#">棉绒枕头</a></span>
+                        <span><a href="#">丝绒床单</a></span>
+                        <span><a href="#">茶几</a></span><br />
+                        <span><a href="#">电视柜</a></span>
+                        <span><a href="#">被罩</a></span>
+                        <span><a href="#">棉绒枕头</a></span>
+                        <span><a href="#">丝绒床单</a></span>
+                        <span><a href="#"></a></span><br />
+                        <a href="#"><img src="<%=path %>/img/common/header/floor_3_ad.png" /></a>
+                    </div>
+                </li>
+				<li><a href="#">女鞋 / 男鞋 / 箱包</a>
+                	<div class="prosmore hide">
+                        <span><a href="#">火锅</a></span>
+                        <span><a href="#">烧烤</a></span>
+                        <span><a href="#">西餐</a></span>
+                        <span><a href="#">海鲜</a></span>
+                        <span><a href="#">地方菜</a></span><br />
+                        <span><a href="#">日韩料理</a></span>
+                        <span><a href="#">快餐</a></span>
+                        <span><a href="#">蛋糕</a></em></span>
+                        <span><a href="#">快餐</a></span>
+                        <span><a href="#">蛋糕</a></em></span><br />
+                        <span><a href="#">火锅</a></span>
+                        <span><a href="#">烧烤</a></span>
+                        <span><a href="#">西餐</a></span>
+                        <span><a href="#">海鲜</a></span>
+                        <span><a href="#">地方菜</a></span><br />
+                        <span><a href="#">日韩料理</a></span>
+                        <span><a href="#">快餐</a></span>
+                        <span><a href="#">蛋糕</a></em></span>
+                        <span><a href="#">快餐</a></span>
+                        <span><a href="#"></a></em></span><br />
+                        <a href="#"><img src="<%=path %>/img/common/header/floor_2_ad.png" ></a>
+                    </div>
+                </li>
+				<li><a href="#">日用洗化 / 清洁用品</a>
+                	<div class="prosmore hide">
+                        <span><a href="#">被子</a></span>
+                        <span><a href="#">被罩</a></span>
+                        <span><a href="#">棉绒枕头</a></span>
+                        <span><a href="#">丝绒床单</a></span>
+                        <span><a href="#">茶几</a></span><br />
+                        <span><a href="#">电视柜</a></span>
+                        <span><a href="#">被罩</a></span>
+                        <span><a href="#">棉绒枕头</a></span>
+                        <span><a href="#">丝绒床单</a></span>
+                        <span><a href="#">茶几</a></span><br />
+                        <span><a href="#">被子</a></span>
+                        <span><a href="#">被罩</a></span>
+                        <span><a href="#">棉绒枕头</a></span>
+                        <span><a href="#">丝绒床单</a></span>
+                        <span><a href="#">茶几</a></span><br />
+                        <span><a href="#">电视柜</a></span>
+                        <span><a href="#">被罩</a></span>
+                        <span><a href="#">棉绒枕头</a></span>
+                        <span><a href="#">丝绒床单</a></span>
+                        <span><a href="#"></a></span><br />
+                        <a href="#"><img src="<%=path %>/img/common/header/floor_3_ad.png" /></a>
+                    </div>
+                </li>
+				<li><a href="#">酒水饮料</a>
+                	<div class="prosmore hide">
+                        <span><a href="#">被子</a></span>
+                        <span><a href="#">被罩</a></span>
+                        <span><a href="#">棉绒枕头</a></span>
+                        <span><a href="#">丝绒床单</a></span>
+                        <span><a href="#">茶几</a></span><br />
+                        <span><a href="#">电视柜</a></span>
+                        <span><a href="#">被罩</a></span>
+                        <span><a href="#">棉绒枕头</a></span>
+                        <span><a href="#">丝绒床单</a></span>
+                        <span><a href="#">茶几</a></span><br />
+                        <span><a href="#">被子</a></span>
+                        <span><a href="#">被罩</a></span>
+                        <span><a href="#">棉绒枕头</a></span>
+                        <span><a href="#">丝绒床单</a></span>
+                        <span><a href="#">茶几</a></span><br />
+                        <span><a href="#">电视柜</a></span>
+                        <span><a href="#">被罩</a></span>
+                        <span><a href="#">棉绒枕头</a></span>
+                        <span><a href="#">丝绒床单</a></span>
+                        <span><a href="#"></a></span><br />
+                        <a href="#"><img src="<%=path %>/img/common/header/floor_3_ad.png" /></a>
+                    </div>
+                </li>
+				<li><a href="#">汽车用品</a>
+                	<div class="prosmore hide">
+                        <span><a href="#">被子</a></span>
+                        <span><a href="#">被罩</a></span>
+                        <span><a href="#">棉绒枕头</a></span>
+                        <span><a href="#">丝绒床单</a></span>
+                        <span><a href="#">茶几</a></span><br />
+                        <span><a href="#">电视柜</a></span>
+                        <span><a href="#">被罩</a></span>
+                        <span><a href="#">棉绒枕头</a></span>
+                        <span><a href="#">丝绒床单</a></span>
+                        <span><a href="#">茶几</a></span><br />
+                        <span><a href="#">被子</a></span>
+                        <span><a href="#">被罩</a></span>
+                        <span><a href="#">棉绒枕头</a></span>
+                        <span><a href="#">丝绒床单</a></span>
+                        <span><a href="#">茶几</a></span><br />
+                        <span><a href="#">电视柜</a></span>
+                        <span><a href="#">被罩</a></span>
+                        <span><a href="#">棉绒枕头</a></span>
+                        <span><a href="#">丝绒床单</a></span>
+                        <span><a href="#"></a></span><br />
+                        <a href="#"><img src="<%=path %>/img/common/header/floor_3_ad.png" /></a>
+                    </div>
+                </li>
+				<li><a href="#">营养保健</a>
+                	<div class="prosmore hide">
+                        <span><a href="#">火锅</a></span>
+                        <span><a href="#">烧烤</a></span>
+                        <span><a href="#">西餐</a></span>
+                        <span><a href="#">海鲜</a></span>
+                        <span><a href="#">地方菜</a></span><br />
+                        <span><a href="#">日韩料理</a></span>
+                        <span><a href="#">快餐</a></span>
+                        <span><a href="#">蛋糕</a></em></span>
+                        <span><a href="#">快餐</a></span>
+                        <span><a href="#">蛋糕</a></em></span><br />
+                        <span><a href="#">火锅</a></span>
+                        <span><a href="#">烧烤</a></span>
+                        <span><a href="#">西餐</a></span>
+                        <span><a href="#">海鲜</a></span>
+                        <span><a href="#">地方菜</a></span><br />
+                        <span><a href="#">日韩料理</a></span>
+                        <span><a href="#">快餐</a></span>
+                        <span><a href="#">蛋糕</a></em></span>
+                        <span><a href="#">快餐</a></span>
+                        <span><a href="#"></a></em></span><br />
+                        <a href="#"><img src="<%=path %>/img/common/header/floor_2_ad.png" ></a>
+                    </div>
+                </li>
+				<li><a href="#">干果 / 鲜果</a>
+                	<div class="prosmore hide">
+                        <span><a href="#">被子</a></span>
+                        <span><a href="#">被罩</a></span>
+                        <span><a href="#">棉绒枕头</a></span>
+                        <span><a href="#">丝绒床单</a></span>
+                        <span><a href="#">茶几</a></span><br />
+                        <span><a href="#">电视柜</a></span>
+                        <span><a href="#">被罩</a></span>
+                        <span><a href="#">棉绒枕头</a></span>
+                        <span><a href="#">丝绒床单</a></span>
+                        <span><a href="#">茶几</a></span><br />
+                        <span><a href="#">被子</a></span>
+                        <span><a href="#">被罩</a></span>
+                        <span><a href="#">棉绒枕头</a></span>
+                        <span><a href="#">丝绒床单</a></span>
+                        <span><a href="#">茶几</a></span><br />
+                        <span><a href="#">电视柜</a></span>
+                        <span><a href="#">被罩</a></span>
+                        <span><a href="#">棉绒枕头</a></span>
+                        <span><a href="#">丝绒床单</a></span>
+                        <span><a href="#"></a></span><br />
+                        <a href="#"><img src="<%=path %>/img/common/header/floor_3_ad.png" /></a>
+                    </div>
+                </li>
+				<li><a href="#">手机 / 运营商</a>
+                	<div class="prosmore hide">
+                        <span><a href="#">被子</a></span>
+                        <span><a href="#">被罩</a></span>
+                        <span><a href="#">棉绒枕头</a></span>
+                        <span><a href="#">丝绒床单</a></span>
+                        <span><a href="#">茶几</a></span><br />
+                        <span><a href="#">电视柜</a></span>
+                        <span><a href="#">被罩</a></span>
+                        <span><a href="#">棉绒枕头</a></span>
+                        <span><a href="#">丝绒床单</a></span>
+                        <span><a href="#">茶几</a></span><br />
+                        <span><a href="#">被子</a></span>
+                        <span><a href="#">被罩</a></span>
+                        <span><a href="#">棉绒枕头</a></span>
+                        <span><a href="#">丝绒床单</a></span>
+                        <span><a href="#">茶几</a></span><br />
+                        <span><a href="#">电视柜</a></span>
+                        <span><a href="#">被罩</a></span>
+                        <span><a href="#">棉绒枕头</a></span>
+                        <span><a href="#">丝绒床单</a></span>
+                        <span><a href="#"></a></span><br />
+                        <a href="#"><img src="<%=path %>/img/common/header/floor_3_ad.png" /></a>
+                    </div>
+                </li>
+				<li><a href="#">眼镜 / 腕表 / 首饰</a>
+                	<div class="prosmore hide">
+                        <span><a href="#">火锅</a></span>
+                        <span><a href="#">烧烤</a></span>
+                        <span><a href="#">西餐</a></span>
+                        <span><a href="#">海鲜</a></span>
+                        <span><a href="#">地方菜</a></span><br />
+                        <span><a href="#">日韩料理</a></span>
+                        <span><a href="#">快餐</a></span>
+                        <span><a href="#">蛋糕</a></em></span>
+                        <span><a href="#">快餐</a></span>
+                        <span><a href="#">蛋糕</a></em></span><br />
+                        <span><a href="#">火锅</a></span>
+                        <span><a href="#">烧烤</a></span>
+                        <span><a href="#">西餐</a></span>
+                        <span><a href="#">海鲜</a></span>
+                        <span><a href="#">地方菜</a></span><br />
+                        <span><a href="#">日韩料理</a></span>
+                        <span><a href="#">快餐</a></span>
+                        <span><a href="#">蛋糕</a></em></span>
+                        <span><a href="#">快餐</a></span>
+                        <span><a href="#"></a></em></span><br />
+                        <a href="#"><img src="<%=path %>/img/common/header/floor_2_ad.png" ></a>
+                    </div>
+                </li>
+			</ul>
+			</div>
+		
+			<div class="clearfix"></div>
+		</div>
+	</div>
   	<div class="banner_box">
 		<div class="banner">
 			<img class="banner1" src="<%=path %>/img/common/header/banner1.png">
@@ -347,7 +632,26 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	</div>
 	<div class="clearfix"></div>
 </div>
-
+	<script type="text/javascript">
+	(function(){
+		
+		var $subblock = $(".subpage"), $head=$subblock.find('h2'), $ul = $("#proinfo"), $lis = $ul.find("li"), inter=false;
+	
+		$lis.hover(function(){
+			if(!$(this).hasClass('nochild')){
+				$(this).addClass("prosahover");
+				$(this).find(".prosmore").removeClass('hide');
+			}
+		},function(){
+			if(!$(this).hasClass('nochild')){
+				if($(this).hasClass("prosahover")){
+					$(this).removeClass("prosahover");
+				}
+				$(this).find(".prosmore").addClass('hide');
+			}
+		});
+	})();
+</script>
 <script>
 $(".banner img").hide()
 $(".banner img").eq(0).show(100)
@@ -413,4 +717,5 @@ $(".banner_box").mouseenter(
 	}
 )
 </script>
+</body>
 </html>

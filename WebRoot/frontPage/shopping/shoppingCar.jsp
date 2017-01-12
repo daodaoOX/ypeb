@@ -6,10 +6,11 @@ String path = request.getContextPath();
 <!DOCTYPE HTML PUBLIC "-//W3C//DTDHTML 4.01 Transitional//EN">
 <html>
 	<head>
-		<link rel="stylesheet" type="text/css" href="<%=path %>/frontCss/cart.css">
+		<link rel="stylesheet" type="text/css" href="<%=path %>/frontCss/car.css">
 		<link rel="stylesheet" type="text/css" href="<%=path %>/frontCss/header_and_footer.css">
 		<script type="text/javascript" src="<%=path %>/bootstrap/js/jquery-2.1.4.min.js"></script>
 	</head>
+	<body onload="window.parent.document.getElementById('index').height=document.body.scrollHeight;">
 		<div class="nav_box">
 		<div class="nav">
 			<h1><a href="<%=path %>/frontPage/body.jsp">首页</a> &gt;</h1>
@@ -113,4 +114,5 @@ String path = request.getContextPath();
 		}
 	)
 </script>
+</body>
 </html>
