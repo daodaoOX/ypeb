@@ -1,11 +1,11 @@
 package com.ypeb.model.trade.pointsSale;
 
-import java.math.BigInteger;
 import java.sql.Timestamp;
 import java.util.List;
 
 import org.hibernate.LockOptions;
 import org.hibernate.Query;
+import org.hibernate.criterion.Order;
 
 import static org.hibernate.criterion.Example.create;
 
@@ -35,8 +35,9 @@ public class PointssaleDAO extends BaseHibernateDAO {
 	public static final String ALL_PRICE = "allPrice";
 	public static final String STATE = "state";
 	public static final String RESIDUE = "residue";
+	public static final String SELECT_ALL = "selectAll";
 
-	public List<Pointssale> comprehensiveQuery(String state, String userID,
+	public List<Pointssale> comprehensiveQuery(Pointssale pointsSale,
 			QueryCondition queryCondition) {
 		/**
 		 * @author jilin
@@ -45,24 +46,45 @@ public class PointssaleDAO extends BaseHibernateDAO {
 		 */
 		log.debug("finding Pointssale total sale points ");
 		try {
-			String queryString = "from Pointssale as model";
-			if (state == null) {
-				if (userID != null)
-					queryString += " where saleID=" + userID;
+			List<Pointssale> results;
+			if (queryCondition.getOrderDirection() == "asc") {
+				results = (List<Pointssale>) getSession()
+						.createCriteria(
+								"com.ypeb.model.trade.pointsSale.Pointssale")
+						.add(create(pointsSale))
+						.addOrder(Order.asc(queryCondition.getOrderField()))
+						.list();
 
 			} else {
-				if (userID != null) {
-					queryString += " where state=" + state
-							+ " and saleID=" + userID;
-				} else
-					queryString += " where state=" + state;
+				results = (List<Pointssale>) getSession()
+						.createCriteria(
+								"com.ypeb.model.trade.pointsSale.Pointssale")
+						.add(create(pointsSale))
+						.addOrder(Order.asc(queryCondition.getOrderField()))
+						.list();
 			}
-			if (queryCondition != null ){
-				queryString += " order by " + queryCondition.getOrderField()
-						+ " " + queryCondition.getOrderDirection();}
-			getSession().flush();
-			Query queryObject = getSession().createQuery(queryString);
-			return queryObject.list();
+			log.debug("find by example successful, result size: "
+					+ results.size());
+			return results;
+
+			// String queryString = "from Pointssale as model";
+			// if (state == null) {
+			// if (userID != null)
+			// queryString += " where saleID=" + userID;
+			//
+			// } else {
+			// if (userID != null) {
+			// queryString += " where state=" + state
+			// + " and saleID=" + userID;
+			// } else
+			// queryString += " where state=" + state;
+			// }
+			// if (queryCondition != null ){
+			// queryString += " order by " + queryCondition.getOrderField()
+			// + " " + queryCondition.getOrderDirection();}
+			// getSession().flush();
+			// Query queryObject = getSession().createQuery(queryString);
+			// return queryObject.list();
 		} catch (RuntimeException re) {
 			log.error("find by property name failed", re);
 			throw re;
@@ -115,7 +137,7 @@ public class PointssaleDAO extends BaseHibernateDAO {
 		log.debug("getting Pointssale instance with id: " + id);
 		try {
 			Pointssale instance = (Pointssale) getSession().get(
-					"com.ypeb.model.points.pointsSale.Pointssale", id);
+					"com.ypeb.model.trade.pointsSale.Pointssale", id);
 			return instance;
 		} catch (RuntimeException re) {
 			log.error("get failed", re);
@@ -128,7 +150,7 @@ public class PointssaleDAO extends BaseHibernateDAO {
 		try {
 			List<Pointssale> results = (List<Pointssale>) getSession()
 					.createCriteria(
-							"com.ypeb.model.points.pointsSale.Pointssale")
+							"com.ypeb.model.trade.pointsSale.Pointssale")
 					.add(create(instance)).list();
 			log.debug("find by example successful, result size: "
 					+ results.size());
@@ -176,6 +198,10 @@ public class PointssaleDAO extends BaseHibernateDAO {
 
 	public List<Pointssale> findByResidue(Object residue) {
 		return findByProperty(RESIDUE, residue);
+	}
+
+	public List<Pointssale> findBySelectAll(Object selectAll) {
+		return findByProperty(SELECT_ALL, selectAll);
 	}
 
 	public List findAll() {
