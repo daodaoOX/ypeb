@@ -35,6 +35,11 @@
 		<mapping
 			class="com.ypeb.model.shopping.goodsCategory.Goodscategory" />
 		<mapping class="com.ypeb.model.shopping.goods.Goods" />
+		<mapping class="com.ypeb.model.shopping.roll.Roll" />
+		<mapping
+			class="com.ypeb.model.shopping.advertisement.Advertisement" />
+		<mapping
+			class="com.ypeb.model.shopping.announcement.Announcement" />
 	</session-factory>
 
 

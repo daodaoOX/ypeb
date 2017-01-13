@@ -39,6 +39,8 @@ public abstract class AbstractGoods implements java.io.Serializable {
 	private String imageUrl4;
 	private String imageUrl5;
 	private String code;
+	private Integer secondCateg;
+	private Integer thirdCateg;
 
 	// Constructors
 
@@ -71,7 +73,8 @@ public abstract class AbstractGoods implements java.io.Serializable {
 			Double price, String givePoints, String discountPrice,
 			Boolean isShow, Double purchacePrice, String attribute,
 			String imageUrl2, String imageUrl3, String imageUrl4,
-			String imageUrl5, String code) {
+			String imageUrl5, String code, Integer secondCateg,
+			Integer thirdCateg) {
 		this.goodscategory = goodscategory;
 		this.name = name;
 		this.specification = specification;
@@ -88,6 +91,8 @@ public abstract class AbstractGoods implements java.io.Serializable {
 		this.imageUrl4 = imageUrl4;
 		this.imageUrl5 = imageUrl5;
 		this.code = code;
+		this.secondCateg = secondCateg;
+		this.thirdCateg = thirdCateg;
 	}
 
 	// Property accessors
@@ -245,6 +250,24 @@ public abstract class AbstractGoods implements java.io.Serializable {
 
 	public void setCode(String code) {
 		this.code = code;
+	}
+
+	@Column(name = "secondCateg")
+	public Integer getSecondCateg() {
+		return this.secondCateg;
+	}
+
+	public void setSecondCateg(Integer secondCateg) {
+		this.secondCateg = secondCateg;
+	}
+
+	@Column(name = "thirdCateg")
+	public Integer getThirdCateg() {
+		return this.thirdCateg;
+	}
+
+	public void setThirdCateg(Integer thirdCateg) {
+		this.thirdCateg = thirdCateg;
 	}
 
 }

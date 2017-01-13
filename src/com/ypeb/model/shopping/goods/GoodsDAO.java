@@ -37,6 +37,8 @@ public class GoodsDAO extends BaseHibernateDAO {
 	public static final String IMAGE_URL4 = "imageUrl4";
 	public static final String IMAGE_URL5 = "imageUrl5";
 	public static final String CODE = "code";
+	public static final String SECOND_CATEG = "secondCateg";
+	public static final String THIRD_CATEG = "thirdCateg";
 
 	public void save(Goods transientInstance) {
 		log.debug("saving Goods instance");
@@ -125,7 +127,11 @@ public class GoodsDAO extends BaseHibernateDAO {
 	public List<Goods> findByGivePoints(Object givePoints) {
 		return findByProperty(GIVE_POINTS, givePoints);
 	}
-
+	
+	public List<Goods> findByCategory(Object category) {
+		return findByProperty(GIVE_POINTS, category);
+	}
+	
 	public List<Goods> findByDiscountPrice(Object discountPrice) {
 		return findByProperty(DISCOUNT_PRICE, discountPrice);
 	}
@@ -160,6 +166,14 @@ public class GoodsDAO extends BaseHibernateDAO {
 
 	public List<Goods> findByCode(Object code) {
 		return findByProperty(CODE, code);
+	}
+
+	public List<Goods> findBySecondCateg(Object secondCateg) {
+		return findByProperty(SECOND_CATEG, secondCateg);
+	}
+
+	public List<Goods> findByThirdCateg(Object thirdCateg) {
+		return findByProperty(THIRD_CATEG, thirdCateg);
 	}
 
 	public List findAll() {
