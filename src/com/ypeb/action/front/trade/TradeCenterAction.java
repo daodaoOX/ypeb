@@ -1,10 +1,13 @@
 package com.ypeb.action.front.trade;
 
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 import com.opensymphony.xwork2.ActionSupport;
 import com.ypeb.dataClass.front.DealRequest;
 import com.ypeb.dataClass.front.TradeK;
+import com.ypeb.model.trade.pointsTrade.PointtradeDAO;
 
 public class TradeCenterAction extends ActionSupport {
 	private String destUrl;
@@ -19,10 +22,28 @@ public class TradeCenterAction extends ActionSupport {
 		 * @descripe:用来查询月K线数据的方法。
 		 * 1、计算到系统时间为止有多少天，
 		 * 2、使用TradeK.cacuMonthK()方法计算出每天的数据，
-		 * 3、分装到tradeKList集合中。
+		 * 3、封装到tradeKList集合中。
 		 * 4、循环计算出本月K线（到系统时间前一天数据即可）的所有数据。
 		 * 5、重定向到显示页面
 		 */
+		PointtradeDAO dao = new PointtradeDAO();
+		Calendar calendar = Calendar.getInstance();  
+		calendar.set(Calendar.HOUR_OF_DAY, 0);
+		calendar.set(Calendar.MINUTE, 0);
+		calendar.set(Calendar.SECOND, 0);
+		Date start = calendar.getTime(); 
+		calendar.set(Calendar.HOUR_OF_DAY, 23);
+		calendar.set(Calendar.MINUTE, 59);
+		calendar.set(Calendar.SECOND, 59);
+		Date end = calendar.getTime();
+		
+		for(int currentDateDay=1; currentDateDay<new Date().getDate(); currentDateDay++){
+			start.setDate(currentDateDay);
+			end.setDate(currentDateDay);
+			TradeK tradeK = new TradeK();
+			tradeK.calcuMonthK(start, end);
+			tradeKList.add(tradeK);
+		}
 		return "diyUrl";
 	}
 	

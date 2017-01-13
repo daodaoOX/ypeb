@@ -45,7 +45,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    9、底部要有备案信息。其他信息UI设计，不涉及动态。
     -->
     <%@ include file="head.jsp" %>
+
 	<iframe  frameborder=0 name="index" id="index" width=100% marginheight=0 marginwidth=0 scrolling=no src="frontShopping_Index_bodyData"></iframe>
 	<%@ include file="bottom.jsp" %>
+
   </body>
 </html>
