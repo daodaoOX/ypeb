@@ -1,7 +1,5 @@
 eclipse.preferences.version=1
 
-validator.Checked=WebRoot/bootstrap/js/jquery-2.1.4.min.js,WebRoot/xheditor,WebRoot/js
-
-validator.Checked=WebRoot/backPage/trade/saleInfo.jsp,WebRoot/xheditor,WebRoot/js
+validator.Checked=WebRoot/backPage/trade/saleInfo.jsp,WebRoot/xheditor,WebRoot/js,WebRoot/bootstrap
 
 validator.Unchecked=

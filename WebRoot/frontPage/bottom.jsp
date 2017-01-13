@@ -1,10 +1,20 @@
 
-<%@ page language="java" pageEncoding="UTF-8"%>
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+
+
 <%@ taglib prefix="s" uri="/struts-tags"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
+
+  <head>
+	<link rel="stylesheet" type="text/css" href="frontCss/index.css">
+	<link rel="stylesheet" type="text/css" href="frontCss/header.css">
+	<link rel="stylesheet" type="text/css" href="frontCss/bottom.css">
+	<script type="text/javascript" src="bootstrap/js/jquery-2.1.4.min.js"></script>
+  </head>
+
 	<div class="footer_bg">
 	<div class="footer_box">
 		<div class="footer_nav">

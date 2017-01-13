@@ -24,6 +24,7 @@ public abstract class AbstractPointssale implements java.io.Serializable {
 	private Double allPrice;
 	private Short state;
 	private Short residue;
+	private Boolean selectAll;
 
 	// Constructors
 
@@ -33,7 +34,8 @@ public abstract class AbstractPointssale implements java.io.Serializable {
 
 	/** full constructor */
 	public AbstractPointssale(Integer saleId, Timestamp time, Double num,
-			Double price, Double allPrice, Short state, Short residue) {
+			Double price, Double allPrice, Short state, Short residue,
+			Boolean selectAll) {
 		this.saleId = saleId;
 		this.time = time;
 		this.num = num;
@@ -41,6 +43,7 @@ public abstract class AbstractPointssale implements java.io.Serializable {
 		this.allPrice = allPrice;
 		this.state = state;
 		this.residue = residue;
+		this.selectAll = selectAll;
 	}
 
 	// Property accessors
@@ -116,6 +119,15 @@ public abstract class AbstractPointssale implements java.io.Serializable {
 
 	public void setResidue(Short residue) {
 		this.residue = residue;
+	}
+
+	@Column(name = "selectAll", nullable = false)
+	public Boolean getSelectAll() {
+		return this.selectAll;
+	}
+
+	public void setSelectAll(Boolean selectAll) {
+		this.selectAll = selectAll;
 	}
 
 }

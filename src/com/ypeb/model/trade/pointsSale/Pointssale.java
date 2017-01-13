@@ -1,6 +1,7 @@
 package com.ypeb.model.trade.pointsSale;
 
 import java.sql.Timestamp;
+
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
@@ -18,10 +19,13 @@ public class Pointssale extends AbstractPointssale implements
 	public Pointssale() {
 	}
 
-	/** full constructor */
 	public Pointssale(Integer saleId, Timestamp time, Double num, Double price,
-			Double allPrice, Short state, Short residue) {
-		super(saleId, time, num, price, allPrice, state, residue);
+			Double allPrice, Short state, Short residue, Boolean selectAll) {
+		super(saleId, time, num, price, allPrice, state, residue, selectAll);
+		// TODO Auto-generated constructor stub
 	}
+
+	/** full constructor */
+	
 
 }

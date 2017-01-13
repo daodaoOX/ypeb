@@ -5,28 +5,44 @@
 
 	<!-- *****************交易所系统***************** -->
 	<package name="trade" namespace="/" extends="struts-default,json-default">
-		
-			
+
+
 		<action name="frontTrade_*_*" class="com.ypeb.action.front.trade.{1}Action"
 			method="{2}">
 
 			<result name="diyUrl">${destUrl}</result>
 		</action>
-		
-	
-	 
+
+
+
 		<action name="backTrade_*_*" class="com.ypeb.action.back.trade.{1}Action"
 			method="{2}">
 
 			<result name="diyUrl">${destUrl}</result>
-			
+
 		</action>
-		<!--
-		 <action name="backTrade_PointsSale_saleInfo" class="com.ypeb.action.back.trade.PointsSaleAction"
-			method="saleInfo">
-			<result name="diyUrl">${destURL}</result>		 
+
+	</package>
+	
+	<!-- *****************商城系统***************** -->
+	<package name="shopping" namespace="/" extends="struts-default,json-default">
+
+
+		<action name="frontShopping_*_*" class="com.ypeb.action.front.shopping.{1}Action"
+			method="{2}">
+
+			<result name="diyUrl">${destUrl}</result>
 		</action>
-		-->
+
+
+
+		<action name="backShopping_*_*" class="com.ypeb.action.back.shopping.{1}Action"
+			method="{2}">
+
+			<result name="diyUrl">${destUrl}</result>
+
+		</action>
+
 	</package>
 
 </struts>    

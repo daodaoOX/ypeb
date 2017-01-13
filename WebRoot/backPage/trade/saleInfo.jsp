@@ -40,11 +40,11 @@
 		action="backTrade_PointsSale_comprehensiveQuery" method="post">
 		<div class="searchBar">
 			<ul class="searchContent">
-				<li><label>挂卖人ID：</label> <input type="text" name="userID"
-					value="${userID }" /></li>
+				<li><label>挂卖人ID：</label> <input type="text" name="pointsSale.saleId"
+					value="${pointsSale.saleId }" /></li>
 
-				<li><select class="combox" name="state">
-						<option value="${state }">订单状态(${state })</option>
+				<li><select class="combox" name="pointsSale.state">
+						<option value="${state }">订单状态(${pointsSale.state })</option>
 						<option value="0">未售完（0）</option>
 						<option value="1">售卖完毕（1）</option>
 						<option value="2">取消售卖（2）</option>
