@@ -7,7 +7,7 @@
 	<package name="trade" namespace="/" extends="json-default">
 		<action name="frontTrade_*_*" class="com.ypeb.action.front.trade.{1}Action"
 			method="{2}">
-			<result name=""></result>
+			
 			<result name="diyUrl" >${destURL}</result>
 		</action>
 		

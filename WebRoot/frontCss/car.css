@@ -1,6 +1,14 @@
 @charset "utf-8";
 /* CSS Document */
 
+.clearfix{clear:both}
+*{font-family:"微软雅黑"}
+
+/*CSS eliminate*/
+body{margin:0;}
+h1,h2,h3,h4,h5{margin:0;padding:0;font-weight:normal}
+a{text-decoration:none}
+
 .nav_box{width:1200px;margin:0 auto}
 .nav h1{font-size:14px;color:#4c4c4c;float:left;line-height:30px;margin-right:6px;margin-top:6px;}
 .nav{width:107px;border-bottom:1px solid #d9d9d9}
@@ -15,6 +23,7 @@
 .shoppingcart_box input{margin:5px 20px 0 20px}
 .shoppingcart_box h1{width:140px;}
 .shoppingcart_box h2{font-size:16px;width:97px;color:#808080;text-align:center}
+
 
 .sc_commodity{width:1200px;margin:0 auto}
 .sc_commodity .boundary{width:1200px;height:1px;background-color:#d9d9d9}
@@ -33,6 +42,12 @@
 /*结算*/
 .check_out_box{width:1200px;margin:10px auto 400px auto}
 .check_out_box .assist_box{float:right}
-.check_out_box h1{font-size:16px;color:#ec1d23;line-height:40px;margin-right:20px}
+.check_out_box h1{font-size:16px;color:#ec1d23;line-height:40px;margin-left:85%;}
 .check_out_box input{width:80px;height:40px;background-color:#ec1d23;font-size:18px;color:#fff;border-radius:4px;margin-right:20px}
 
+
+a:link{ color:#000; text-decoration:none;}
+a:visited{color:#000;text-decoration:none;}
+a:hover{color:#000;text-decoration:none;}
+.spansum{font-size:18px; font-weight:500; margin:20px; position:absolute; top:89.8%;}
+.divsum{ border:1px solid red; width:80px; height:40px; background-color:#ec1d23;border-radius:4px;}

@@ -10,7 +10,10 @@ import com.ypeb.dataClass.front.TradeK;
 import com.ypeb.model.trade.pointsTrade.PointtradeDAO;
 
 public class TradeCenterAction extends ActionSupport {
-	private String destUrl;
+	 
+	private static final long serialVersionUID = 1L;
+	
+	private String destURL;
 	private List<TradeK> tradeKList;
 	private List<DealRequest> dealRequestList;
 	private int userId;
@@ -44,6 +47,9 @@ public class TradeCenterAction extends ActionSupport {
 			tradeK.calcuMonthK(start, end);
 			tradeKList.add(tradeK);
 		}
+		
+		destURL = "frontPage/trade/tradeGraph.jsp"; 
+		
 		return "diyUrl";
 	}
 	
@@ -76,11 +82,11 @@ public class TradeCenterAction extends ActionSupport {
 	}
 
 	public String getDestUrl() {
-		return destUrl;
+		return destURL;
 	}
 
 	public void setDestUrl(String destUrl) {
-		this.destUrl = destUrl;
+		this.destURL = destUrl;
 	}
 
 	public List<TradeK> getTradeKList() {
@@ -106,8 +112,5 @@ public class TradeCenterAction extends ActionSupport {
 	public void setUserId(int userId) {
 		this.userId = userId;
 	}
-	
-	
-	
 	
 }

@@ -8,19 +8,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <html>
   <head>
     <base href="<%=basePath%>">
-    
-    <title>积分交易所</title>
-    
-	<meta http-equiv="pragma" content="no-cache">
+ 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
 	<meta http-equiv="expires" content="0">    
 	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 	<meta http-equiv="description" content="This is my page">
-
 	<link type="text/css" rel="stylesheet" href="frontCss/trade/tradeCenter.css">
   </head>
   
-  <body style="border:6px solid #000;"  >
+  <body onload="window.parent.document.getElementById('index').height=document.body.scrollHeight;">
     <!-- ************交易中心页面***********
 >>>>>>> refs/remotes/origin/master
     iframe布局。
@@ -32,7 +28,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    		右侧为局部刷新。局部刷新页面分别为tradeGraph.jsp,tradeDeal,tradeRecord。
      -->
 	     <div class="trade">
-	    	<a href="frontPage/trade/tradeGraph.jsp" target="mytrade"><span class="tradeGraph">交易中心</span></a><br />
+	    	<a href="frontTrade_TradeCenter_tradeCenter"  target="mytrade"><span class="tradeGraph">交易中心</span></a><br />
 	        <a href="frontPage/trade/tradeDeal.jsp" target="mytrade"><span class="pointsBuy">积分购买</span></a><br />
 	        <a href="frontPage/trade/tradeRecord.jsp" target="mytrade"><span class="tradeRecord">交易记录</span></a>
 	     </div>
