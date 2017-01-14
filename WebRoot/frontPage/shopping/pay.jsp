@@ -30,9 +30,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<div class="clearfix"></div>
 		</div>
 		<div class="clearfix"></div>
-	</div>
-	
-	
+	</div>	
+	<form action=" ">
 	<div class="site_box">
 		<div class="site">
 			<h1>小明（收）</h1>
@@ -41,7 +40,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<input type="checkbox" checked="checked">
 		</div>
 		<input class="add_site" type="button" id="parentIframe" value="添加新地址">
-		<input class="manage_site" type="button" value="管理地址">
 		<div class="clearfix"></div>
 	</div>
 	
@@ -54,7 +52,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<h2>属性</h2>
 				<h2>单价</h2>
 				<h2>数量</h2>
-				<h2>小结</h2>
+
 				<div class="clearfix"></div>
 			</div>
 			<div class="clearfix"></div>
@@ -67,7 +65,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<img src="img/shopping_car/commodity.png">
 		<h1>新货【百草味】夏威夷果200g*3袋 坚果炒货零食干果 奶油味</h1>
 		<div class="assist_box">
-			<h2>￥<span>39.90</span></h2>
+			
             <h2>x<span>1</span></h2>
 			<h2>￥<span>39.90</span></h2>
 			<h2>奶油味</h2>
@@ -81,11 +79,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<h1>积分余额</h1>
 			<h1>共计￥39.9</h1>
 			<h1>需支付 40 积分</h1>
-			<input type="button" value="去支付">
+			<input type="submit" value="去支付">
 		</div>
 		<div class="clearfix"></div>
 	</div>
-
+</form>	
 <!--添加地址弹出框-->
 	<script>
 		$("#parentIframe").on("click", function(){

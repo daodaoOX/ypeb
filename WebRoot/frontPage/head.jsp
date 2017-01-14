@@ -7,8 +7,8 @@
   	<div class="header">
 	<div class="header_top">
 		<h1 class="welcome">欢迎进入沂品电子商务积分购物商城!</h1>
-		<h1><a class="sign_up" href="#">请登录</a></h1>
-		<h1><a class="sign_in" href="#">免费注册</a></h1>
+		<h1><a class="sign_up" href="frontPage/user/login/userLogin.jsp">请登录</a></h1>
+		<h1><a class="sign_in" href="frontPage/user/login/userLogin.jsp">免费注册</a></h1>
 		<h1><a class="info" href="#">我的信息</a></h1>
 		<div class="clearfix"></div>
 	</div>

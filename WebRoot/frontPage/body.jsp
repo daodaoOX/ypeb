@@ -9,12 +9,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 	<head>
-	<link rel="stylesheet" type="text/css" href="<%=path %>/frontCss/index.css">
-	<link rel="stylesheet" type="text/css" href="<%=path %>/frontCss/header.css">
-	<link rel="stylesheet" type="text/css" href="<%=path %>/frontCss/bottom.css">
-	<script type="text/javascript" src="<%=path %>/bootstrap/js/jquery-2.1.4.min.js"></script>
-  </head>
-  <body onload="window.parent.document.getElementById('index').height=document.body.scrollHeight;">
+		<link rel="stylesheet" type="text/css" href="<%=path %>/frontCss/index.css">
+		<link rel="stylesheet" type="text/css" href="<%=path %>/frontCss/header.css">
+		<link rel="stylesheet" type="text/css" href="<%=path %>/frontCss/bottom.css">
+		<script type="text/javascript" src="<%=path %>/bootstrap/js/jquery-2.1.4.min.js"></script>
+	  </head>
+  <body >
     	<div class="" >
 		<div class="header_bottom">
           <div class="pros">
@@ -347,7 +347,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<div class="boundary"></div>
 	<img class="floor_ad" src="<%=path %>/img/index/floor_1_ad.png">
 	<div class="foot">
-		<div class="img_box"><img class="foot_img" src="<%=path %>/img/index/foot_1.png"></div>
+		<div class="img_box"> <a href="<%=path %>/frontPage/shopping/detail.jsp" target="index"><img class="foot_img" src="<%=path %>/img/index/foot_1.png"></a></div>
 		<h1 class="name">新疆薄皮核桃</h1>
 		<h1 class="price">￥21.9</h1>
 		<img class="foot_shopping_cart" src="<%=path %>/img/common/foot_shopping_cart.png">
@@ -632,9 +632,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	</div>
 	<div class="clearfix"></div>
 </div>
+<!-- 列表二级菜单显示 -->
 	<script type="text/javascript">
 	(function(){
-		
 		var $subblock = $(".subpage"), $head=$subblock.find('h2'), $ul = $("#proinfo"), $lis = $ul.find("li"), inter=false;
 	
 		$lis.hover(function(){
@@ -652,6 +652,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		});
 	})();
 </script>
+<!-- 轮播图显示 -->
 <script>
 $(".banner img").hide()
 $(".banner img").eq(0).show(100)
@@ -669,7 +670,6 @@ function toFade(){
 	$(".ctrl_span span").eq(n).addClass("current")
 }
 var t1=setInterval(toFade,3000)
-
 $(".arrow_left").click(
 	function(){
 		if(n>0){
@@ -705,7 +705,6 @@ $(".ctrl_span span").click(
 		$(".ctrl_span span").eq(n).addClass("current")
 	}
 )
-
 $(".banner_box").mouseenter(
 	function(){
 	clearInterval(t1)
@@ -717,5 +716,6 @@ $(".banner_box").mouseenter(
 	}
 )
 </script>
+
 </body>
 </html>

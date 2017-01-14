@@ -34,25 +34,29 @@ String path = request.getContextPath();
         </div>
 	</div>
     
-<form action="" >
+<form action="" method="get">
   <div class="one-shop">
       <!--商品--> 
 	<div class="sc_commodity one-goods">
       <div class="goods-msg">
 		<div class="boundary"></div>
-		<input class="check_box goods-check GoodsCheck" type="checkbox">
+		<input class="check_box goods-check GoodsCheck"  type="checkbox"  name="check_goods" value="1" data-age="11">
 		<img src="<%=path %>/img/shopping_car/commodity.png"/>
 		<h1>新货【百草味】夏威夷果200g*3袋 坚果炒货零食干果 奶油味</h1>
 		<div class="assist_box">
 			<h2 class="del">删除</h2>
 			<h2></h2>
 			<div class="quantity">
-				<img src="<%=path %>/img/detail/minus.png" class="minus">
-				<input class="am-num-text" type="text" value="1" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')">
-				<img src="<%=path %>/img/detail/plus.png" class="plus">
+				<!-- <img src="<%=path %>/img/detail/minus.png" class="minus"> -->
+				<input class="am-num-text" name="goodssum" data-age="11" type="text" value="1"
+				onkeyup="value=(parseInt((value=value.replace(/[^1-9]/g,''))==''||parseInt((value=value.replace(/\D/g,''))==0)?'1':value,10))" 
+				onafterpaste="value=(parseInt((value=value.replace(/[^1-9]/g,''))==''||parseInt((value=value.replace(/\D/g,''))==0)?'1':value,10))">
+				<!-- <img src="<%=path %>/img/detail/plus.png" class="plus"> -->
 				<div class="clearfix"></div>
 			</div>
-			<h2>￥<span class="shop-total-amount GoodsPrice">20.00</span></h2>
+			<div class="addtype">
+				<h2>￥<span class="shop-total-amount GoodsPrice">20.00</span></h2>
+			</div>
 		</div>
 		<div class="clearfix"></div>
       </div>
@@ -62,19 +66,23 @@ String path = request.getContextPath();
     <div class="sc_commodity one-goods">
       <div class="goods-msg">
 		<div class="boundary"></div>
-		<input class="check_box goods-check GoodsCheck" type="checkbox">
+		<input class="check_box goods-check GoodsCheck" type="checkbox" name="check_goods" value="2" data-age="12">
 		<img src="<%=path %>/img/shopping_car/commodity.png"/>
 		<h1>新货【百草味】夏威夷果200g*3袋 坚果炒货零食干果 奶油味</h1>
 		<div class="assist_box">
 			<h2 class="del">删除</h2>
 			<h2></h2>
 			<div class="quantity">
-				<img src="<%=path %>/img/detail/minus.png" class="minus">
-				<input class="am-num-text" type="text" value="1" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')">
-				<img src="<%=path %>/img/detail/plus.png" class="plus">
+				<!--  <img src="<%=path %>/img/detail/minus.png" class="minus">-->
+				<input class="am-num-text" name="goodssum" data-age="12" type="text" value="1"
+				onkeyup="value=(parseInt((value=value.replace(/[^1-9]/g,''))==''||parseInt((value=value.replace(/\D/g,''))==0)?'1':value,10))" 
+				onafterpaste="value=(parseInt((value=value.replace(/[^1-9]/g,''))==''||parseInt((value=value.replace(/\D/g,''))==0)?'1':value,10))">
+				<!-- <img src="<%=path %>/img/detail/plus.png" class="plus">-->
 				<div class="clearfix"></div>
 			</div>
-			<h2>￥<span class="shop-total-amount GoodsPrice">20.00</span></h2>
+			<div class="addtype">
+				<h2>￥<span class="shop-total-amount GoodsPrice">20.00</span></h2>
+			</div>
 		</div>
 		<div class="clearfix"></div>
       </div>
@@ -83,19 +91,23 @@ String path = request.getContextPath();
     <div class="sc_commodity one-goods">
       <div class="goods-msg">
 		<div class="boundary"></div>
-		<input class="check_box goods-check GoodsCheck" type="checkbox">
+		<input class="check_box goods-check GoodsCheck" type="checkbox" name="check_goods" value="3" data-age="13">
 		<img src="<%=path %>/img/shopping_car/commodity.png"/>
 		<h1>新货【百草味】夏威夷果200g*3袋 坚果炒货零食干果 奶油味</h1>
 		<div class="assist_box">
 			<h2 class="del">删除</h2>
 			<h2></h2>
 			<div class="quantity">
-				<img src="<%=path %>/img/detail/minus.png" class="minus">
-				<input class="am-num-text" type="text" value="1" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')">
-				<img src="<%=path %>/img/detail/plus.png" class="plus">
+				<!-- <img src="<%=path %>/img/detail/minus.png" class="minus"> -->
+				<input class="am-num-text" data-age="13" name="goodssum" type="text" value="1" 
+				onkeyup="value=(parseInt((value=value.replace(/[^1-9]/g,''))==''||parseInt((value=value.replace(/\D/g,''))==0)?'1':value,10))" 
+				onafterpaste="value=(parseInt((value=value.replace(/[^1-9]/g,''))==''||parseInt((value=value.replace(/\D/g,''))==0)?'1':value,10))">
+				<!-- <img src="<%=path %>/img/detail/plus.png" class="plus"> -->
 				<div class="clearfix"></div>
 			</div>
-			<h2>￥<span class="shop-total-amount GoodsPrice">20.00</span></h2>
+			<div class="addtype">
+				<h2>￥<span class="shop-total-amount GoodsPrice">20.00</span></h2>
+			</div>
 		</div>
 		<div class="clearfix"></div>
       </div>
@@ -104,19 +116,23 @@ String path = request.getContextPath();
     <div class="sc_commodity one-goods">
       <div class="goods-msg">
 		<div class="boundary"></div>
-		<input class="check_box goods-check GoodsCheck" type="checkbox">
+		<input class="check_box goods-check GoodsCheck" type="checkbox" name="check_goods" value="4" data-age="14">
 		<img src="<%=path %>/img/shopping_car/commodity.png"/>
 		<h1>新货【百草味】夏威夷果200g*3袋 坚果炒货零食干果 奶油味</h1>
 		<div class="assist_box">
 			<h2 class="del">删除</h2>
 			<h2></h2>
 			<div class="quantity">
-				<img src="<%=path %>/img/detail/minus.png" class="minus">
-				<input class="am-num-text" type="text" value="1" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')">
-				<img src="<%=path %>/img/detail/plus.png" class="plus">
+				<!-- <img src="<%=path %>/img/detail/minus.png" class="minus"> -->
+				<input class="am-num-text" data-age="14" name="goodssum" type="text"  value="1" 
+				onkeyup="value=(parseInt((value=value.replace(/[^1-9]/g,''))==''||parseInt((value=value.replace(/\D/g,''))==0)?'1':value,10))" 
+				onafterpaste="value=(parseInt((value=value.replace(/[^1-9]/g,''))==''||parseInt((value=value.replace(/\D/g,''))==0)?'1':value,10))">
+				<!-- <img src="<%=path %>/img/detail/plus.png" class="plus"> -->
 				<div class="clearfix"></div>
 			</div>
-			<h2>￥<span class="shop-total-amount GoodsPrice">20.00</span></h2>
+			<div class="addtype">
+				<h2>￥<span class="shop-total-amount GoodsPrice">20.00</span></h2>
+			</div>
 		</div>
 		<div class="clearfix"></div>
       </div>
@@ -127,16 +143,84 @@ String path = request.getContextPath();
 		<h1>共计￥<span class="shop-total-amount ShopTotal">0</span></h1>
 		<div class="assist_box">
 					
-			<a href="pay.jsp" target="index">
-				<div class="divsum">
-					<span type="submit" class="spansum">结算</span>
+			<a id="dela" href="<%=path %>/frontPage/shopping/pay.jsp" target="index">
+				<div class="divsum" onclick="checksum();">
+					<span type="submit" class="spansum" >结算</span>
 				</div>
 			</a>
 		</div>
 		<div class="clearfix"></div>
 	</div>
   </div>
-</form> 
+</form>
+<!-- 判断复选框是否选中,选中商品和数量提交后台操作 -->
+<script>
+	function checksum(){
+		//var a = frontPage/shopping/pay.jsp; 
+	    var allprice = 0; //总价
+	    $(".one-shop").each(function() { //循环每个店铺
+	      var oprice = 0; //店铺总价
+	      $(this).find(".GoodsCheck").each(function() { //循环店铺里面的商品
+	        if ($(this).is(":checked")) { //如果该商品被选中
+	          var num = parseInt($(this).parents(".one-goods").find(".am-num-text").val()); //得到商品的数量
+	          var price = parseFloat($(this).parents(".one-goods").find(".GoodsPrice").text()); //得到商品的单价
+	          var total = price * num; //计算单个商品的总价
+	          oprice += total; //计算该店铺的总价
+	        }
+	        $(this).closest(".one-shop").find(".ShopTotal").text(oprice.toFixed(2)); //显示被选中商品的店铺总价
+	      });
+	      var oneprice = parseFloat($(this).find(".ShopTotal").text()); //得到每个店铺的总价
+	      allprice += oneprice; //计算所有店铺的总价
+	    });
+	    $("#AllTotal").text(allprice.toFixed(2));
+	    //输出全部总价
+		//alert(allprice.toFixed(2));
+		if (allprice.toFixed(2)!=0){
+			$("#dela").attr("href","<%=path %>/frontPage/shopping/pay.jsp");  
+		}
+		else {
+			$('#dela').removeAttr('href');
+			alert("请选择要结算的商品!");
+		}
+	   
+	   //获得选中的复选框的value值;
+	 	var check_goods = { 'info': [] };
+		$("input[name='check_goods']:checked").each(function (i, n) {
+			//check_goods['info'].push(n.value);
+			checkvalue = n.value;
+			//alert(checkvalue);
+			//获得选中的复选框的data-age值
+			checkdata = $(n).attr('data-age');
+			//alert(checkdata);
+		//获得数量的value值和data-age值;
+		var goodssum = { 'info': []};
+		$("input[name='goodssum']").each(function (i, n) {
+			goodssum['info'].push(n.value);
+			sumvalue = n.value;
+			//alert(sumvalue);
+			//获得选中的复选框的data-age值
+			sumdata = $(n).attr('data-age');
+			//alert(sumdata);
+		//判断复选框的data-age与数量的data-age属性是否相同
+		if(checkdata == sumdata){
+				//alert(checkvalue+" "+sumvalue);
+				var end = checkvalue+" "+sumvalue;
+				check_goods ['info'].push(end);
+			}
+		});
+	});	
+	
+		$.ajax({
+			type: "get",
+		    url: "/action",
+		    type: "post",
+		    data: check_goods,
+		    success: function (result) {
+		        //handle
+		    }
+		});
+	 }
+</script> 
   <script>
   // 数量减
   $(".minus").click(function() {
@@ -210,6 +294,7 @@ String path = request.getContextPath();
     $("#AllTotal").text(allprice.toFixed(2)); //输出全部总价
   };
   
+  	//删除商品
 	$(".del").click(function() {
 		var ret = window.confirm("确认要删除商品吗?");
 		//当点击确定时 返回 true 
