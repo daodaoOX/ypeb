@@ -3,8 +3,9 @@
 <struts>
 
 
-<!-- *****************交易所系统***************** -->
-	<package name="trade" namespace="/" extends="json-default">
+	<!-- *****************交易所系统***************** -->
+	<package name="trade" namespace="/" extends="struts-default,json-default">
+			
 		<action name="frontTrade_*_*" class="com.ypeb.action.front.trade.{1}Action"
 			method="{2}">
 			
@@ -13,9 +14,14 @@
 		
 		<action name="backTrade_*_*" class="com.ypeb.action.back.trade.{1}Action"
 			method="{2}">
-			<result name=""></result>
-			<result name="diyUrl" >${destURL}</result>
+			<result name="diyUrl">${destUrl}</result>
 		</action>
+		<!--
+		 <action name="backTrade_PointsSale_saleInfo" class="com.ypeb.action.back.trade.PointsSaleAction"
+			method="saleInfo">
+			<result name="diyUrl">${destURL}</result>		 
+		</action>
+		-->
 	</package>
 
 </struts>    

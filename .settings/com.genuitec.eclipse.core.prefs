@@ -1,3 +1,11 @@
 eclipse.preferences.version=1
+<<<<<<< HEAD
 validator.Checked=WebRoot/bootstrap/js/jquery-2.1.4.min.js,WebRoot/xheditor,WebRoot/build/dist/echarts.js,WebRoot/frontPage/trade/build/dist/echarts.js,WebRoot/frontJs/shopping/layer/jquery.js,WebRoot/js,WebRoot/build/dist/echarts-all.js,WebRoot/frontPage/index.jsp,WebRoot/frontPage/trade/build/dist/echarts-all.js
+=======
+
+validator.Checked=WebRoot/bootstrap/js/jquery-2.1.4.min.js,WebRoot/xheditor,WebRoot/js
+
+validator.Checked=WebRoot/backPage/trade/saleInfo.jsp,WebRoot/xheditor,WebRoot/js
+
+>>>>>>> 5a597b79c8e3edac4cda83e7a33c7c689901b4c5
 validator.Unchecked=

@@ -1,6 +1,14 @@
 eclipse.preferences.version=1
+<<<<<<< HEAD
 encoding//WebRoot/frontPage/shopping/address.jsp=UTF-8
 encoding//WebRoot/frontPage/shopping/detail.jsp=UTF-8
 encoding//WebRoot/frontPage/shopping/pay.jsp=UTF-8
 encoding//WebRoot/frontPage/shopping/shoppingCar.jsp=UTF-8
+=======
+
+encoding//WebRoot/frontPage/shopping/shoppingCart.jsp=UTF-8
+
+encoding//src/com/ypeb/util/Page.java=UTF-8
+
+>>>>>>> 5a597b79c8e3edac4cda83e7a33c7c689901b4c5
 encoding/<project>=UTF-8

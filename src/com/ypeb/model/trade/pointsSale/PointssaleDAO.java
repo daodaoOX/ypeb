@@ -1,11 +1,16 @@
 package com.ypeb.model.trade.pointsSale;
 
+import java.math.BigInteger;
+import java.sql.Timestamp;
 import java.util.List;
+
 import org.hibernate.LockOptions;
 import org.hibernate.Query;
 import org.hibernate.criterion.Example;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import com.ypeb.dataClass.front.QueryCondition;
 
 /**
  * A data access object (DAO) providing persistence and search support for
@@ -21,6 +26,59 @@ import org.slf4j.LoggerFactory;
 public class PointssaleDAO extends BaseHibernateDAO {
 	private static final Logger log = LoggerFactory
 			.getLogger(PointssaleDAO.class);
+
+	public List<Pointssale> comprehensiveQuery(String state, String userID,
+			QueryCondition queryCondition) {
+		/**
+		 * @author jilin
+		 * @date : 2017年1月10日 下午3:49:53
+		 * @descripe: 根据查询条件state和userID，排序条件queryCondition查询
+		 */
+		log.debug("finding Pointssale total sale points ");
+		try {
+			String queryString = "from Pointssale as model";
+			if (state == null) {
+				if (userID != null)
+					queryString += " where saleID=" + userID;
+
+			} else {
+				if (userID != null) {
+					queryString += " where state=" + state
+							+ " and saleID=" + userID;
+				} else
+					queryString += " where state=" + state;
+			}
+			if (queryCondition != null ){
+				queryString += " order by " + queryCondition.getOrderField()
+						+ " " + queryCondition.getOrderDirection();}
+			getSession().flush();
+			Query queryObject = getSession().createQuery(queryString);
+			return queryObject.list();
+		} catch (RuntimeException re) {
+			log.error("find by property name failed", re);
+			throw re;
+		}
+
+	}
+
+	public int totalSalePoints() {
+		/**
+		 * @author jilin
+		 * @date : 2017年1月9日 下午6:59:49
+		 * @descripe:查询挂卖积分总量
+		 */
+		log.debug("finding Pointssale total sale points ");
+		try {
+			String queryString = "select sum(residue) from Pointssale as model"
+					+ " where state=0 or state=3.";
+			Query queryObject = getSession().createQuery(queryString);
+			getSession().flush();
+			return ((Number) queryObject.uniqueResult()).intValue();
+		} catch (RuntimeException re) {
+			log.error("find by property name failed", re);
+			throw re;
+		}
+	}
 
 	public void save(Pointssale transientInstance) {
 		log.debug("saving Pointssale instance");

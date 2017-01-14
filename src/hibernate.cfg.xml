@@ -32,8 +32,6 @@
 		<mapping class="com.ypeb.model.user.address.Address" />
 		<mapping class="com.ypeb.model.user.user.User" />
 		<mapping class="com.ypeb.model.user.bankCard.Bankcard" />
-		<mapping
-			resource="com/ypeb/model/trade/pointsSale/Pointssale.hbm.xml" />
 	</session-factory>
 
 
