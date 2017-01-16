@@ -36,6 +36,7 @@ public class UserDAO extends BaseHibernateDAO {
 	public static final String USING_POINTS = "usingPoints";
 	public static final String INFOR_IS_FULL = "inforIsFull";
 	public static final String IMAGE_URL = "imageUrl";
+	public static final String STYLE = "style";
 
 	public void save(User transientInstance) {
 		log.debug("saving User instance");
@@ -151,6 +152,10 @@ public class UserDAO extends BaseHibernateDAO {
 
 	public List<User> findByImageUrl(Object imageUrl) {
 		return findByProperty(IMAGE_URL, imageUrl);
+	}
+
+	public List<User> findByStyle(Object style) {
+		return findByProperty(STYLE, style);
 	}
 
 	public List findAll() {

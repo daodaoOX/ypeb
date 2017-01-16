@@ -39,6 +39,11 @@ public class GoodsDAO extends BaseHibernateDAO {
 	public static final String CODE = "code";
 	public static final String SECOND_CATEG = "secondCateg";
 	public static final String THIRD_CATEG = "thirdCateg";
+	public static final String CATEGORY2 = "category2";
+	public static final String TIME_MARK = "timeMark";
+	public static final String TELEPHONE = "telephone";
+	public static final String LINK_MAN = "linkMan";
+	public static final String WEB_CHAT = "webChat";
 
 	public void save(Goods transientInstance) {
 		log.debug("saving Goods instance");
@@ -127,11 +132,7 @@ public class GoodsDAO extends BaseHibernateDAO {
 	public List<Goods> findByGivePoints(Object givePoints) {
 		return findByProperty(GIVE_POINTS, givePoints);
 	}
-	
-	public List<Goods> findByCategory(Object category) {
-		return findByProperty(GIVE_POINTS, category);
-	}
-	
+
 	public List<Goods> findByDiscountPrice(Object discountPrice) {
 		return findByProperty(DISCOUNT_PRICE, discountPrice);
 	}
@@ -174,6 +175,26 @@ public class GoodsDAO extends BaseHibernateDAO {
 
 	public List<Goods> findByThirdCateg(Object thirdCateg) {
 		return findByProperty(THIRD_CATEG, thirdCateg);
+	}
+
+	public List<Goods> findByCategory2(Object category2) {
+		return findByProperty(CATEGORY2, category2);
+	}
+
+	public List<Goods> findByTimeMark(Object timeMark) {
+		return findByProperty(TIME_MARK, timeMark);
+	}
+
+	public List<Goods> findByTelephone(Object telephone) {
+		return findByProperty(TELEPHONE, telephone);
+	}
+
+	public List<Goods> findByLinkMan(Object linkMan) {
+		return findByProperty(LINK_MAN, linkMan);
+	}
+
+	public List<Goods> findByWebChat(Object webChat) {
+		return findByProperty(WEB_CHAT, webChat);
 	}
 
 	public List findAll() {

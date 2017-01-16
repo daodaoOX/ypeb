@@ -1,22 +1,28 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%
-String path = request.getContextPath();
-String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+	String path = request.getContextPath();
+	String basePath = request.getScheme() + "://"
+			+ request.getServerName() + ":" + request.getServerPort()
+			+ path + "/";
 %>
-<%@ taglib prefix="s" uri="/struts-tags"%>  
+<%@ taglib prefix="s" uri="/struts-tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
-  <head>
-    <base href="<%=basePath%>">
-    
-    <title>沂品电子商务平台后台管理系统</title>
-    
-	<link href="themes/default/style.css" rel="stylesheet" type="text/css" media="screen"/>
-<link href="themes/css/core.css" rel="stylesheet" type="text/css" media="screen"/>
-<link href="themes/css/print.css" rel="stylesheet" type="text/css" media="print"/>
-<link href="uploadify/css/uploadify.css" rel="stylesheet" type="text/css" media="screen"/>
+<head>
+<base href="<%=basePath%>">
+
+<title>沂品电子商务平台后台管理系统</title>
+
+<link href="themes/default/style.css" rel="stylesheet" type="text/css"
+	media="screen" />
+<link href="themes/css/core.css" rel="stylesheet" type="text/css"
+	media="screen" />
+<link href="themes/css/print.css" rel="stylesheet" type="text/css"
+	media="print" />
+<link href="uploadify/css/uploadify.css" rel="stylesheet"
+	type="text/css" media="screen" />
 <!--[if IE]>
 <link href="themes/css/ieHack.css" rel="stylesheet" type="text/css" media="screen"/>
 <![endif]-->
@@ -31,7 +37,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <script src="js/jquery.bgiframe.js" type="text/javascript"></script>
 <script src="xheditor/xheditor-1.2.1.min.js" type="text/javascript"></script>
 <script src="xheditor/xheditor_lang/zh-cn.js" type="text/javascript"></script>
-<script src="uploadify/scripts/jquery.uploadify.js" type="text/javascript"></script>
+<script src="uploadify/scripts/jquery.uploadify.js"
+	type="text/javascript"></script>
 
 <!-- svg图表  supports Firefox 3.0+, Safari 3.0+, Chrome 5.0+, Opera 9.5+ and Internet Explorer 6.0+ -->
 <script type="text/javascript" src="chart/raphael.js"></script>
@@ -79,20 +86,31 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <script src="js/dwz.regional.zh.js" type="text/javascript"></script>
 
 <script type="text/javascript">
-$(function(){
-	DWZ.init("dwz.frag.xml", {
-		loginUrl:"login_dialog.html", loginTitle:"登录",	// 弹出登录对话框
-//		loginUrl:"login.html",	// 跳到登录页面
-		statusCode:{ok:200, error:300, timeout:301}, //【可选】
-		pageInfo:{pageNum:"pageNum", numPerPage:"numPerPage", orderField:"orderField", orderDirection:"orderDirection"}, //【可选】
-		debug:false,	// 调试模式 【true|false】
-		callback:function(){
-			initEnv();
-			$("#themeList").theme({themeBase:"themes"}); // themeBase 相对于index页面的主题base路径
-		}
+	$(function() {
+		DWZ.init("dwz.frag.xml", {
+			loginUrl : "login_dialog.html",
+			loginTitle : "登录", // 弹出登录对话框
+			//		loginUrl:"login.html",	// 跳到登录页面
+			statusCode : {
+				ok : 200,
+				error : 300,
+				timeout : 301
+			}, //【可选】
+			pageInfo : {
+				pageNum : "pageNum",
+				numPerPage : "numPerPage",
+				orderField : "orderField",
+				orderDirection : "orderDirection"
+			}, //【可选】
+			debug : false, // 调试模式 【true|false】
+			callback : function() {
+				initEnv();
+				$("#themeList").theme({
+					themeBase : "themes"
+				}); // themeBase 相对于index页面的主题base路径
+			}
+		});
 	});
-});
-
 </script>
 </head>
 
@@ -115,157 +133,207 @@ $(function(){
 			</div>
 
 			<!-- navMenu -->
-			
+
 		</div>
 
 		<div id="leftside">
 			<div id="sidebar_s">
 				<div class="collapse">
-					<div class="toggleCollapse"><div></div></div>
+					<div class="toggleCollapse">
+						<div></div>
+					</div>
 				</div>
 			</div>
 			<div id="sidebar">
-				<div class="toggleCollapse"><h2>平台管理</h2><div>收缩</div></div>
+				<div class="toggleCollapse">
+					<h2>平台管理</h2>
+					<div>收缩</div>
+				</div>
 
 				<div class="accordion" fillSpace="sidebar">
-				
-				
-	<!--*******************************超级管理员系统 *******************************-->	
+
+
+					<!--*******************************超级管理员系统 *******************************-->
 					<div class="accordionHeader">
-						<h2><span>Folder</span>超级管理员系统</h2>
+						<h2>
+							<span>Folder</span>超级管理员系统
+						</h2>
 					</div>
 					<div class="accordionContent">
 						<ul class="tree treeFolder">
 							<li><a href="tabsPage.html" target="navTab">super权限管理</a>
 								<ul>
 									<li><a href="main.html" target="navTab" rel="main">我的主页</a></li>
-									<li><a href="http://www.baidu.com" target="navTab" rel="page1">页面一(外部页面)</a></li>
-									<li><a href="demo_page2.html" target="navTab" rel="external" external="true">iframe navTab页面</a></li>
-									<li><a href="demo_page1.html" target="navTab" rel="page1" fresh="false">替换页面一</a></li>
+									<li><a href="http://www.baidu.com" target="navTab"
+										rel="page1">页面一(外部页面)</a></li>
+									<li><a href="demo_page2.html" target="navTab"
+										rel="external" external="true">iframe navTab页面</a></li>
+									<li><a href="demo_page1.html" target="navTab" rel="page1"
+										fresh="false">替换页面一</a></li>
 									<li><a href="demo_page2.html" target="navTab" rel="page2">页面二</a></li>
-									<li><a href="demo_page4.html" target="navTab" rel="page3" title="页面三（自定义标签名）">页面三</a></li>
-									<li><a href="demo_page4.html" target="navTab" rel="page4" fresh="false">测试页面（fresh="false"）</a></li>
+									<li><a href="demo_page4.html" target="navTab" rel="page3"
+										title="页面三（自定义标签名）">页面三</a></li>
+									<li><a href="demo_page4.html" target="navTab" rel="page4"
+										fresh="false">测试页面（fresh="false"）</a></li>
 									<li><a href="w_editor.html" target="navTab">表单提交会话超时</a></li>
 									<li><a href="demo/common/ajaxTimeout.html" target="navTab">navTab会话超时</a></li>
 									<li><a href="demo/common/ajaxTimeout.html" target="dialog">dialog会话超时</a></li>
 									<li><a href="index_menu.html" target="_blank">横向导航条</a></li>
-								</ul>
-							</li>
+								</ul></li>
 							<li><a href="dwz.frag.xml" target="navTab" external="true">dwz.frag.xml</a></li>
 						</ul>
-					</div>		
-					
-<!--   *******************************积分交易系统******************************* -->		
-					
+					</div>
+
+					<!--   *******************************积分交易系统******************************* -->
+
 					<div class="accordionHeader">
-						<h2><span>Folder</span>积分管理系统</h2>
+						<h2>
+							<span>Folder</span>积分管理系统
+						</h2>
 					</div>
 					<div class="accordionContent">
 						<ul class="tree treeFolder">
-							<li><a href="tabsPage.html" target="navTab">积分管理系统</a>
-								<ul>
-									
-								</ul>
-							</li>				
+							<li><a href="backShopping_PointsPublish_list"
+								target="navTab" rel="pointsPublish" fresh="true">积分发行</a>
+								</li>
+							<li><a href="backShopping_PointsBuyRecord_list"
+								target="navTab" rel="points" fresh="true">发行积分售卖记录</a>
+								</li>
 						</ul>
-					</div>	
-					
-<!-- *************************商城管理******************************* -->
-					
+					</div>
+
+					<!-- *************************商城管理******************************* -->
+
 					<div class="accordionHeader">
-						<h2><span>Folder</span>商城管理</h2>
+						<h2>
+							<span>Folder</span>商城管理
+						</h2>
 					</div>
 					<div class="accordionContent">
 						<ul class="tree treeFolder">
-							<li><a href="tabsPage.html" target="navTab">商城管理</a>
+							<li><a>商城订单管理</a>
 								<ul>
-									
-								</ul>
-							</li>				
+									<li><a href="backPage/shopping/order/list.jsp"
+										target="navTab" rel="order" fresh="true">订单管理</a></li>
+									<li><a href="backPage/shopping/order/listAddress.jsp"
+										target="navTab" rel="address" fresh="true">收货地址查询</a></li>
+
+								</ul></li>
+							<li><a>商品管理</a>
+								<ul>
+									<li><a href="backPage/shopping/goods/list.jsp"
+										target="navTab" rel="goods" fresh="true">商品管理</a></li>
+
+								</ul></li>
+							<li><a>栏目分类管理</a>
+								<ul>
+									<li><a href="backShopping_Category_list" target="navTab"
+										rel="category" fresh="true">栏目管理</a></li>
+								</ul></li>
+							<li><a>页面管理</a>
+								<ul>
+									<li><a href="backShopping_Advertisement_list"
+										target="navTab" rel="advertisement" fresh="true">广告管理</a></li>
+									<li><a href="backShopping_Roll_list" target="navTab"
+										rel="roll" fresh="true">轮播管理</a></li>
+									<li><a href="backShopping_Announcement_list"
+										target="navTab" rel="announcement" fresh="true">公告管理</a></li>
+								</ul></li>
 						</ul>
-					</div>				
-					
-					
-<!--******************************* 会员管理 *******************************-->
+
+					</div>
+
+
+					<!--******************************* 会员管理 *******************************-->
 					<div class="accordionHeader">
-						<h2><span>Folder</span>会员管理</h2>
+						<h2>
+							<span>Folder</span>会员管理
+						</h2>
 					</div>
 					<div class="accordionContent">
 						<ul class="tree treeFolder">
 							<li><a href="tabsPage.html" target="navTab">会员管理</a>
 								<ul>
-									
-								</ul>
-							</li>				
+
+								</ul></li>
 						</ul>
-					</div>	
-								
-<!--******************************* 积分系统 *******************************  -->	
-		
-				<div class="accordionHeader">
-						<h2><span>Folder</span>交易所管理</h2>
+					</div>
+
+					<!--******************************* 积分系统 *******************************  -->
+
+					<div class="accordionHeader">
+						<h2>
+							<span>Folder</span>交易所管理
+						</h2>
 					</div>
 					<div class="accordionContent">
 						<ul class="tree treeFolder">
-							
-							<li><a >挂卖和求购信息管理</a>
+
+							<li><a>挂卖和求购信息管理</a>
 								<ul>
-									<li><a href="backTrade_PointsSale_saleInfo" target="navTab" rel="saleInfo" fresh="true">挂卖信息</a></li>
-									<li><a href="backTrade_PointsBuy_buyInfo" target="navTab" rel="buyInfo" fresh="true">求购信息</a></li>
-								</ul>
-							</li>	
-							<li><a >交易记录管理</a>
+									<li><a href="backTrade_PointsSale_saleInfo"
+										target="navTab" rel="saleInfo" fresh="true">挂卖信息</a></li>
+									<li><a href="backTrade_PointsBuy_buyInfo" target="navTab"
+										rel="buyInfo" fresh="true">求购信息</a></li>
+								</ul></li>
+							<li><a>交易记录管理</a>
 								<ul>
-									<li><a href="frontTrade_PointsTrade_tradeInfo" target="navTab" rel="saleInfo" fresh="true">交易记录</a></li>
-									
-								</ul>
-							</li>	
-								
+									<li><a href="frontTrade_PointsTrade_tradeInfo"
+										target="navTab" rel="saleInfo" fresh="true">交易记录</a></li>
+
+								</ul></li>
+
 						</ul>
-					</div>	
-<!--******************************* 留言管理系统 *******************************  -->	
-		
-				<div class="accordionHeader">
-						<h2><span>Folder</span>留言系统管理</h2>
+					</div>
+					<!--******************************* 留言管理系统 *******************************  -->
+
+					<div class="accordionHeader">
+						<h2>
+							<span>Folder</span>留言系统管理
+						</h2>
 					</div>
 					<div class="accordionContent">
 						<ul class="tree treeFolder">
 							<li><a href="tabsPage.html" target="navTab">留言系统管理</a>
 								<ul>
-									
-								</ul>
-							</li>				
+
+								</ul></li>
 						</ul>
-					</div>				
-				
-<!--******************************* 系统设置 *******************************  -->	
-		
-				<div class="accordionHeader">
-						<h2><span>Folder</span>系统设置</h2>
+					</div>
+
+					<!--******************************* 系统设置 *******************************  -->
+
+					<div class="accordionHeader">
+						<h2>
+							<span>Folder</span>系统设置
+						</h2>
 					</div>
 					<div class="accordionContent">
 						<ul class="tree treeFolder">
 							<li><a href="tabsPage.html" target="navTab">系统设置</a>
 								<ul>
-									
-								</ul>
-							</li>				
+
+								</ul></li>
 						</ul>
-					</div>			
-					
+					</div>
+
 				</div>
 			</div>
 		</div>
 		<div id="container">
 			<div id="navTab" class="tabsPage">
 				<div class="tabsPageHeader">
-					<div class="tabsPageHeaderContent"><!-- 显示左右控制时添加 class="tabsPageHeaderMargin" -->
+					<div class="tabsPageHeaderContent">
+						<!-- 显示左右控制时添加 class="tabsPageHeaderMargin" -->
 						<ul class="navTab-tab">
-							<li tabid="main" class="main"><a href="javascript:;"><span><span class="home_icon">我的主页</span></span></a></li>
+							<li tabid="main" class="main"><a href="javascript:;"><span><span
+										class="home_icon">我的主页</span></span></a></li>
 						</ul>
 					</div>
-					<div class="tabsLeft">left</div><!-- 禁用只需要添加一个样式 class="tabsLeft tabsLeftDisabled" -->
-					<div class="tabsRight">right</div><!-- 禁用只需要添加一个样式 class="tabsRight tabsRightDisabled" -->
+					<div class="tabsLeft">left</div>
+					<!-- 禁用只需要添加一个样式 class="tabsLeft tabsLeftDisabled" -->
+					<div class="tabsRight">right</div>
+					<!-- 禁用只需要添加一个样式 class="tabsRight tabsRightDisabled" -->
 					<div class="tabsMore">more</div>
 				</div>
 				<ul class="tabsMoreList">
@@ -275,30 +343,48 @@ $(function(){
 					<div class="page unitBox">
 						<div class="accountInfo">
 							<div class="alertInfo">
-								<p><a href="https://code.csdn.net/dwzteam/dwz_jui/tree/master/doc" target="_blank" style="line-height:19px"><span>DWZ框架使用手册</span></a></p>
-								<p><a href="http://pan.baidu.com/s/18Bb8Z" target="_blank" style="line-height:19px">DWZ框架开发视频教材</a></p>
+								<p>
+									<a href="https://code.csdn.net/dwzteam/dwz_jui/tree/master/doc"
+										target="_blank" style="line-height:19px"><span>DWZ框架使用手册</span></a>
+								</p>
+								<p>
+									<a href="http://pan.baidu.com/s/18Bb8Z" target="_blank"
+										style="line-height:19px">DWZ框架开发视频教材</a>
+								</p>
 							</div>
 							<div class="right">
-								<p style="color:red">DWZ官方微博 <a href="http://weibo.com/dwzui" target="_blank">http://weibo.com/dwzui</a></p>
+								<p style="color:red">
+									DWZ官方微博 <a href="http://weibo.com/dwzui" target="_blank">http://weibo.com/dwzui</a>
+								</p>
 							</div>
-							<p><span>DWZ富客户端框架</span></p>
-							<p>DWZ官方微博:<a href="http://weibo.com/dwzui" target="_blank">http://weibo.com/dwzui</a></p>
+							<p>
+								<span>DWZ富客户端框架</span>
+							</p>
+							<p>
+								DWZ官方微博:<a href="http://weibo.com/dwzui" target="_blank">http://weibo.com/dwzui</a>
+							</p>
 						</div>
-						
-						
-						<div style="width:230px;position: absolute;top:60px;right:0" layoutH="80">
-							<iframe width="100%" height="430" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?width=0&height=430&fansRow=2&ptype=1&skin=1&isTitle=0&noborder=1&isWeibo=1&isFans=0&uid=1739071261&verifier=c683dfe7"></iframe>
+
+
+						<div style="width:230px;position: absolute;top:60px;right:0"
+							layoutH="80">
+							<iframe width="100%" height="430" class="share_self"
+								frameborder="0" scrolling="no"
+								src="http://widget.weibo.com/weiboshow/index.php?width=0&height=430&fansRow=2&ptype=1&skin=1&isTitle=0&noborder=1&isWeibo=1&isFans=0&uid=1739071261&verifier=c683dfe7"></iframe>
 						</div>
 					</div>
-					
+
 				</div>
 			</div>
 		</div>
-		</div>
+	</div>
 
 	</div>
 
-	<div id="footer">Copyright &copy; 2010 <a href="demo_page2.html" target="dialog">DWZ团队</a> 京ICP备05019125号-10</div>
+	<div id="footer">
+		Copyright &copy; 2010 <a href="demo_page2.html" target="dialog">DWZ团队</a>
+		京ICP备05019125号-10
+	</div>
 
 </body>
 </html>

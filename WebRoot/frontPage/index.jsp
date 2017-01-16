@@ -19,6 +19,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 	<meta http-equiv="description" content="This is my page">
 	
+
 	<link rel="stylesheet" type="text/css" href="frontCss/index.css">
 	<link rel="stylesheet" type="text/css" href="frontCss/header.css">
 	<link rel="stylesheet" type="text/css" href="frontCss/bottom.css">
@@ -47,5 +48,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <%@ include file="head.jsp" %>
 	<iframe  frameborder=0 name="index" id="index" width=100% marginheight=0 marginwidth=0 scrolling=no src="frontShopping_Index_bodyData"></iframe>
 	<%@ include file="bottom.jsp" %>
+	<script type="text/javascript">
+		function reinitIframe(){
+		var iframe = document.getElementById("index");
+		try{
+		iframe.height = iframe.contentWindow.document.documentElement.scrollHeight;
+		}catch (ex){}
+		}
+		window.setInterval("reinitIframe()", 200);
+	</script>
   </body>
 </html>

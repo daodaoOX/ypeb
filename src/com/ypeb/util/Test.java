@@ -3,20 +3,22 @@ package com.ypeb.util;
 import java.util.List;
 
 import com.ypeb.dataClass.front.QueryCondition;
+import com.ypeb.model.points.pointsPublish.Pointspublish;
 import com.ypeb.model.trade.pointsSale.Pointssale;
 import com.ypeb.model.trade.pointsSale.PointssaleDAO;
+import com.ypeb.model.user.address.Address;
+import com.ypeb.model.user.address.AddressDAO;
+import com.ypeb.model.user.user.User;
+import com.ypeb.model.user.user.UserDAO;
 
 public class Test {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		PointssaleDAO dao=new PointssaleDAO();
-		QueryCondition queryCondition=new QueryCondition();
-		queryCondition.setOrderDirection("desc");
-		queryCondition.setOrderField("time");
-		List<Pointssale> list=dao.comprehensiveQuery("3", "3", queryCondition);
+		Address address=new Address();
+		User user=new UserDAO().findById(1);
+		address.setUser(user);
+		List<Address> list=new AddressDAO().findByExample(address);
 		System.out.println(list.size());
-		System.out.println(list.get(0).getId());
 
 	}
 

@@ -18,6 +18,7 @@ public abstract class AbstractRoll implements java.io.Serializable {
 	private Integer id;
 	private String name;
 	private String url;
+	private Integer goodsId;
 
 	// Constructors
 
@@ -26,9 +27,10 @@ public abstract class AbstractRoll implements java.io.Serializable {
 	}
 
 	/** full constructor */
-	public AbstractRoll(String name, String url) {
+	public AbstractRoll(String name, String url, Integer goodsId) {
 		this.name = name;
 		this.url = url;
+		this.goodsId = goodsId;
 	}
 
 	// Property accessors
@@ -59,6 +61,15 @@ public abstract class AbstractRoll implements java.io.Serializable {
 
 	public void setUrl(String url) {
 		this.url = url;
+	}
+
+	@Column(name = "goodsID", nullable = false)
+	public Integer getGoodsId() {
+		return this.goodsId;
+	}
+
+	public void setGoodsId(Integer goodsId) {
+		this.goodsId = goodsId;
 	}
 
 }

@@ -35,4 +35,8 @@
 .check_out_box .assist_box{float:right}
 .check_out_box h1{font-size:16px;color:#ec1d23;line-height:40px;margin-right:20px}
 .check_out_box input{width:80px;height:40px;background-color:#ec1d23;font-size:18px;color:#fff;border-radius:4px;margin-right:20px}
-
+a:link{ color:#000; text-decoration:none;}
+a:visited{color:#000;text-decoration:none;}
+a:hover{color:#000;text-decoration:none;}
+.spansum{border:1x solid #000; font-size:18px; font-weight:500; margin-top:6px; margin-left:20px; position:absolute;}
+.divsum{ border:1px solid red; width:80px; height:40px; background-color:#ec1d23;border-radius:4px;}

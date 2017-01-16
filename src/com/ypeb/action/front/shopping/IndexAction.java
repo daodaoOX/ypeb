@@ -3,8 +3,10 @@ package com.ypeb.action.front.shopping;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.ypeb.dataClass.front.CategoryByLevel;
+import com.ypeb.dataClass.front.GoodsByFloor;
 import com.ypeb.model.shopping.advertisement.Advertisement;
 import com.ypeb.model.shopping.advertisement.AdvertisementDAO;
 import com.ypeb.model.shopping.announcement.Announcement;
@@ -15,6 +17,8 @@ import com.ypeb.model.shopping.goodsCategory.Goodscategory;
 import com.ypeb.model.shopping.goodsCategory.GoodscategoryDAO;
 import com.ypeb.model.shopping.roll.Roll;
 import com.ypeb.model.shopping.roll.RollDAO;
+import com.ypeb.model.shopping.shoppingCar.ShoppingcarDAO;
+import com.ypeb.model.user.user.UserDAO;
 
 public class IndexAction extends ActionSupport {
 	/**
@@ -22,10 +26,10 @@ public class IndexAction extends ActionSupport {
 	 * @date : 2017年1月11日 下午2:57:57
 	 * @descripe:商城首页使用的action
 	 */
-	private List<Goodscategory> firstCategoryList;
+	private List<Goodscategory> firstCategoryList = new ArrayList<Goodscategory>();
 	private ArrayList<List<Goodscategory>> secondCategoryList = new ArrayList<List<Goodscategory>>();
-	private List<Goodscategory> floorCategoryList;
-	private List<List<Goods>> goodsList;
+	private List<Goodscategory> floorCategoryList = new ArrayList<Goodscategory>();
+	private List<GoodsByFloor> goodsList=new ArrayList<GoodsByFloor>();
 	private List<Roll> rollList;
 	private List<Advertisement> advertList;// 封装广告
 	private List<Announcement> announList;
@@ -34,12 +38,29 @@ public class IndexAction extends ActionSupport {
 	private String goodsID;// 商品ID，用来查询商品详情
 	private Goods goods;
 	private ArrayList<CategoryByLevel> categoryByLevel = new ArrayList<CategoryByLevel>();
-
+	private String shoppingCarNum="0";//购物车数量
+	private String userName;
+	
+	
 	private String destUrl;
+	
 
 	public String indexData(){
+		ActionContext.getContext().getSession().put("userName", "test1");
+		ActionContext.getContext().getSession().put("userID", "1");
+		String userName=(String) ActionContext.getContext().getSession().get("userName");
+		String id=(String)ActionContext.getContext().getSession().get("userID");
+		
+		if(userName!=null && !userName.isEmpty() ){
+			
+			Integer uid=new Integer(id);
+			
+			shoppingCarNum=shoppingCarNum.valueOf((new ShoppingcarDAO().findByUserId(uid.intValue())).size());
+			
+		}
+		
+		
 		GoodscategoryDAO categoryDao = new GoodscategoryDAO();
-		GoodsDAO goodsDao = new GoodsDAO();
 		short level = 1;
 		firstCategoryList = categoryDao.findByLevel(level);
 		for (Goodscategory first : firstCategoryList) {
@@ -51,6 +72,7 @@ public class IndexAction extends ActionSupport {
 			cate.setSecCategoryList(categoryDao.findBySuperId(first.getId()));
 			categoryByLevel.add(cate);
 		}
+		
 		destUrl="frontPage/index.jsp";
 		return "diyUrl";
 	}
@@ -60,6 +82,8 @@ public class IndexAction extends ActionSupport {
 		 * @date : 2017年1月11日 下午3:08:31
 		 * @descripe:进入首页使用的方法
 		 */
+		ActionContext.getContext().put("userID", "1");
+		
 		GoodscategoryDAO categoryDao = new GoodscategoryDAO();
 		GoodsDAO goodsDao = new GoodsDAO();
 		short level = 1;
@@ -76,21 +100,36 @@ public class IndexAction extends ActionSupport {
 		}
 
 		floorCategoryList = categoryDao.findByIsFloor(true);
-		Goods goods = new Goods();
+		
 		for (int i = 0; i < floorCategoryList.size(); i++) {
 			// 先判断楼层栏目是不是有足够的8个商品，不足8个商品就只查出来有的
-			goods.setGoodscategory(floorCategoryList.get(i));
-			goods.setIsShow(true);
-			int goodsNumInCateg = goodsDao.findByExample(goods).size();
-			List<Goods> goodsOneFloor = goodsDao.findByExample(goods);
+			Goods goodsTemp = new Goods();
+			goodsTemp.setGoodscategory(floorCategoryList.get(i));
+			goodsTemp.setSecondCateg(floorCategoryList.get(i).getId());
+			goodsTemp.setIsShow(true);
+			
+			GoodsByFloor goodsByFloor=new GoodsByFloor();
+			goodsByFloor.setFloorName(floorCategoryList.get(i).getName());
+			goodsByFloor.setId(floorCategoryList.get(i).getId());
+			goodsByFloor.setUrl(floorCategoryList.get(i).getUrl());
+			//List<Goods> goodsOneFloor =goodsDao.findByCategory1(floorCategoryList.get(i).getId());
+			List<Goods> goodsOneFloor = goodsDao.findByExample(goodsTemp);
+			int goodsNumInCateg = goodsOneFloor.size();
+			
+			
+			//("*********goodsCategoryID:"+goodsOneFloor.get(0).getId());
+			
 			for (int j = 0; j < (goodsNumInCateg >= 8 ? 8 : goodsNumInCateg); j++) {
 				// 封装商品到楼层中
-				goodsList.get(i).add(goodsOneFloor.get(j));
+				
+				goodsByFloor.getGoodsList().add(goodsOneFloor.get(j));
 			}
+			goodsList.add(goodsByFloor);
 		}
 		rollList = new RollDAO().findAll();
-		advertList = new AdvertisementDAO().findByType(1);
+		advertList = new AdvertisementDAO().findByType(0);
 		announList = new AnnouncementDAO().findIndexAnnoun();
+		
 		destUrl = "frontPage/body.jsp";
 		return "diyUrl";
 	}
@@ -118,7 +157,7 @@ public class IndexAction extends ActionSupport {
 		return "diyUrl";
 	}
 
-	public String showFoods() {
+	public String queryGoods() {
 		/**
 		 * @author jilin
 		 * @date : 2017年1月12日 下午2:33:03
@@ -138,13 +177,7 @@ public class IndexAction extends ActionSupport {
 		this.floorCategoryList = floorCategoryList;
 	}
 
-	public List<List<Goods>> getGoodsList() {
-		return goodsList;
-	}
-
-	public void setGoodsList(List<List<Goods>> goodsList) {
-		this.goodsList = goodsList;
-	}
+	
 
 	public String getDestUrl() {
 		return destUrl;
@@ -234,5 +267,25 @@ public class IndexAction extends ActionSupport {
 	public void setCategoryByLevel(ArrayList<CategoryByLevel> categoryByLevel) {
 		this.categoryByLevel = categoryByLevel;
 	}
+	public String getShoppingCarNum() {
+		return shoppingCarNum;
+	}
+	public void setShoppingCarNum(String shoppingCarNum) {
+		this.shoppingCarNum = shoppingCarNum;
+	}
+	public String getUserName() {
+		return userName;
+	}
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+	public List<GoodsByFloor> getGoodsList() {
+		return goodsList;
+	}
+	public void setGoodsList(List<GoodsByFloor> goodsList) {
+		this.goodsList = goodsList;
+	}
+	
+	
 
 }

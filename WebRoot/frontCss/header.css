@@ -25,7 +25,7 @@ ul,li{margin:0;padding:0;list-style:none;font-weight:normal}
 .header_middle{width:1200px;margin:0 auto}
 .logo{margin:24px 100px 24px 0}
 
-.search_box{width:596px;height:32px;border:2px solid #ec1d23;padding-left:10px;outline:none;margin:30px 0}
+.search_box{width:596px;height:38px;border:2px solid #ec1d23;padding-left:10px;outline:none;margin:30px 0}
 .search_button{width:80px;height:38px;border:2px solid #ec1d23;background-color:#ec1d23;font-size:16px;color:#fff;margin:30px 0}
 
 
@@ -53,8 +53,8 @@ ul,li{margin:0;padding:0;list-style:none;font-weight:normal}
 .classification_box li a:visited{color:#4f0505;font-weight:500;text-decoration:none;}
 .classification_box li a:hover{color:#000000;font-weight:500;text-decoration:none;}
 .classification_box li{margin:0px; padding:4px;}
-.prosul li{line-height:50px;height:30px;_overflow:hidden;border-bottom:1px #bb2d1e dashed;margin-right:3px;padding-left:5px}
-.prosmore{padding:0px 0 15px 15px;position:absolute;z-index:999;left:190px;top:-2px;background-color:#FFFFFF;border:2px #d03322 solid;border-left:0 none;
+.prosul li{line-height:50px;height:30px;_overflow:hidden;border-bottom:1px #bb2d1e dashed;margin-right:0px;padding-left:5px}
+.prosmore{padding:0px 0 15px 15px;position:absolute;z-index:999;left:200px;top:-2px;background-color:#FFFFFF;border:2px #d03322 solid;border-left:0 none;
 width:1000px;height:435px}
 .hide{display:none}
 .prosmore img{margin-left:70%; height:95%; position:absolute; top:10px;margin_top:-80%;}
