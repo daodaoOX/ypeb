@@ -1,3 +1,9 @@
 eclipse.preferences.version=1
+<<<<<<< HEAD
 validator.Checked=WebRoot/backPage/trade/saleInfo.jsp,WebRoot/xheditor,WebRoot/frontJs/shopping/layer/jquery.js,WebRoot/js,WebRoot/bootstrap
+=======
+
+validator.Checked=WebRoot/backPage/trade/saleInfo.jsp,WebRoot/xheditor,WebRoot/js,WebRoot/bootstrap
+
+>>>>>>> 7d4b8964c1bfc8f8f5a4ad9e4ee03106f62f21b5
 validator.Unchecked=

@@ -3,17 +3,26 @@ package com.ypeb.action.front.shopping;
 import java.util.ArrayList;
 import java.util.List;
 
+
+
+
+
+
+import org.hibernate.Transaction;
+
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
+import com.ypeb.dataClass.front.CarGoodsName;
+import com.ypeb.model.hibernate.HibernateSessionFactory;
 import com.ypeb.model.points.setting.Setting;
 import com.ypeb.model.points.setting.SettingDAO;
 import com.ypeb.model.shopping.advertisement.Advertisement;
 import com.ypeb.model.shopping.advertisement.AdvertisementDAO;
 import com.ypeb.model.shopping.goods.Goods;
 import com.ypeb.model.shopping.goods.GoodsDAO;
-import com.ypeb.model.shopping.goodsCategory.Goodscategory;
 import com.ypeb.model.shopping.goodsCategory.GoodscategoryDAO;
 import com.ypeb.model.shopping.goodsOrder.Order;
+import com.ypeb.model.shopping.goodsOrder.OrderDAO;
 import com.ypeb.model.shopping.shoppingCar.Shoppingcar;
 import com.ypeb.model.shopping.shoppingCar.ShoppingcarDAO;
 import com.ypeb.model.user.address.Address;
@@ -32,6 +41,9 @@ public class GoodsAction extends ActionSupport {
 	private Address address;
 	private String num;
 	private double pointsPrice;//计算的对应的积分价格（总价）
+	private List<Shoppingcar> carList=new ArrayList<Shoppingcar>();
+	private List<CarGoodsName> shopCarList=new ArrayList<CarGoodsName>();
+	
 	
 	private String shopID;
 	private String shopCarNum;
@@ -41,10 +53,8 @@ public class GoodsAction extends ActionSupport {
 	public String payPre(){
 		goods=new Goods();
 		goods=new GoodsDAO().findById(id);
-		String userID=(String)ActionContext.getContext().getSession().get("userID");
-		//addressList=new AddressDAO().findby
-
-		Integer uID=new Integer(2);
+		String userID=(String)ActionContext.getContext().getSession().get("userID");	
+		Integer uID=new Integer(userID);
 		User user=new User();
 		order=new Order();
 		user=new UserDAO().findById(uID.intValue());
@@ -65,11 +75,68 @@ public class GoodsAction extends ActionSupport {
 		Setting setting=(Setting) new SettingDAO().findAll().get(0);
 		double price=setting.getPrice();
 		pointsPrice=order.getTotalprice()*price;
-		address=new Address();
-		address.setUser(user);
-		addressList=new AddressDAO().findByExample(address);
 		
+		addressList=new AddressDAO().findByUser(user);
+		ActionContext.getContext().getSession().put("order", order);
 		destUrl="frontPage/shopping/pay.jsp";
+		return "diyUrl";
+	}
+	
+	public String pay(){
+		Transaction tx=null;
+		try{
+		tx=(Transaction) HibernateSessionFactory.getSession().beginTransaction();
+		String userID=(String)ActionContext.getContext().getSession().get("userID");	
+		Integer uID=new Integer(userID);
+		order.setUserId(uID.intValue());
+		short temp=1;
+		order.setState(temp);
+		goods=new GoodsDAO().findById(order.getGoodsId());
+		User user=new User();
+		user=new UserDAO().findById(uID.intValue());
+		if(user.getStyle()==2){
+			order.setUnitPrice(goods.getDiscountPrice());			
+			order.setStyle(true);
+		}
+		else{
+			order.setUnitPrice(goods.getPrice());
+			order.setStyle(false);
+		}
+		new OrderDAO().save(order);
+		tx.commit();
+		
+		HibernateSessionFactory.getSession().close();
+		destUrl="frontPage/shopping/payComplete.jsp";
+		}catch(Exception e){
+			
+			e.printStackTrace();
+			destUrl="error.jsp";
+		}
+		
+		return "diyUrl";
+	}
+	
+	public String listCar(){
+		String userID=(String)ActionContext.getContext().getSession().get("userID");	
+		Integer uID=new Integer(userID);
+		
+		carList=new ShoppingcarDAO().findByUserId(uID.intValue());
+		
+		for(Shoppingcar list:carList){
+			CarGoodsName temp=new CarGoodsName();
+			temp.setCar(list);
+			GoodsDAO dao=new GoodsDAO();
+			int id=list.getGoodsId();
+			Goods tem=new Goods();
+			tem=dao.findById(id);
+			System.out.println(tem.getName());
+			tem.getName();
+			String name=new GoodsDAO().findById(list.getGoodsId()).getName();
+			
+			temp.setName(name);
+			shopCarList.add(temp);
+		}
+		destUrl="frontPage/shopping/shoppingCar.jsp";
 		return "diyUrl";
 	}
 	
@@ -224,6 +291,22 @@ public class GoodsAction extends ActionSupport {
 
 	public void setPointsPrice(double pointsPrice) {
 		this.pointsPrice = pointsPrice;
+	}
+
+	public List<Shoppingcar> getCarList() {
+		return carList;
+	}
+
+	public void setCarList(List<Shoppingcar> carList) {
+		this.carList = carList;
+	}
+
+	public List<CarGoodsName> getShopCarList() {
+		return shopCarList;
+	}
+
+	public void setShopCarList(List<CarGoodsName> shopCarList) {
+		this.shopCarList = shopCarList;
 	}
 	
 

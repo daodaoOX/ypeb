@@ -1,12 +1,15 @@
+
 <%@ page language="java" pageEncoding="UTF-8"%>
 <%@ taglib prefix="s" uri="/struts-tags"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
+
 <div class="header">
 	<div class="header_top">
 		<h1 class="welcome">欢迎进入沂品电子商务积分购物商城!</h1>
+
 		<c:choose>
 			<c:when test="${userName!=null}">
 			<!-- 登陆用户 -->
@@ -37,23 +40,28 @@
 		</c:choose>
 
 
+
 		<div class="clearfix"></div>
 	</div>
 	<div class="top_middle"></div>
 	<div class="header_middle">
+
 		<img class="logo" src="image/index/logo.png"> 
 		<input class="search_box">
 		<input class="search_button" type="submit" value="搜索">
 		<div class="shopping_cart_box">
 			<img class="shopping_cart" src="image/index/shopping_cart.png">
-			<a href="frontPage/shopping/shoppingCar.jsp" target="index"><h1 
+			<a href="frontShopping_Goods_listCar" target="index"><h1 
 					class="shopping_cart_text" id="shopping_cart_text" num="${shoppingCarNum }">购物车(${shoppingCarNum })</h1></a>
+
+
 			<div class="classfix"></div>
 		</div>
 		<div class="clearfix"></div>
 	</div>
 	<div class="header_bottom_bg">
 		<div class="header_bottom">
+
 			<div class="pros">
 				<h2 class="classification">全部商品分类</h2>
 				<ul class="classification_box prosul" id="proinfo">
@@ -75,10 +83,12 @@
 				<a class="deal" href="frontPage/trade/tradeCenter.jsp"
 					target="index">交易中心</a>
 			</h1>
+
 			<div class="clearfix"></div>
 		</div>
 	</div>
 </div>
+
 
 <script type="text/javascript">
 	(function() {
@@ -94,6 +104,7 @@
 		}, function() {
 			if (!$(this).hasClass('nochild')) {
 				if ($(this).hasClass("prosahover")) {
+
 					$(this).removeClass("prosahover");
 				}
 				$(this).find(".prosmore").addClass('hide');
@@ -101,6 +112,7 @@
 		});
 	})();
 </script>
+
 <script>
 	$(".classification_box").hide();
 	$(".classification").mouseover(function() {
@@ -114,6 +126,7 @@
 		$(".classification_box").hide();
 	});
 </script>
+
 <!-- 解决iframe跳转页面时位置如何返回顶部问题 -->
 <script type="text/javascript">
 	function parentGoTop(){
@@ -127,4 +140,5 @@
 	}
 	window.onload=function(){addClick();}
 </script>
+
 </html>

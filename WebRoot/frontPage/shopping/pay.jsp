@@ -40,7 +40,7 @@
 		</div>
 		<div class="clearfix"></div>
 	</div>
-	<form action=" ">
+	<form action="frontShopping_Goods_pay">
 		<div class="site_box">
 			<c:forEach items="${addressList }" var="addr" varStatus="status">
 				<div class="site">
@@ -49,10 +49,10 @@
 					<p>${addr.telephone }</p>
 					<c:choose>
 					<c:when test="${status.first }">
-					<input type="radio" checked="checked" name="address" value="${addr.id }">
+					<input type="radio" checked="checked" name="order.address" value="${addr.id }">
 					</c:when>
 					<c:otherwise>
-					<input type="radio"  name="address" value="${addr.id }">
+					<input type="radio"  name="order.address" value="${addr.id }">
 					</c:otherwise>
 					</c:choose>
 				</div>
@@ -82,11 +82,12 @@
 			<img src="img/shopping_car/commodity.png">
 			<h1>${goods.name }</h1>
 			<div class="assist_box GoodsCheck">
+			<input type="hidden" name="order.goodsId" value="${goods.id }">
 				<h2>
-					x<span class="num">1</span>
+					x<span class="num"><input type="hidden" readonly="true" name="order.num" value="${order.num }">${order.num }</span>
 				</h2>
 				<h2>
-					￥<span class="price">${order.unitPrice }</span>
+					￥<span class="price"><input type="hidden" readonly="true" name="order.unitPrice" value="${order.unitPrice }">${order.unitPrice }</span>
 				</h2>
 				<h2>${goods.attribute }</h2>
 			</div>
@@ -98,7 +99,7 @@
 			<div class="assist_box">
 				<h1>积分余额</h1>
 				<h1>共计￥${order.totalprice }</h1>
-				<h1>需支付 40 积分</h1>
+				<h1>需支付<input type="hidden" readonly="true" name="order.totalprice" value="${order.totalprice }"> ${pointsPrice }积分</h1>
 				<input type="submit" value="去支付">
 			</div>
 			<div class="clearfix"></div>

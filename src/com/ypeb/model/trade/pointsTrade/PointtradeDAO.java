@@ -3,6 +3,7 @@ package com.ypeb.model.trade.pointsTrade;
 import com.ypeb.model.trade.pointsSale.BaseHibernateDAO;
 
 import java.sql.Timestamp;
+import java.util.Date;
 import java.util.List;
 
 import org.hibernate.LockOptions;
@@ -170,4 +171,35 @@ public class PointtradeDAO extends BaseHibernateDAO {
 			throw re;
 		}
 	}
+	
+	//查询月K线图中date日期一天中的交易时间升序排列放到List<Pointtrade>中
+	public List<Pointtrade> findByTime(Date start,Date end) {
+		log.debug("finding Pointtrade instance");
+		try {
+			String queryString = "from Pointtrade as p where p.time between :start and :end order by p.time asc";		
+			Query queryObject = getSession().createQuery(queryString);
+			queryObject.setParameter("start", start);
+			queryObject.setParameter("end", end);
+			return queryObject.list();
+		} catch (RuntimeException re) {
+			log.error("find by property name failed", re);
+			throw re;
+		}
+	}
+	
+	//查询月K线图中date日期一天中的单价降序排列放到List<Pointtrade>中
+		public List<Pointtrade> findByPrice(Date start,Date end) {
+			log.debug("finding Pointtrade instance");
+			try {
+				String queryString = "from Pointtrade as p where p.time between :start and :end order by p.price desc";		
+				Query queryObject = getSession().createQuery(queryString);
+				queryObject.setParameter("start", start);
+				queryObject.setParameter("end", end);
+				return queryObject.list();
+			} catch (RuntimeException re) {
+				log.error("find by property name failed", re);
+				throw re;
+			}
+		}
+		
 }

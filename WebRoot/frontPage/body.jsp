@@ -5,12 +5,15 @@
 			+ request.getServerName() + ":" + request.getServerPort()
 			+ path + "/";
 %>
+
 <%@ taglib prefix="s" uri="/struts-tags"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
+
 <link rel="stylesheet" type="text/css" href="frontCss/index.css">
+
 <head>
 <link rel="stylesheet" type="text/css"
 	href="<%=path%>/frontCss/index.css">
@@ -57,14 +60,17 @@
 			src="<%=path%>/img/common/header/right.png"></span>
 		<div class="ctrl_span">
 			<span class="current"></span> <span></span> <span></span> <span></span>
+
 		</div>
 	</div>
 
 	<div class="AD_box">
+
 		<c:forEach items="${advertList }" var="ad">
 			<img src="upload/image/advertisement/${ad.url }">
 
 		</c:forEach>
+
 
 		<div class="notice">
 			<div>
@@ -238,4 +244,5 @@ $(document).ready(function(){
 	window.onload=function(){addClick();}
 </script>
 </body>
+
 </html>
