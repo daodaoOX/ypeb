@@ -2,7 +2,9 @@
 <%
 String path = request.getContextPath();
 %>
-
+<%@ taglib prefix="s" uri="/struts-tags"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTDHTML 4.01 Transitional//EN">
 <html>
 	<head>
@@ -37,12 +39,13 @@ String path = request.getContextPath();
 <form action="" method="get">
   <div class="one-shop">
       <!--商品--> 
+      <c:forEach items="${shopCarList }" var="list">
 	<div class="sc_commodity one-goods">
       <div class="goods-msg">
 		<div class="boundary"></div>
-		<input class="check_box goods-check GoodsCheck"  type="checkbox"  name="check_goods" value="1" data-age="11">
-		<img src="<%=path %>/img/shopping_car/commodity.png"/>
-		<h1>新货【百草味】夏威夷果200g*3袋 坚果炒货零食干果 奶油味</h1>
+		<input class="check_box goods-check GoodsCheck"  type="checkbox"  name="check_goods" value="${list.car.num }" data-age="11">
+		<img class="shoppingCarImg" src="upload/image/goods/${list.image}"/>
+		<h1>${list.name }</h1>
 		<div class="assist_box">
 			<h2 class="del">删除</h2>
 			<h2></h2>
@@ -55,13 +58,13 @@ String path = request.getContextPath();
 				<div class="clearfix"></div>
 			</div>
 			<div class="addtype">
-				<h2>￥<span class="shop-total-amount GoodsPrice">20.00</span></h2>
+				<h2>￥<span class="shop-total-amount GoodsPrice">${list.car.price }</span></h2>
 			</div>
 		</div>
 		<div class="clearfix"></div>
       </div>
 	</div>
-    
+    </c:forEach>
    
     
 	<!--结算-->

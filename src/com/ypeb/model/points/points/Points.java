@@ -20,10 +20,12 @@ public class Points extends AbstractPoints implements java.io.Serializable {
 	public Points() {
 	}
 
-	/** full constructor */
 	public Points(Pointspublish pointspublish, Integer userId, Double pointNum,
-			Timestamp time) {
-		super(pointspublish, userId, pointNum, time);
+			Timestamp time, Boolean state) {
+		super(pointspublish, userId, pointNum, time, state);
+		// TODO Auto-generated constructor stub
 	}
 
+	/** full constructor */
+	
 }

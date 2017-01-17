@@ -40,6 +40,6 @@ ul,li{margin:0;padding:0;list-style:none;font-weight:normal}
 
 .foot .img_box{width:200px;height:200px;overflow:hidden}
 
-.foot .foot_img{transition:transform 0.5s linear}
+.foot .foot_img{transition:transform 0.5s linear;width:200px;height:200px;}
 .foot .foot_img:hover{transform: scale(1.05,1.05)}
 .foot .foot_shopping_cart:hover{transform: scale(1.05,1.05)}

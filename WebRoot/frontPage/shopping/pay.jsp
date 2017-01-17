@@ -79,7 +79,7 @@
 		<!--商品-->
 		<div class="sc_commodity">
 			<div class="boundary"></div>
-			<img src="img/shopping_car/commodity.png">
+			<img class="payImg" src="img/shopping_car/commodity.png">
 			<h1>${goods.name }</h1>
 			<div class="assist_box GoodsCheck">
 			<input type="hidden" name="order.goodsId" value="${goods.id }">

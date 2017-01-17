@@ -1,11 +1,18 @@
 package com.ypeb.model.user.user;
 
 import com.ypeb.model.trade.pointsSale.BaseHibernateDAO;
+
 import java.util.List;
-import java.util.Set;
+
+
+import org.hibernate.Criteria;
 import org.hibernate.LockOptions;
 import org.hibernate.Query;
+import org.hibernate.criterion.DetachedCriteria;
+import org.hibernate.criterion.Restrictions;
+
 import static org.hibernate.criterion.Example.create;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -86,6 +93,18 @@ public class UserDAO extends BaseHibernateDAO {
 			throw re;
 		}
 	}
+	
+	public List<User> findByUser(User user) {  
+	    final DetachedCriteria query = DetachedCriteria  
+	            .forClass(User.class);  
+	    Criteria criteria = query.getExecutableCriteria(getSession());  
+	    criteria.add(Restrictions.eq("user", user));  
+ 	  
+	    @SuppressWarnings("unchecked")  
+	    List<User> list = criteria.list();  
+	      
+	    return list;  
+	} 
 
 	public List findByProperty(String propertyName, Object value) {
 		log.debug("finding User instance with property: " + propertyName

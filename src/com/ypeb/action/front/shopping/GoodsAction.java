@@ -121,7 +121,17 @@ public class GoodsAction extends ActionSupport {
 		Integer uID=new Integer(userID);
 		
 		carList=new ShoppingcarDAO().findByUserId(uID.intValue());
-		
+		/*for(int i=0;i<carList.size();i++){
+			CarGoodsName temp=new CarGoodsName();
+			Goods tem=null;
+			tem=new GoodsDAO().findById(carList.get(i).getGoodsId());
+			String name=new String();
+			name=tem.getName();
+			temp.setName(name);
+			tem=null;
+			temp.setCar(carList.get(i));
+		}*/
+
 		for(Shoppingcar list:carList){
 			CarGoodsName temp=new CarGoodsName();
 			temp.setCar(list);
@@ -129,10 +139,15 @@ public class GoodsAction extends ActionSupport {
 			int id=list.getGoodsId();
 			Goods tem=new Goods();
 			tem=dao.findById(id);
-			System.out.println(tem.getName());
-			tem.getName();
-			String name=new GoodsDAO().findById(list.getGoodsId()).getName();
+		
+			tem=new Goods();
 			
+			tem=dao.findById(id);
+			
+			
+			
+			String name=tem.getName();
+			temp.setImage(tem.getImageUrl1());
 			temp.setName(name);
 			shopCarList.add(temp);
 		}

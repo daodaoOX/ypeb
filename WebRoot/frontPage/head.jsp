@@ -14,14 +14,14 @@
 			<c:when test="${userName!=null}">
 			<!-- 登陆用户 -->
 			<h1>
-					<a class="sign_up" href="">用户${userName }</a>
+					<a class="sign_up" href="javascript:void(0);">用户${userName }</a>
 				</h1>
 
 				<h1>
 					<a class="sign_in" href="#">免费注册</a>
 				</h1>
 				<h1>
-					<a class="info" href="#">我的信息</a>
+					<a class="info" href="frontUser_PersonalCenter_infoCenter" target="index">我的信息</a>
 				</h1>
 			</c:when>
 			<c:otherwise>

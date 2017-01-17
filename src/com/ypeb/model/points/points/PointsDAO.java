@@ -25,6 +25,7 @@ public class PointsDAO extends BaseHibernateDAO {
 	// property constants
 	public static final String USER_ID = "userId";
 	public static final String POINT_NUM = "pointNum";
+	public static final String STATE = "state";
 
 	public void save(Points transientInstance) {
 		log.debug("saving Points instance");
@@ -96,6 +97,10 @@ public class PointsDAO extends BaseHibernateDAO {
 
 	public List<Points> findByPointNum(Object pointNum) {
 		return findByProperty(POINT_NUM, pointNum);
+	}
+
+	public List<Points> findByState(Object state) {
+		return findByProperty(STATE, state);
 	}
 
 	public List findAll() {

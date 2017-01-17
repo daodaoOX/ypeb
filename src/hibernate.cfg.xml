@@ -6,19 +6,19 @@
 <hibernate-configuration>
 
 
-<session-factory>
-	<property name="dialect">
-		org.hibernate.dialect.MySQLDialect
-	</property>
-	<property name="connection.url">
-		jdbc:mysql://localhost:3306/ypeb
-	</property>
-	<property name="connection.username">root</property>
-	<property name="connection.password">260715</property>
-	<property name="connection.driver_class">
-		com.mysql.jdbc.Driver
-	</property>
-	<property name="myeclipse.connection.profile">YPEB</property>
+	<session-factory>
+		<property name="dialect">
+			org.hibernate.dialect.MySQLDialect
+		</property>
+		<property name="connection.url">
+			jdbc:mysql://localhost:3306/ypeb
+		</property>
+		<property name="connection.username">root</property>
+		<property name="connection.password">260715</property>
+		<property name="connection.driver_class">
+			com.mysql.jdbc.Driver
+		</property>
+		<property name="myeclipse.connection.profile">YPEB</property>
 
 
 		<property name="javax.persistence.validation.mode">
@@ -54,6 +54,7 @@
 		<mapping class="come.ypeb.model.manager.role.Role" />
 		<mapping class="com.ypeb.model.user.message.Message" />
 		<mapping class="com.ypeb.model.points.setting.Setting" />
+		<mapping class="com.ypeb.model.user.award.Award" />
 	</session-factory>
 
 

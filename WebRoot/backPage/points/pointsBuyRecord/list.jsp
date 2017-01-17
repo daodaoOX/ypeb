@@ -70,6 +70,7 @@
 				<th width="70" align="center">数量</th>
 				<th width="70" align="center">时间</th>
 				<th width="70" align="center">发行编次ID</th>
+				<th width="70" align="center">是否释放完毕</th>
 
 			</tr>
 		</thead>
@@ -82,6 +83,7 @@
 					<td>${list.pointNum }</td>
 					<td>${list.time }</td>
 					<td>${list.pointspublish.id }</td>
+					<td>${list.state }</td>
 					
 				</tr>
 			</c:forEach>
