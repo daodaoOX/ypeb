@@ -1,10 +1,18 @@
 package com.ypeb.model.user.address;
 
 import com.ypeb.model.trade.pointsSale.BaseHibernateDAO;
+import com.ypeb.model.user.user.User;
+
 import java.util.List;
+
+import org.hibernate.Criteria;
 import org.hibernate.LockOptions;
 import org.hibernate.Query;
+import org.hibernate.criterion.DetachedCriteria;
+import org.hibernate.criterion.Restrictions;
+
 import static org.hibernate.criterion.Example.create;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -74,6 +82,19 @@ public class AddressDAO extends BaseHibernateDAO {
 			throw re;
 		}
 	}
+	
+	public List<Address> findByUser(User user) {  
+	    final DetachedCriteria query = DetachedCriteria  
+	            .forClass(Address.class);  
+	    Criteria criteria = query.getExecutableCriteria(getSession());  
+	    criteria.add(Restrictions.eq("user", user));  
+ 
+	  
+	    @SuppressWarnings("unchecked")  
+	    List<Address> list = criteria.list();  
+	      
+	    return list;  
+	}  
 
 	public List findByProperty(String propertyName, Object value) {
 		log.debug("finding Address instance with property: " + propertyName

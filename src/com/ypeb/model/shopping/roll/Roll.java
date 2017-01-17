@@ -16,9 +16,12 @@ public class Roll extends AbstractRoll implements java.io.Serializable {
 	public Roll() {
 	}
 
-	/** full constructor */
-	public Roll(String name, String url) {
-		super(name, url);
+	public Roll(String name, String url, Integer goodsId) {
+		super(name, url, goodsId);
+		// TODO Auto-generated constructor stub
 	}
+
+	/** full constructor */
+
 
 }

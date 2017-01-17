@@ -12,6 +12,8 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 
+<link rel="stylesheet" type="text/css" href="frontCss/index.css">
+
 <head>
 <link rel="stylesheet" type="text/css"
 	href="<%=path%>/frontCss/index.css">
@@ -22,8 +24,7 @@
 <script type="text/javascript"
 	src="<%=path%>/bootstrap/js/jquery-2.1.4.min.js"></script>
 </head>
-<body
-	onload="window.parent.document.getElementById('index').height=document.body.scrollHeight;">
+<body>
 	<div class="">
 		<div class="header_bottom">
 			<div class="pros">
@@ -48,7 +49,8 @@
 	<div class="banner_box">
 		<div class="banner">
 			<c:forEach items="${rollList }" var="roll">
-				<img class="banner1" src="<%=path%>upload/image/roll/banner1.png">
+				<a href="frontShopping_Goods_queryGoods?id=${roll.goodsId }"><img
+					class="banner1" src="upload/image/roll/${roll.url }"></a>
 			</c:forEach>
 			<div class="clearfix"></div>
 		</div>
@@ -64,8 +66,12 @@
 
 	<div class="AD_box">
 
-		<img class="AD_1" src="<%=path%>upload/image/roll/ad1.png"> <img
-			src="<%=path%>/img/index/ad2.png">
+		<c:forEach items="${advertList }" var="ad">
+			<img src="upload/image/advertisement/${ad.url }">
+
+		</c:forEach>
+
+
 		<div class="notice">
 			<div>
 				<h1 class="headline">商城公告</h1>
@@ -79,105 +85,77 @@
 					<a href="?id=${announcement.id }">${announcement.title }</a>
 				</h3>
 			</c:forEach>
-			<h3>
-				<a href="#">东北气度因雨雪天气延迟配送！</a>
-			</h3>
 
 		</div>
 		<div class="clearfix"></div>
 	</div>
 
 	<!--floor-->
-	<div class="floor">
-		<div>
-			<img class="floor_number" src="<%=path%>/img/index/1F.png">
-			<h1 class="floor_name">食品副食</h1>
+	<c:forEach items="${goodsList}" var="floor" varStatus="status">
+		<div class="floor">
+			<div>
+				<img class="floor_number" src="image/floor/${status.index+1 }f.png">
+				<h1 class="floor_name">${floor.floorName }</h1>
+				<div class="clearfix"></div>
+			</div>
+			<div class="boundary"></div>
+			<img class="floor_ad" src="upload/image/category/${floor.url }">
+			<c:forEach items="${floor.goodsList}" var="floorGoods">
+				<div class="foot">
+					<div class="img_box">
+						<a href="frontShopping_Goods_queryGoods?id=${floorGoods.id }"
+							target="index"><img class="foot_img"
+							src="upload/image/goods/${floorGoods.imageUrl1 }"> </a>
+					</div>
+					<h1 class="name">${floorGoods.name}</h1>
+					<div class="price">
+						<h1 class="vip_price">商城会员价:${floorGoods.discountPrice}</h1>
+						<h2>普通会员价${floorGoods.price}</h2>
+					</div>
+					<input type="hidden" value="${floorGoods.id }"> <img
+						class="foot_shopping_cart"
+						src="image/index/foot_shopping_cart.png"
+						shopID="${floorGoods.id }">
+				</div>
+			</c:forEach>
 			<div class="clearfix"></div>
 		</div>
-		<div class="boundary"></div>
-		<img class="floor_ad" src="<%=path%>/img/index/floor_1_ad.png">
-		<div class="foot">
-			<div class="img_box">
-				<img class="foot_img" src="<%=path%>/img/index/foot_1.png">
-			</div>
-			<h1 class="name">新疆薄皮核桃</h1>
-			<h1 class="price">￥21.9</h1>
-			<img class="foot_shopping_cart"
-				src="<%=path%>/img/common/foot_shopping_cart.png">
-		</div>
-		<div class="foot">
-			<div class="img_box">
-				<img class="foot_img" src="<%=path%>/img/index/foot_2.png">
-			</div>
-			<h1 class="name">山核桃味瓜子500g*4袋</h1>
-			<h1 class="price">￥42.9</h1>
-			<img class="foot_shopping_cart"
-				src="<%=path%>/img/common/foot_shopping_cart.png">
-		</div>
-		<div class="foot">
-			<div class="img_box">
-				<img class="foot_img" src="<%=path%>/img/index/foot_3.png">
-			</div>
-			<h1 class="name">唇动巧克力蛋糕点心500g*2</h1>
-			<h1 class="price">￥39</h1>
-			<img class="foot_shopping_cart"
-				src="<%=path%>/img/common/foot_shopping_cart.png">
-		</div>
-		<div class="foot">
-			<div class="img_box">
-				<img class="foot_img" src="<%=path%>/img/index/foot_4.png">
-			</div>
-			<h1 class="name">安徽特产黄山烧饼40个</h1>
-			<h1 class="price">￥19.9</h1>
-			<img class="foot_shopping_cart"
-				src="<%=path%>/img/common/foot_shopping_cart.png">
-		</div>
-		<div class="foot">
-			<div class="img_box">
-				<img class="foot_img" src="<%=path%>/img/index/foot_5.png">
-			</div>
-			<h1 class="name">三只松鼠 小贱牛肉粒110g</h1>
-			<h1 class="price">19.8</h1>
-			<img class="foot_shopping_cart"
-				src="<%=path%>/img/common/foot_shopping_cart.png">
-		</div>
-		<div class="foot">
-			<div class="img_box">
-				<img class="foot_img" src="<%=path%>/img/index/foot_6.png">
-			</div>
-			<h1 class="name">葡记 麦片巧克力500g*5袋</h1>
-			<h1 class="price">￥29.9</h1>
-			<img class="foot_shopping_cart"
-				src="<%=path%>/img/common/foot_shopping_cart.png">
-		</div>
-		<div class="foot">
-			<div class="img_box">
-				<img class="foot_img" src="<%=path%>/img/index/foot_7.png">
-			</div>
-			<h1 class="name">牛肉干内蒙古正宗手撕</h1>
-			<h1 class="price">￥59.8</h1>
-			<img class="foot_shopping_cart"
-				src="<%=path%>/img/common/foot_shopping_cart.png">
-		</div>
-		<div class="foot">
-			<div class="img_box">
-				<img class="foot_img" src="<%=path%>/img/index/foot_8.png">
-			</div>
-			<h1 class="name">达利园瑞士卷香蕉味蛋糕3斤</h1>
-			<h1 class="price">￥29.9</h1>
-			<img class="foot_shopping_cart"
-				src="<%=path%>/img/common/foot_shopping_cart.png">
-		</div>
-		<div class="clearfix"></div>
-	</div>
+	</c:forEach>
+	
+<script type="text/javascript">
 
+$(document).ready(function(){
+  $(".foot_shopping_cart").click(function(){
+   
+   
+	var shopID = $(this).attr("shopID");
+	
+	
+	$.post("frontShopping_Goods_addShoppingCar",{"shopID":shopID},function(data,status){
+      
 
+     	var v2 = $('#shopping_cart_text', window.parent.document);
+     	
+		if(data.statusCode=='200'){
+		alert("添加成功");
+		v2.html("购物车("+data.shopCarNum+")");//要刷新的div,(dates=shopNum+1)购物车中的数量
+		}else{
+			alert("请先登录");
+		}
+      	
+ 		
+      	
+    });
+  });
+});
 
+</script>
+	<script type="text/javascript" language="javascript">
+	
 
-
-
-
-	<script type="text/javascript">
+	
+	
+	
 		(function() {
 
 			var $subblock = $(".subpage"), $head = $subblock.find('h2'), $ul = $("#proinfo"), $lis = $ul
@@ -252,6 +230,19 @@
 			t1 = setInterval(toFade, 3000)
 		})
 	</script>
+	<!-- 解决iframe跳转页面时位置如何返回顶部问题 -->
+<script type="text/javascript">
+	function parentGoTop(){
+	parent.scrollTo(0,0);
+	}
+	function addClick(){
+	var aList=document.getElementsByTagName("a");
+	for(var i=0;i<aList.length;i++){
+	    aList[i].onclick=function(){parentGoTop();}
+	    }
+	}
+	window.onload=function(){addClick();}
+</script>
 </body>
 
 </html>

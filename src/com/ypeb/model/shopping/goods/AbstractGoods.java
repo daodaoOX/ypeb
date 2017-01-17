@@ -30,7 +30,7 @@ public abstract class AbstractGoods implements java.io.Serializable {
 	private String imageUrl1;
 	private Double price;
 	private String givePoints;
-	private String discountPrice;
+	private Double discountPrice;
 	private Boolean isShow;
 	private Double purchacePrice;
 	private String attribute;
@@ -41,6 +41,11 @@ public abstract class AbstractGoods implements java.io.Serializable {
 	private String code;
 	private Integer secondCateg;
 	private Integer thirdCateg;
+	private Integer category2;
+	private String timeMark;
+	private String telephone;
+	private String linkMan;
+	private String webChat;
 
 	// Constructors
 
@@ -50,14 +55,10 @@ public abstract class AbstractGoods implements java.io.Serializable {
 
 	/** minimal constructor */
 	public AbstractGoods(Goodscategory goodscategory, String name,
-			String specification, String description, String imageUrl1,
-			Double price, String givePoints, String discountPrice,
+			Double price, String givePoints, Double discountPrice,
 			Boolean isShow, Double purchacePrice, String attribute, String code) {
 		this.goodscategory = goodscategory;
 		this.name = name;
-		this.specification = specification;
-		this.description = description;
-		this.imageUrl1 = imageUrl1;
 		this.price = price;
 		this.givePoints = givePoints;
 		this.discountPrice = discountPrice;
@@ -70,11 +71,12 @@ public abstract class AbstractGoods implements java.io.Serializable {
 	/** full constructor */
 	public AbstractGoods(Goodscategory goodscategory, String name,
 			String specification, String description, String imageUrl1,
-			Double price, String givePoints, String discountPrice,
+			Double price, String givePoints, Double discountPrice,
 			Boolean isShow, Double purchacePrice, String attribute,
 			String imageUrl2, String imageUrl3, String imageUrl4,
 			String imageUrl5, String code, Integer secondCateg,
-			Integer thirdCateg) {
+			Integer thirdCateg, Integer category2, String timeMark,
+			String telephone, String linkMan, String webChat) {
 		this.goodscategory = goodscategory;
 		this.name = name;
 		this.specification = specification;
@@ -93,6 +95,11 @@ public abstract class AbstractGoods implements java.io.Serializable {
 		this.code = code;
 		this.secondCateg = secondCateg;
 		this.thirdCateg = thirdCateg;
+		this.category2 = category2;
+		this.timeMark = timeMark;
+		this.telephone = telephone;
+		this.linkMan = linkMan;
+		this.webChat = webChat;
 	}
 
 	// Property accessors
@@ -108,7 +115,7 @@ public abstract class AbstractGoods implements java.io.Serializable {
 	}
 
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "category", nullable = false)
+	@JoinColumn(name = "category1", nullable = false)
 	public Goodscategory getGoodscategory() {
 		return this.goodscategory;
 	}
@@ -126,7 +133,7 @@ public abstract class AbstractGoods implements java.io.Serializable {
 		this.name = name;
 	}
 
-	@Column(name = "specification", nullable = false, length = 65535)
+	@Column(name = "specification", length = 65535)
 	public String getSpecification() {
 		return this.specification;
 	}
@@ -135,7 +142,7 @@ public abstract class AbstractGoods implements java.io.Serializable {
 		this.specification = specification;
 	}
 
-	@Column(name = "description", nullable = false, length = 65535)
+	@Column(name = "description", length = 65535)
 	public String getDescription() {
 		return this.description;
 	}
@@ -144,7 +151,7 @@ public abstract class AbstractGoods implements java.io.Serializable {
 		this.description = description;
 	}
 
-	@Column(name = "imageUrl1", nullable = false, length = 45)
+	@Column(name = "imageUrl1", length = 45)
 	public String getImageUrl1() {
 		return this.imageUrl1;
 	}
@@ -171,12 +178,12 @@ public abstract class AbstractGoods implements java.io.Serializable {
 		this.givePoints = givePoints;
 	}
 
-	@Column(name = "discountPrice", nullable = false, length = 45)
-	public String getDiscountPrice() {
+	@Column(name = "discountPrice", nullable = false, precision = 11)
+	public Double getDiscountPrice() {
 		return this.discountPrice;
 	}
 
-	public void setDiscountPrice(String discountPrice) {
+	public void setDiscountPrice(Double discountPrice) {
 		this.discountPrice = discountPrice;
 	}
 
@@ -268,6 +275,51 @@ public abstract class AbstractGoods implements java.io.Serializable {
 
 	public void setThirdCateg(Integer thirdCateg) {
 		this.thirdCateg = thirdCateg;
+	}
+
+	@Column(name = "category2")
+	public Integer getCategory2() {
+		return this.category2;
+	}
+
+	public void setCategory2(Integer category2) {
+		this.category2 = category2;
+	}
+
+	@Column(name = "timeMark", length = 45)
+	public String getTimeMark() {
+		return this.timeMark;
+	}
+
+	public void setTimeMark(String timeMark) {
+		this.timeMark = timeMark;
+	}
+
+	@Column(name = "telephone", length = 12)
+	public String getTelephone() {
+		return this.telephone;
+	}
+
+	public void setTelephone(String telephone) {
+		this.telephone = telephone;
+	}
+
+	@Column(name = "linkMan", length = 20)
+	public String getLinkMan() {
+		return this.linkMan;
+	}
+
+	public void setLinkMan(String linkMan) {
+		this.linkMan = linkMan;
+	}
+
+	@Column(name = "webChat", length = 45)
+	public String getWebChat() {
+		return this.webChat;
+	}
+
+	public void setWebChat(String webChat) {
+		this.webChat = webChat;
 	}
 
 }

@@ -9,28 +9,51 @@
 <div class="header">
 	<div class="header_top">
 		<h1 class="welcome">欢迎进入沂品电子商务积分购物商城!</h1>
-		<h1>
-			<a class="sign_up" href="#">请登录</a>
-		</h1>
-		<h1>
-			<a class="sign_in" href="#">免费注册</a>
-		</h1>
-		<h1>
-			<a class="info" href="#">我的信息</a>
-		</h1>
+
+		<c:choose>
+			<c:when test="${userName!=null}">
+			<!-- 登陆用户 -->
+			<h1>
+					<a class="sign_up" href="javascript:void(0);">用户${userName }</a>
+				</h1>
+
+				<h1>
+					<a class="sign_in" href="#">免费注册</a>
+				</h1>
+				<h1>
+					<a class="info" href="frontUser_PersonalCenter_infoCenter" target="index">我的信息</a>
+				</h1>
+			</c:when>
+			<c:otherwise>
+			<!-- 未登陆用户 -->
+				<h1>
+					<a class="sign_up" href="frontPage/user/login/userLogin.jsp">请登录</a>
+				</h1>
+
+				<h1>
+					<a class="sign_in" href="frontPage/user/login/userLogin.jsp">免费注册</a>
+				</h1>
+				<h1>
+					<a class="info" href="#">我的信息</a>
+				</h1>
+			</c:otherwise>
+		</c:choose>
+
+
 
 		<div class="clearfix"></div>
 	</div>
 	<div class="top_middle"></div>
 	<div class="header_middle">
 
-		<img class="logo" src="img/common/header/logo.png"> <input
-			class="search_box"> <input class="search_button"
-			type="submit" value="搜索">
+		<img class="logo" src="image/index/logo.png"> 
+		<input class="search_box">
+		<input class="search_button" type="submit" value="搜索">
 		<div class="shopping_cart_box">
-			<img class="shopping_cart" src="img/common/header/shopping_cart.png">
-			<a href="frontPage/shopping/shoppingCar.jsp" target="index"><h1
-					class="shopping_cart_text">购物车(3)</h1></a>
+			<img class="shopping_cart" src="image/index/shopping_cart.png">
+			<a href="frontShopping_Goods_listCar" target="index"><h1 
+					class="shopping_cart_text" id="shopping_cart_text" num="${shoppingCarNum }">购物车(${shoppingCarNum })</h1></a>
+
 
 			<div class="classfix"></div>
 		</div>
@@ -51,10 +74,10 @@
 								</c:forEach>
 							</div></li>
 					</c:forEach>
-			</ul>
+				</ul>
 			</div>
 			<h1>
-				<a class="home" href="frontPage/body.jsp" target="index">首页</a>
+				<a class="home" href="frontShopping_Index_bodyData" target="index">首页</a>
 			</h1>
 			<h1>
 				<a class="deal" href="frontPage/trade/tradeCenter.jsp"
@@ -102,6 +125,20 @@
 	}).mouseout(function() {
 		$(".classification_box").hide();
 	});
+</script>
+
+<!-- 解决iframe跳转页面时位置如何返回顶部问题 -->
+<script type="text/javascript">
+	function parentGoTop(){
+	parent.scrollTo(0,0);
+	}
+	function addClick(){
+	var aList=document.getElementsByTagName("a");
+	for(var i=0;i<aList.length;i++){
+	    aList[i].onclick=function(){parentGoTop();}
+	    }
+	}
+	window.onload=function(){addClick();}
 </script>
 
 </html>

@@ -46,8 +46,7 @@ public class PointsSaleAction extends ActionSupport {
 		}
 		
 		pointsSale.setSelectAll(true);
-		System.out.println("state="+pointsSale.getState()
-				+"  userID="+pointsSale.getSaleId()+" orderField="+orderField);
+
 		pointsSaleList = new PointssaleDAO().comprehensiveQuery(pointsSale,
 				queryCondition);
 		

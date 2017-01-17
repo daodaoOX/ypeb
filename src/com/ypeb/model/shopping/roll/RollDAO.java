@@ -24,6 +24,7 @@ public class RollDAO extends BaseHibernateDAO {
 	// property constants
 	public static final String NAME = "name";
 	public static final String URL = "url";
+	public static final String GOODS_ID = "goodsId";
 
 	public void save(Roll transientInstance) {
 		log.debug("saving Roll instance");
@@ -95,6 +96,10 @@ public class RollDAO extends BaseHibernateDAO {
 
 	public List<Roll> findByUrl(Object url) {
 		return findByProperty(URL, url);
+	}
+
+	public List<Roll> findByGoodsId(Object goodsId) {
+		return findByProperty(GOODS_ID, goodsId);
 	}
 
 	public List findAll() {

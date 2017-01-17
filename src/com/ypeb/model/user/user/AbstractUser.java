@@ -43,6 +43,7 @@ public abstract class AbstractUser implements java.io.Serializable {
 	private Integer usingPoints;
 	private Boolean inforIsFull;
 	private String imageUrl;
+	private Integer style;
 	private Set<Address> addresses = new HashSet<Address>(0);
 	private Set<User> users = new HashSet<User>(0);
 	private Set<Bankcard> bankcards = new HashSet<Bankcard>(0);
@@ -56,7 +57,7 @@ public abstract class AbstractUser implements java.io.Serializable {
 	/** minimal constructor */
 	public AbstractUser(String password, String payPassword, String telephone,
 			String name, String province, String city, String country,
-			String idcard, Short level, Boolean inforIsFull) {
+			Short level, Boolean inforIsFull, Integer style) {
 		this.password = password;
 		this.payPassword = payPassword;
 		this.telephone = telephone;
@@ -64,9 +65,9 @@ public abstract class AbstractUser implements java.io.Serializable {
 		this.province = province;
 		this.city = city;
 		this.country = country;
-		this.idcard = idcard;
 		this.level = level;
 		this.inforIsFull = inforIsFull;
+		this.style = style;
 	}
 
 	/** full constructor */
@@ -74,7 +75,8 @@ public abstract class AbstractUser implements java.io.Serializable {
 			String telephone, String name, String province, String city,
 			String country, String idcard, Short level, Integer cash,
 			Integer usingPoints, Boolean inforIsFull, String imageUrl,
-			Set<Address> addresses, Set<User> users, Set<Bankcard> bankcards) {
+			Integer style, Set<Address> addresses, Set<User> users,
+			Set<Bankcard> bankcards) {
 		this.user = user;
 		this.password = password;
 		this.payPassword = payPassword;
@@ -89,6 +91,7 @@ public abstract class AbstractUser implements java.io.Serializable {
 		this.usingPoints = usingPoints;
 		this.inforIsFull = inforIsFull;
 		this.imageUrl = imageUrl;
+		this.style = style;
 		this.addresses = addresses;
 		this.users = users;
 		this.bankcards = bankcards;
@@ -179,7 +182,7 @@ public abstract class AbstractUser implements java.io.Serializable {
 		this.country = country;
 	}
 
-	@Column(name = "IDcard", nullable = false, length = 20)
+	@Column(name = "IDcard", length = 20)
 	public String getIdcard() {
 		return this.idcard;
 	}
@@ -231,6 +234,15 @@ public abstract class AbstractUser implements java.io.Serializable {
 
 	public void setImageUrl(String imageUrl) {
 		this.imageUrl = imageUrl;
+	}
+
+	@Column(name = "style", nullable = false)
+	public Integer getStyle() {
+		return this.style;
+	}
+
+	public void setStyle(Integer style) {
+		this.style = style;
 	}
 
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "user")

@@ -1,7 +1,11 @@
+=\=\=\=\=\=\=
+<<<<<<<=HEAD
+>>>>>>>=7d4b8964c1bfc8f8f5a4ad9e4ee03106f62f21b5
 eclipse.preferences.version=1
-
-encoding//WebRoot/frontPage/shopping/shoppingCart.jsp=UTF-8
-
+encoding//WebRoot/backPage/shopping/category/add.jsp=UTF-8
+encoding//WebRoot/frontPage/user/personalCenter/changePassword.jsp=UTF-8
+encoding//WebRoot/frontPage/user/personalCenter/myInfo.jsp=UTF-8
+encoding//WebRoot/frontPage/user/personalCenter/order.jsp=UTF-8
+encoding//WebRoot/frontPage/user/personalInformation.jsp=UTF-8
 encoding//src/com/ypeb/util/Page.java=UTF-8
-
 encoding/<project>=UTF-8
