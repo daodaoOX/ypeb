@@ -17,13 +17,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 	<meta http-equiv="description" content="This is my page">
 	
-	<link rel="stylesheet" href="frontCss/header_and_footer.css" type="text/css">
+	<link rel="stylesheet" href="frontCss/header_and_footer.css"
+		type="text/css">
+	<link rel="stylesheet" href="frontCss/user/login.css" type="text/css">
 	<script src="bootstrap/js/jquery-2.1.4.min.js"></script>
 	<!--引用城市插件-->
-	<link href="frontJs/user/areaselect.css" type="text/css" rel="stylesheet" />
+	<link href="frontJs/user/areaselect.css" type="text/css"
+		rel="stylesheet" />
 	<script type="text/javascript" src="frontJs/user/data.js"></script>
 	<script type="text/javascript" src="frontJs/user/areaselect.js"></script>
-
   </head>
   
   <body>
@@ -41,39 +43,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	  
 	      
  	<div class="logo1">
-		<img src="img/logo.png">
+		<img src="img/user/logo.png">
 	</div>
 	<div class="bg_box">
-		<img src="img/登录注册banner_bg.png" class="bg_img">
-		<!--登陆-->
-		<div class="login_box">
-			<h1>会员登陆</h1>
-			<h2>免费注册&gt;</h2>
-			<div class="clearfix"></div>
-			<div class="login1">
-				<span>用户名</span>
-				<input type="text" style="background-image: url(img/yonghu.png)" class="input5">
-				<div class="clearfix"></div>
-			</div>
-			<div class="login1">
-				<span>密　码</span>
-				<input type="text" class="input6">
-				<div class="clearfix"></div>
-			</div>
-			<div class="login1">
-				<span>验证码</span>
-				<input type="text" style="width: 154px" class="input7">
-				<img src="img/yzm.png" class="login_img">
-				<div class="clearfix"></div>
-			</div>
-			<p class="wjmm">忘记密码</span>
-			<div class="clearfix"></div>
-			<div class="login_btn">登　录</div>
-		</div>
+		<img src="img/user/banner_bg.png" class="bg_img">
 		<!--注册-->
 		<div class="regsiter_box">
 			<h1>会员注册</h1>
-			<h2>登录&gt;</h2>
+			<br /><br />
 			<div class="clearfix"></div>
             <div class="name">
             	<span class="username">用户名</span>
@@ -97,7 +74,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<div class="regsiter">
 				<span>验证码　</span>
 				<input type="text" style="width: 170px" value="" placeholder="请输入验证码" class="input4" />
-				<img src="img/yzm.png" class="login_img">
+				<img src="img/user/yzm.png" class="login_img">
 				<div class="clearfix"></div>
 			</div><br />
             <div class="cityaddr">
@@ -111,7 +88,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             </div><!--选择省市县 end-->			
 			<br />
 			<div class="login_btn" onClick="pwd();">
-            	<span type="submit">注&nbsp;&nbsp;册</span>
+            	<button type="submit">注&nbsp;&nbsp;册</button>
             </div>
 		</div>	
 	</div>
@@ -139,23 +116,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     new locationCard({
         ids: ['pr2', 'ci2', 'co2']
     }).init();
-</script>
-<script>
-	//注册登陆切换
-	$(".regsiter_box").hide()
-	$(".login_box h2").click(
-		function(){
-			$(".login_box").hide()
-			$(".regsiter_box").show()
-		}
-	)
-	
-	$(".regsiter_box h2").click(
-		function(){
-			$(".login_box").show()
-			$(".regsiter_box").hide()
-		}
-	)
 </script>
 					
   </body>

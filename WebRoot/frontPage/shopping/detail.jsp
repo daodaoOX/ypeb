@@ -28,12 +28,8 @@
 <script src="bootstrap/js/jquery-2.1.4.min.js"></script>
 </head>
 
-<<<<<<< HEAD
-<body >
-=======
 <body
 	onload="window.parent.document.getElementById('index').height=document.body.scrollHeight;">
->>>>>>> 3299adf096613fd1725e88358ee80c3f7216472e
 
 	<div class="s_classification">
 		<div class="boundary">
@@ -85,9 +81,7 @@
 					</div>
 				</div>
 				<div class="divbuy">
-					
-						<button type="submit" value="立即购买" style="border:1px solid red;background-color:#ec1d23; color:white;width:120;height:40;font-weight:500">立即购买</button>
-					
+					<button type="submit" value="立即购买" style="border:1px solid red;background-color:#ec1d23; color:white;width:120;height:40;font-weight:500">立即购买</button>
 				</div>
 				<div class="clearfix"></div>
 					<div class="divcart">

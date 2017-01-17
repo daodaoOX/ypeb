@@ -39,13 +39,9 @@ ul,li{margin:0;padding:0;list-style:none;font-weight:normal}
 .shopping_cart_box{float:right;margin-top:31px}
 
 /*buttom*/
-<<<<<<< HEAD
-.header_bottom_bg{background-color:#ec1d23; z-index:100;}
-=======
 
 .header_bottom_bg{background-color:#ec1d23; z-index:100;}
 
->>>>>>> 3299adf096613fd1725e88358ee80c3f7216472e
 .header_bottom{width:1200px;margin:0 auto;position:relative}
 .header_bottom h2{color:#FFFFFF; position:absolute; margin-top:3px; margin-left:35px;}
 .home,.deal{font-size:14px;color:#fff;line-height:40px;float:left;}

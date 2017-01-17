@@ -16,7 +16,6 @@
 			<h1>
 					<a class="sign_up" href="javascript:void(0);">用户${userName }</a>
 				</h1>
-
 				<h1>
 					<a class="sign_in" href="#">免费注册</a>
 				</h1>
@@ -29,32 +28,26 @@
 				<h1>
 					<a class="sign_up" href="frontPage/user/login/userLogin.jsp">请登录</a>
 				</h1>
-
 				<h1>
-					<a class="sign_in" href="frontPage/user/login/userLogin.jsp">免费注册</a>
+					<a class="sign_in" href="frontPage/user/login/simpleRegister.jsp">免费注册</a>
 				</h1>
 				<h1>
 					<a class="info" href="#">我的信息</a>
 				</h1>
 			</c:otherwise>
 		</c:choose>
-
-
-
 		<div class="clearfix"></div>
 	</div>
 	<div class="top_middle"></div>
 	<div class="header_middle">
-
 		<img class="logo" src="image/index/logo.png"> 
 		<input class="search_box">
-		<input class="search_button" type="submit" value="搜索">
+		<input class="search_button" type="submit" value="搜索" />
+		<a href="frontPage/shopping/query.jsp" target="index"><span>query</span></a>
 		<div class="shopping_cart_box">
 			<img class="shopping_cart" src="image/index/shopping_cart.png">
 			<a href="frontShopping_Goods_listCar" target="index"><h1 
 					class="shopping_cart_text" id="shopping_cart_text" num="${shoppingCarNum }">购物车(${shoppingCarNum })</h1></a>
-
-
 			<div class="classfix"></div>
 		</div>
 		<div class="clearfix"></div>

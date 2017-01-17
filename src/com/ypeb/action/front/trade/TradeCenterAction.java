@@ -44,6 +44,13 @@ public class TradeCenterAction extends ActionSupport {
 			start.setDate(currentDateDay);
 			end.setDate(currentDateDay);
 			TradeK tradeK = new TradeK();
+			//TradeData tradeData=new ();
+			//tradeData.calcuMonthData(start,end);
+			//TradeK tradeK=new ();
+			//tradeK.setTradeData(tradeData);
+			//new Date().getTimeLong(),
+			//tradeK.setTime(封装start时间为规定格式的String类型);
+			//tradeKlist.add(tradeK);
 			tradeK.calcuMonthK(start, end);
 			tradeKList.add(tradeK);
 		}

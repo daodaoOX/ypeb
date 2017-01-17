@@ -36,16 +36,9 @@ String path = request.getContextPath();
         </div>
 	</div>
     
-<form action="" method="get">
+<form action="" method="get" id="shoppingCarSubmit">
   <div class="one-shop">
       <!--商品--> 
-<<<<<<< HEAD
-	<div class="sc_commodity one-goods">
-      <div class="goods-msg">
-		<div class="boundary"></div>
-		<input class="check_box goods-check GoodsCheck"  type="checkbox"  name="check_goods" value="1" data-age="11">
-		<img src="<%=path %>/img/shopping_car/commodity.png"/>
-		<h1>新货【百草味】夏威夷果200g*3袋 坚果炒货零食干果 奶油味</h1>
       <c:forEach items="${shopCarList }" var="list">
 	<div class="sc_commodity one-goods">
       <div class="goods-msg">
@@ -79,7 +72,8 @@ String path = request.getContextPath();
 		<h1>共计￥<span class="shop-total-amount ShopTotal">0</span></h1>
 		<div class="assist_box">
 					
-			<a id="dela" href="<%=path %>/frontPage/shopping/pay.jsp" onclick="parentGoTop();" target="index">
+			<a id="dela" href="<%=path %>/frontPage/shopping/pay.jsp" onclick="parentGoTop();" 
+				onclick="document.getElementById('shoppingCarSubmit').submit();" target="index">
 				<div class="divsum" onclick="checksum();">
 					<span type="submit" class="spansum" >结算</span>
 				</div>
@@ -198,7 +192,6 @@ String path = request.getContextPath();
       // 计算
     }
   });
-
   // 点击全选按钮
   $("#AllCheck").click(function() {
     if ($(this).prop("checked") == true) { //如果全选按钮被选中
@@ -210,7 +203,6 @@ String path = request.getContextPath();
     }
     $(".ShopCheck").change(); //执行店铺全选的操作
   });
-
   function TotalPrice() {
     var allprice = 0; //总价
     $(".one-shop").each(function() { //循环每个店铺
@@ -237,7 +229,6 @@ String path = request.getContextPath();
 		if(ret){
 			//do something 点确定
 		}
-
 	})
   </script>
   	<!-- 解决iframe跳转页面时位置如何返回顶部问题 -->
@@ -248,3 +239,4 @@ String path = request.getContextPath();
 	</script>
 </body>
 </html>
+

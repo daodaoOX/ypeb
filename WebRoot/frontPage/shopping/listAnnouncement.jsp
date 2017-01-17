@@ -8,21 +8,50 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <html>
   <head>
     <base href="<%=basePath%>">
-    
-    <title>My JSP 'listAnnouncement.jsp' starting page</title>
-    
-	<meta http-equiv="pragma" content="no-cache">
-	<meta http-equiv="cache-control" content="no-cache">
-	<meta http-equiv="expires" content="0">    
-	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
-	<meta http-equiv="description" content="This is my page">
-	<!--
-	<link rel="stylesheet" type="text/css" href="styles.css">
-	-->
-
+	<link rel="stylesheet" href="frontCss/shopping/announcement.css" />
   </head>
   
   <body>
-    This is my JSP page. <br>
+    <!--nav-->
+	<div class="nav_box">
+		<div class="nav">
+			<h1><a href="<%=path %>/frontPage/body.jsp" target="index">首页</a> &gt;</h1>
+			<h1>公告</h1>
+			<h1></h1>
+		</div>
+		<div class="clearfix"></div>
+	</div>
+	
+	<div class="box">
+		<div class="notice_list">
+			<div class="category">
+				<h1>标题</h1>
+				<h2>日期</h2>
+				<div class="clearfix"></div>
+			</div>
+			<div class="item">
+				<h1 class="title"><a href="frontPage/shopping/dispAnnouncement.jsp">东北地区因雨雪天气延迟发货！</a></h1>
+				<h2>2017.01.03</h2>
+				<div class="clearfix"></div>
+			</div>
+			<div class="item">
+				<h1 class="title"><a href="">东北地区因雨雪天气延迟发货！</a></h1>
+				<h2>2017.01.03</h2>
+				<div class="clearfix"></div>
+			</div>
+			<div class="item">
+				<h1 class="title"><a href="">东北地区因雨雪天气延迟发货！</a></h1>
+				<h2>2017.01.03</h2>
+				<div class="clearfix"></div>
+			</div><div class="item1">
+				<h1 class="title"><a href="">东北地区因雨雪天气延迟发货！</a></h1>
+				<h2>2017.01.03</h2>
+				<div class="clearfix"></div>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+		<div class="clearfix"></div>
+	</div>
+	<div class="addBottomHei"></div>
   </body>
 </html>
