@@ -20,7 +20,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<script src="frontJs/shopping/layer/layer.js"></script>
   </head>
   
-  <body onload="window.parent.document.getElementById('index').height=document.body.scrollHeight;">
+  <body >
    	<!---->
 	<div class="nav_box">
 		<div class="nav">
@@ -52,7 +52,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<h2>属性</h2>
 				<h2>单价</h2>
 				<h2>数量</h2>
-
 				<div class="clearfix"></div>
 			</div>
 			<div class="clearfix"></div>
@@ -64,10 +63,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<div class="boundary"></div>
 		<img src="img/shopping_car/commodity.png">
 		<h1>新货【百草味】夏威夷果200g*3袋 坚果炒货零食干果 奶油味</h1>
-		<div class="assist_box">
-			
-            <h2>x<span>1</span></h2>
-			<h2>￥<span>39.90</span></h2>
+		<div class="assist_box GoodsCheck">
+            <h2>x<span class="num">1</span></h2>
+			<h2>￥<span class="price">39.90</span></h2>
 			<h2>奶油味</h2>
 		</div>
 		<div class="clearfix"></div>
@@ -84,7 +82,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<div class="clearfix"></div>
 	</div>
 </form>	
-<!--添加地址弹出框-->
+<!-- 添加地址弹出框 -->
 	<script>
 		$("#parentIframe").on("click", function(){
 	 		layer.open({
@@ -97,6 +95,19 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	        content:"frontPage/shopping/address.jsp",
 	    });
 	});
+	</script>
+	<!-- 解决iframe跳转页面时位置如何返回顶部问题 -->
+	<script type="text/javascript">
+	function parentGoTop(){
+	parent.scrollTo(0,0);
+	}
+	function addClick(){
+	var aList=document.getElementsByTagName("a");
+	for(var i=0;i<aList.length;i++){
+	    aList[i].onclick=function(){parentGoTop();}
+	    }
+	}
+	window.onload=function(){addClick();}
 	</script>
   </body>
 </html>

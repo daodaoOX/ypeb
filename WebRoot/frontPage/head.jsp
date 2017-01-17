@@ -316,9 +316,7 @@
 
 <script type="text/javascript">
 	(function(){
-		
 		var $subblock = $(".subpage"), $head=$subblock.find('h2'), $ul = $("#proinfo"), $lis = $ul.find("li"), inter=false;
-	
 		$lis.hover(function(){
 			if(!$(this).hasClass('nochild')){
 				$(this).addClass("prosahover");
@@ -346,5 +344,18 @@
         }).mouseout(function (){  
             $(".classification_box").hide();  
         }); 
+	</script>
+		<!-- 解决iframe跳转页面时位置如何返回顶部问题 -->
+	<script type="text/javascript">
+		function parentGoTop(){
+		parent.scrollTo(0,0);
+		}
+		function addClick(){
+		var aList=document.getElementsByTagName("a");
+		for(var i=0;i<aList.length;i++){
+		    aList[i].onclick=function(){parentGoTop();}
+		    }
+		}
+		window.onload=function(){addClick();}
 	</script>
 </html>

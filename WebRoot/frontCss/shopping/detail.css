@@ -8,7 +8,7 @@
 
 /*商品信息*/
 .commodity{width:1200px;margin:0 auto}
-#box{width:400px;height:500px;margin: 0 auto; background:url(../../img/detail/commodity_1.png) no-repeat;overflow: hidden;}
+#box{width:400px;height:500px;margin: 0 auto; background:no-repeat;overflow: hidden;}
 .commodity_s_img span img{margin-top:410px;}
 .spanbuy{font-size:14px; font-weight:500; color:#FFFFFF; margin-left:32px; position:absolute; margin-top:10px;}
 .divbuy{ border:1px solid red; width:120px; height:40px; background-color:#ec1d23;border-radius:4px; margin-top:210px; margin-left:50px;}
@@ -35,7 +35,7 @@
 .integral{font-size:24px;color:#ec1d23;line-height:48px;margin-left:60px;text-align:right}
 .quantity{margin:16px 0 0 60px}
 .purchase_box .name .vip_price{color:#ec1d23}
-.quantity img,input{float:left}
+.quantity img,input{float:left;margin-top:50px;}
 .quantity img{margin:5px}
 .quantity input{padding-right:8px;width:30px;height:20px;border:1px solid #d9d9d9;text-align:right}
 .purchase_box .purchase,.purchase_shopping_cart{width:140px;height:40px;color:#fff;background-color:#ec1d23;border-radius:2px;margin-right:20px;clear:both}
@@ -68,3 +68,4 @@
 .commodity_detail h1{font-size:20px;width:200px;line-height:40px;text-align:center;color:#fff;background-color:#ec1d23}
 .commodity_detail ul{font-size:14px;color:#7f7f7f;width:270px;float:left;overflow:hidden;margin-right:30px;white-space:nowrap;line-height:30px}
 .image{margin-top:20px}
+

@@ -10,7 +10,7 @@ String path = request.getContextPath();
 		<link rel="stylesheet" type="text/css" href="<%=path %>/frontCss/header_and_footer.css">
 		<script type="text/javascript" src="<%=path %>/bootstrap/js/jquery-2.1.4.min.js"></script>
 	</head>
-<body onload="window.parent.document.getElementById('index').height=document.body.scrollHeight;">
+<body>
     <div class="nav_box">
 		<div class="nav">
 			<h1><a href="<%=path %>/frontPage/body.jsp" target="index">首页</a> &gt;</h1>
@@ -143,7 +143,7 @@ String path = request.getContextPath();
 		<h1>共计￥<span class="shop-total-amount ShopTotal">0</span></h1>
 		<div class="assist_box">
 					
-			<a id="dela" href="<%=path %>/frontPage/shopping/pay.jsp" target="index">
+			<a id="dela" href="<%=path %>/frontPage/shopping/pay.jsp" onclick="parentGoTop();" parentGoTop target="index">
 				<div class="divsum" onclick="checksum();">
 					<span type="submit" class="spansum" >结算</span>
 				</div>
@@ -304,5 +304,11 @@ String path = request.getContextPath();
 
 	})
   </script>
+	<!-- 解决iframe跳转页面时位置如何返回顶部问题 -->
+	<script type="text/javascript">
+		function parentGoTop(){
+		parent.scrollTo(0,0);
+		}
+	</script>
 </body>
 </html>

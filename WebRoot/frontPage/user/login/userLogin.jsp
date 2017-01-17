@@ -43,6 +43,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<div class="bg_box">
 		<img src="img/user/banner_bg.png" class="bg_img">
 		<!--登陆-->
+		<form action="login" onsubmit="return validateCallback(this);" method="post">
 		<div class="login_box">
 			<h1>会员登陆</h1>
 			<h2>免费注册&gt;</h2>
@@ -65,9 +66,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			</div>
 			<p class="wjmm">忘记密码</span>
 			<div class="clearfix"></div>
-			<div class="login_btn">登　录</div>
+			<div class="login_btn" type="submit">登　录</div>
 		</div>
+		</form>
 		<!--注册-->
+		<form action="">
 		<div class="regsiter_box">
 			<h1>会员注册</h1>
 			<h2>登录&gt;</h2>
@@ -111,6 +114,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             	<span type="submit">注&nbsp;&nbsp;册</span>
             </div>
 		</div>	
+		</form>
 	</div>
     <!-- 验证手机号和密码格式是否正确 -->
     <script>
