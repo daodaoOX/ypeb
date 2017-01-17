@@ -1,0 +1,23 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*统计栏*/
+	.list_line{width:720px; height: 1px;background-color: #d9d9d9;}
+	.statistics_box{ margin-bottom: 20px;}
+	.statistics{width:144px;text-align: center;font-size:14px; float: left;}
+	.statistics p{line-height:54px;  color:#4c4c4c; }
+	.statistics span{ color:#ec1d23;line-height: 14px; margin-bottom: 20px}
+	/*订单*/
+
+	.list img{float:left;margin: 10px 0;}
+	.list p{ float: left; line-height: 92px; font-size: 14px;color:#4d4d4d}
+	.list_p1{width:200px; margin-left:10px;}
+	.list_p2{width:90px;text-align: center; margin: 0 10px;}
+	.list_p3{width:128px;text-align: center;}
+	.list_p4{width:70px;text-align: center; margin: 0 30px;}
+	.list_p5{width:70px;text-align:right;}
+/*交易明细_翻页按钮*/
+.pagination_box{ margin-left: 126px; margin-top: 45px;}
+.pagination_box span{ display: block; width: 28px; line-height:28px; font-size: 16px;text-align: center;border: solid 1px #bfbfbf; float: left; margin-right: 10px}
+.pagination_box p{line-height: 28px}
+.box{float:left; margin-left: 47px}

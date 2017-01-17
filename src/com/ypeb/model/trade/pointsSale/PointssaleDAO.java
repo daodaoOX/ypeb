@@ -1,12 +1,14 @@
 package com.ypeb.model.trade.pointsSale;
 
-import java.math.BigInteger;
 import java.sql.Timestamp;
 import java.util.List;
 
 import org.hibernate.LockOptions;
 import org.hibernate.Query;
-import org.hibernate.criterion.Example;
+import org.hibernate.criterion.Order;
+
+import static org.hibernate.criterion.Example.create;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -26,8 +28,16 @@ import com.ypeb.dataClass.front.QueryCondition;
 public class PointssaleDAO extends BaseHibernateDAO {
 	private static final Logger log = LoggerFactory
 			.getLogger(PointssaleDAO.class);
+	// property constants
+	public static final String SALE_ID = "saleId";
+	public static final String NUM = "num";
+	public static final String PRICE = "price";
+	public static final String ALL_PRICE = "allPrice";
+	public static final String STATE = "state";
+	public static final String RESIDUE = "residue";
+	public static final String SELECT_ALL = "selectAll";
 
-	public List<Pointssale> comprehensiveQuery(String state, String userID,
+	public List<Pointssale> comprehensiveQuery(Pointssale pointsSale,
 			QueryCondition queryCondition) {
 		/**
 		 * @author jilin
@@ -36,24 +46,45 @@ public class PointssaleDAO extends BaseHibernateDAO {
 		 */
 		log.debug("finding Pointssale total sale points ");
 		try {
-			String queryString = "from Pointssale as model";
-			if (state == null) {
-				if (userID != null)
-					queryString += " where saleID=" + userID;
+			List<Pointssale> results;
+			if (queryCondition.getOrderDirection() == "asc") {
+				results = (List<Pointssale>) getSession()
+						.createCriteria(
+								"com.ypeb.model.trade.pointsSale.Pointssale")
+						.add(create(pointsSale))
+						.addOrder(Order.asc(queryCondition.getOrderField()))
+						.list();
 
 			} else {
-				if (userID != null) {
-					queryString += " where state=" + state
-							+ " and saleID=" + userID;
-				} else
-					queryString += " where state=" + state;
+				results = (List<Pointssale>) getSession()
+						.createCriteria(
+								"com.ypeb.model.trade.pointsSale.Pointssale")
+						.add(create(pointsSale))
+						.addOrder(Order.asc(queryCondition.getOrderField()))
+						.list();
 			}
-			if (queryCondition != null ){
-				queryString += " order by " + queryCondition.getOrderField()
-						+ " " + queryCondition.getOrderDirection();}
-			getSession().flush();
-			Query queryObject = getSession().createQuery(queryString);
-			return queryObject.list();
+			log.debug("find by example successful, result size: "
+					+ results.size());
+			return results;
+
+			// String queryString = "from Pointssale as model";
+			// if (state == null) {
+			// if (userID != null)
+			// queryString += " where saleID=" + userID;
+			//
+			// } else {
+			// if (userID != null) {
+			// queryString += " where state=" + state
+			// + " and saleID=" + userID;
+			// } else
+			// queryString += " where state=" + state;
+			// }
+			// if (queryCondition != null ){
+			// queryString += " order by " + queryCondition.getOrderField()
+			// + " " + queryCondition.getOrderDirection();}
+			// getSession().flush();
+			// Query queryObject = getSession().createQuery(queryString);
+			// return queryObject.list();
 		} catch (RuntimeException re) {
 			log.error("find by property name failed", re);
 			throw re;
@@ -120,7 +151,7 @@ public class PointssaleDAO extends BaseHibernateDAO {
 			List results = getSession()
 					.createCriteria(
 							"com.ypeb.model.trade.pointsSale.Pointssale")
-					.add(Example.create(instance)).list();
+					.add(create(instance)).list();
 			log.debug("find by example successful, result size: "
 					+ results.size());
 			return results;
@@ -143,6 +174,34 @@ public class PointssaleDAO extends BaseHibernateDAO {
 			log.error("find by property name failed", re);
 			throw re;
 		}
+	}
+
+	public List<Pointssale> findBySaleId(Object saleId) {
+		return findByProperty(SALE_ID, saleId);
+	}
+
+	public List<Pointssale> findByNum(Object num) {
+		return findByProperty(NUM, num);
+	}
+
+	public List<Pointssale> findByPrice(Object price) {
+		return findByProperty(PRICE, price);
+	}
+
+	public List<Pointssale> findByAllPrice(Object allPrice) {
+		return findByProperty(ALL_PRICE, allPrice);
+	}
+
+	public List<Pointssale> findByState(Object state) {
+		return findByProperty(STATE, state);
+	}
+
+	public List<Pointssale> findByResidue(Object residue) {
+		return findByProperty(RESIDUE, residue);
+	}
+
+	public List<Pointssale> findBySelectAll(Object selectAll) {
+		return findByProperty(SELECT_ALL, selectAll);
 	}
 
 	public List findAll() {

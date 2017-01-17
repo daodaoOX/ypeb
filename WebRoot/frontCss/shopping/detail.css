@@ -35,9 +35,9 @@
 .integral{font-size:24px;color:#ec1d23;line-height:48px;margin-left:60px;text-align:right}
 .quantity{margin:16px 0 0 60px}
 .purchase_box .name .vip_price{color:#ec1d23}
-.quantity img,input{float:left;margin-top:50px;}
+.quantity img,input{float:left}
 .quantity img{margin:5px}
-.quantity input{padding-right:8px;width:30px;height:20px;border:1px solid #d9d9d9;text-align:right}
+.quantity input{padding-right:8px;width:60px;height:20px;border:1px solid #d9d9d9;text-align:right;margin-left:20px;}
 .purchase_box .purchase,.purchase_shopping_cart{width:140px;height:40px;color:#fff;background-color:#ec1d23;border-radius:2px;margin-right:20px;clear:both}
 .purchase{margin:20px}
 .purchase_shopping_cart{margin:-60px 200px 0}
@@ -56,16 +56,16 @@
 .service h3{font-size:12px;text-align:center;margin-bottom:30px;color:#808080}
 
 
-/*推荐商品  规格参数*/
+/*活动  规格参数*/
 .relative_a_detail{width:1200px;margin:30px auto}
-.foot_box{float:left;}
-.foot{margin-bottom:20px}
-.foot .name{font-size:14px;line-height:40px}
-.foot_price{font-size:20px;line-height:40px;color:#ec1d23;float:right}
+.activity_box{float:left;width:200px !important}
+.activity_box img{margin-bottom:20px !important}
+
 
 .gray_border{padding:10px 10px 0 10px}
-.commodity_detail{float:left;margin-left:40px}
+.commodity_detail p{font-size:14px;color:#808080}
+.gray_border img{margin:20px 0}
+.commodity_detail{float:left;margin-left:40px;width:960px !important}
 .commodity_detail h1{font-size:20px;width:200px;line-height:40px;text-align:center;color:#fff;background-color:#ec1d23}
-.commodity_detail ul{font-size:14px;color:#7f7f7f;width:270px;float:left;overflow:hidden;margin-right:30px;white-space:nowrap;line-height:30px}
-.image{margin-top:20px}
+
 

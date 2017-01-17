@@ -32,10 +32,14 @@ ul,li{margin:0;padding:0;list-style:none;font-weight:normal}
 .floor .floor_ad{margin-right:20px}
 .floor .foot{margin-left:20px;margin-bottom:0px;position:relative}
 .foot .name{width:100%;font-size:14px;color:#fff;line-height:30px;text-align:center;background-color:rgba(0,0,0,0.5);position:absolute;margin-top:-30px}
-.foot .price{line-height:37px;color:#ec1d23;font-size:24px;float:left}
-.foot .foot_shopping_cart{float:right;margin:6px;transition:transform 0.1s linear}
+
+.foot .price{float:left;padding:6px 0 6px 6px}
+.foot .vip_price{line-height:20px;color:#ec1d23;font-size:16px !important}
+.foot h2{font-size:12px !important;line-height:20px;color:#808080}
+.foot .foot_shopping_cart{float:right;margin:10px;transition:transform 0.1s linear}
+
 .foot .img_box{width:200px;height:200px;overflow:hidden}
 
-.foot .foot_img{transition:transform 0.5s linear; width:200; height:200;}
+.foot .foot_img{transition:transform 0.5s linear;width:200px;height:200px;}
 .foot .foot_img:hover{transform: scale(1.05,1.05)}
 .foot .foot_shopping_cart:hover{transform: scale(1.05,1.05)}

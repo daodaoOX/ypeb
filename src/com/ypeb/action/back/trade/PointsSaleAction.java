@@ -13,8 +13,7 @@ public class PointsSaleAction extends ActionSupport {
 	private int totalSale;// 现在平台挂卖的积分总量
 	private List<Pointssale> pointsSaleList;
 	private String telephone;
-	private String state;
-	private String userID;
+
 	// JUI JSON返回
 	private String statusCode;
 	private String message;
@@ -27,6 +26,10 @@ public class PointsSaleAction extends ActionSupport {
 	private String orderDirection="asc";
 	private String orderField="time";
 	private Page page;
+	
+	//综合查询条件
+	
+	Pointssale pointsSale;
 
 	public String comprehensiveQuery() {
 		/**
@@ -41,8 +44,10 @@ public class PointsSaleAction extends ActionSupport {
 		if (orderDirection != null && orderDirection != "") {
 			queryCondition.setOrderDirection(orderDirection);
 		}
-		System.out.println("state="+state+"  userID="+userID+" orderField="+orderField);
-		pointsSaleList = new PointssaleDAO().comprehensiveQuery(state, userID,
+		
+		pointsSale.setSelectAll(true);
+
+		pointsSaleList = new PointssaleDAO().comprehensiveQuery(pointsSale,
 				queryCondition);
 		
 		totalSale = new PointssaleDAO().totalSalePoints();
@@ -162,20 +167,14 @@ public class PointsSaleAction extends ActionSupport {
 		this.forwardUrl = forwardUrl;
 	}
 
-	public String getState() {
-		return state;
+
+
+	public Pointssale getPointsSale() {
+		return pointsSale;
 	}
 
-	public void setState(String state) {
-		this.state = state;
-	}
-
-	public String getUserID() {
-		return userID;
-	}
-
-	public void setUserID(String userID) {
-		this.userID = userID;
+	public void setPointsSale(Pointssale pointsSale) {
+		this.pointsSale = pointsSale;
 	}
 	
 

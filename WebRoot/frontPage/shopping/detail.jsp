@@ -28,7 +28,12 @@
 <script src="bootstrap/js/jquery-2.1.4.min.js"></script>
 </head>
 
+<<<<<<< HEAD
 <body >
+=======
+<body
+	onload="window.parent.document.getElementById('index').height=document.body.scrollHeight;">
+>>>>>>> 3299adf096613fd1725e88358ee80c3f7216472e
 
 	<div class="s_classification">
 		<div class="boundary">
@@ -53,13 +58,13 @@
 				<span id="img4"><img width="72px" height="72px" id="src4"
 					src="upload/image/goods/${goods.imageUrl1 }"></span> 
 				<span id="img5"><img width="72px" height="72px" id="src5"
-					src="upload/image/goods/${goods.imageUrl1 }"></span>
-			</div>
+					src="upload/image/goods/${goods.imageUrl1 }"></span>			</div>
 		</div>
 		<div class="commodity_information">
 			<h1 class="commodity_name">${goods.name }</h1>
 			<h1 class="commodity_number">商品货号：${goods.code }</h1>
-			<form action="">
+			<form action="frontShopping_Goods_payPre" method="post">
+			<input type="hidden" value="${goods.id }" name="id">
 			<div class="purchase_box">
 				<div class="name">
 					<h1 class="vip_price">商城会员价：</h1>
@@ -72,22 +77,22 @@
 					<h1 class="price">￥${goods.price }</h1>
 					<h1 class="integral">${goods.givePoints }</h1>
 					<div class="quantity">
-						<input name="numtext"
+						<input name="num"
 							class="am-num-text" type="text" value="1"
 							onkeyup="this.value=this.value.replace(/\D/g,'')"
-							onafterpaste="this.value=this.value.replace(/\D/g,'')">
+							onafterpaste="this.value=this.value.replace(/\D/g,'')"> 
 						<div class="clearfix"></div>
 					</div>
 				</div>
 				<div class="divbuy">
-					<a href="frontShopping_Goods_payPre?id=${goods.id }" target="index">
-						<span type="submit" class="spanbuy" onclick="nowbuy();">立即购买</span>
-					</a>
+					
+						<button type="submit" value="立即购买" style="border:1px solid red;background-color:#ec1d23; color:white;width:120;height:40;font-weight:500">立即购买</button>
+					
 				</div>
 				<div class="clearfix"></div>
 					<div class="divcart">
-						<a href="frontPage/shopping/shoppingCar.jsp" target="index">
-							<span type="submit" class="spancart">加入购物车</span>
+						<a href="javascritp:void(0)" target="index">
+							<span type="submit" class="spancart" shopID="${goods.id }">加入购物车</span>
 						</a>
 					</div>
 				<div class="clearfix"></div>
@@ -113,32 +118,51 @@
 
 	<!--相关分类  商品详情-->
 	<div class="relative_a_detail">
-		<div class="foot_box">
-			<div class="activty_box">
-				<c:forEach items="${ adList}" var="list">
+		
+			<div class="activity_box">
+				<c:forEach items="${adList }" var="list">
 					<img src="upload/image/advertisement/${list.url }">
 				</c:forEach>
 			</div>
-			<div class="clearfix"></div>
-		</div>
+			
 		<div class="commodity_detail">
-			<div>
-				<h1>规格参数</h1>
-				<div class="gray_border">
-					${goods.specification }
-					<div class="clearfix"></div>
-				</div>
-				<div class="clearfix"></div>
-			</div>
-			<div class="image">
-				<p>商品介绍：</p>
+			<h1>规格参数</h1>
+			<p>${goods.specification } </p>
+			<div class="gray_border">
+				
 				${goods.description }
 			</div>
 		</div>
 		<div class="clearfix"></div>
 	</div>
 	<!--商铺主图切换-->
-	<script>
+	<script type="text/javascript">
+
+$(document).ready(function(){
+  $(".spancart").click(function(){
+
+	var shopID = $(this).attr("shopID");
+
+	$.post("frontShopping_Goods_addShoppingCar",{"shopID":shopID},function(data,status){
+
+     	var v2 = $('#shopping_cart_text', window.parent.document);
+     	
+		if(data.statusCode=='200'){
+		alert("添加成功");
+		v2.html("购物车("+data.shopCarNum+")");//要刷新的div,(dates=shopNum+1)购物车中的数量
+		}else{
+			alert("请先登录");
+		}
+      	
+ 		
+      	
+    });
+  });
+});
+
+</script>
+	
+<script>
 		
 		window.onload = function() {
 			var src1 = $("#src1").attr('src');
@@ -169,11 +193,12 @@
 	<!-- 获得页面输入的数量 -->
 	<script>
 	function nowbuy(){
+		parent.scrollTo(0,0);
 		var val = $("input[name='numtext']").val();
 		alert(val);
 		$.ajax({
+			type: "get",
 		    url: "/action",
-		    type: "post",
 		    data: val,
 		    success: function (result) {
 		        //handle
@@ -181,5 +206,6 @@
 		});
 	}
 	</script>
+
 </body>
 </html>

@@ -2,6 +2,8 @@ package com.ypeb.model.trade.pointsSale;
 
 import java.sql.Timestamp;
 
+import javax.persistence.Column;
+
 /**
  * AbstractPointssale entity provides the base persistence definition of the
  * Pointssale entity. @author MyEclipse Persistence Tools
@@ -19,7 +21,7 @@ public abstract class AbstractPointssale implements java.io.Serializable {
 	private Double allPrice;
 	private Short state;
 	private Short residue;
-	private Short selectAll;
+	private Boolean selectAll;
 
 	// Constructors
 
@@ -30,7 +32,7 @@ public abstract class AbstractPointssale implements java.io.Serializable {
 	/** full constructor */
 	public AbstractPointssale(Integer saleId, Timestamp time, Double num,
 			Double price, Double allPrice, Short state, Short residue,
-			Short selectAll) {
+			Boolean selectAll) {
 		this.saleId = saleId;
 		this.time = time;
 		this.num = num;
@@ -107,11 +109,12 @@ public abstract class AbstractPointssale implements java.io.Serializable {
 		this.residue = residue;
 	}
 
-	public Short getSelectAll() {
+	@Column(name = "selectAll", nullable = false)
+	public Boolean getSelectAll() {
 		return this.selectAll;
 	}
 
-	public void setSelectAll(Short selectAll) {
+	public void setSelectAll(Boolean selectAll) {
 		this.selectAll = selectAll;
 	}
 

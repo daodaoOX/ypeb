@@ -44,12 +44,9 @@ a{text-decoration:none}
 .check_out_box .assist_box{float:right}
 .check_out_box h1{font-size:16px;color:#ec1d23;line-height:40px;margin-left:83%;}
 .check_out_box input{width:80px;height:40px;background-color:#ec1d23;font-size:18px;color:#fff;border-radius:4px;margin-right:20px}
-
-
 a:link{ color:#000; text-decoration:none;}
 a:visited{color:#000;text-decoration:none;}
 a:hover{color:#000;text-decoration:none;}
 .spansum{border:1x solid #000; font-size:18px; font-weight:500; margin-top:6px; margin-left:20px; position:absolute;}
 .divsum{ border:1px solid red; width:80px; height:40px; background-color:#ec1d23;border-radius:4px;}
-.addtype{position:absolute; margin-left:-90px}
-.am-num-text{position:absolute; margin-left:-60px}
+.shoppingCarImg{width:72px;height:72px;}

@@ -11,6 +11,7 @@
 	<link rel="stylesheet" type="text/css" href="frontCss/bottom.css">
 	<script type="text/javascript" src="bootstrap/js/jquery-2.1.4.min.js"></script>
   </head>
+
 	<div class="footer_bg">
 	<div class="footer_box">
 		<div class="footer_nav">
