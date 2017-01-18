@@ -16,10 +16,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<meta http-equiv="expires" content="0">    
 	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 	<meta http-equiv="description" content="This is my page">
-	<!--
-	<link rel="stylesheet" type="text/css" href="styles.css">
-	-->
-
+	
+	<link rel="stylesheet" href="frontCss/header_and_footer.css"
+		type="text/css">
+	<link rel="stylesheet" href="frontCss/user/login.css" type="text/css">
+	<script src="bootstrap/js/jquery-2.1.4.min.js"></script>
+	<!--引用城市插件-->
+	<link href="frontJs/user/areaselect.css" type="text/css"
+		rel="stylesheet" />
+	<script type="text/javascript" src="frontJs/user/data.js"></script>
+	<script type="text/javascript" src="frontJs/user/areaselect.js"></script>
   </head>
   
   <body>
@@ -34,5 +40,83 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	4、返回信息。提交之后如果手机号已经被注册要有提示行。
 	
 	  -->
+	  
+	      
+ 	<div class="logo1">
+		<img src="img/user/logo.png">
+	</div>
+	<div class="bg_box">
+		<img src="img/user/banner_bg.png" class="bg_img">
+		<!--注册-->
+		<div class="regsiter_box">
+			<h1>会员注册</h1>
+			<br /><br />
+			<div class="clearfix"></div>
+            <div class="name">
+            	<span class="username">用户名</span>
+                <input type="text" value="" placeholder="请输入用户名" class="input0"/>
+            </div>
+			<div class="regsiter">
+				<span>手机号</span>
+				<input type="text" value="" name="phone" placeholder="请输入你的手机号" class="input1" />
+				<div class="clearfix"></div>
+			</div>
+			<div class="regsiter">
+				<span>设置密码</span>
+				<input type="text" value="" name="pwdo" placeholder="请输入8~16位新密码" class="input2" />
+				<div class="clearfix"></div>
+			</div>
+			<div class="regsiter">
+				<span>确认密码</span>
+				<input type="text" value="" name="pwdt" placeholder="请重新输入8~16位新密码" class="input3"/>
+				<div class="clearfix"></div>
+			</div>
+			<div class="regsiter">
+				<span>验证码　</span>
+				<input type="text" style="width: 170px" value="" placeholder="请输入验证码" class="input4" />
+				<img src="img/user/yzm.png" class="login_img">
+				<div class="clearfix"></div>
+			</div><br />
+            <div class="cityaddr">
+				<span>地址</span>
+			</div>
+            <!--选择省市县-->
+            <div class="mycity">
+                <input id="pr2" type="text" placeholder="省份" />
+                <input id="ci2" type="text" placeholder="城市" />
+                <input id="co2" type="text" placeholder="县级" />
+            </div><!--选择省市县 end-->			
+			<br />
+			<div class="login_btn" onClick="pwd();">
+            	<button type="submit">注&nbsp;&nbsp;册</button>
+            </div>
+		</div>	
+	</div>
+    <!-- 验证手机号和密码格式是否正确 -->
+    <script>
+	function pwd(){
+		var phone = $("input[name='phone']").val();
+		if(phone && /^1[3|4|5|7|8]\d{9}$/.test(phone)){
+			//alert($("input[name='phone']").val());
+		} else{
+			alert("手机号码格式不正确!");
+		}
+    	if($("input[name='pwdo']").val()==$("input[name='pwdt']").val()){
+			//alert("yes");
+	    }else{
+			alert("重复输入的密码不正确!");		
+	  }
+	}
+    </script>
+    <!-- 注册选择城市 -->
+<script type="text/javascript">
+    new locationCard({
+        ids: ['pr1', 'ci1', 'co1']
+    }).init();
+    new locationCard({
+        ids: ['pr2', 'ci2', 'co2']
+    }).init();
+</script>
+					
   </body>
 </html>

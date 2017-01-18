@@ -76,7 +76,7 @@
 			<div>
 				<h1 class="headline">商城公告</h1>
 				<h1 class="more">
-					<a href="#">更多></a>
+					<a href="<%=path%>/frontPage/shopping/listAnnouncement.jsp">更多></a>
 				</h1>
 				<div class="clearfix"></div>
 			</div>

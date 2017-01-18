@@ -24,22 +24,25 @@ public class User extends AbstractUser implements java.io.Serializable {
 	public User(String password, String payPassword, String telephone,
 			String name, String province, String city, String country,
 			Short level, Boolean inforIsFull, Integer style) {
-		super(password, payPassword, telephone, name, province, city, country, level,
-				inforIsFull, style);
+		super(password, payPassword, telephone, name, province, city, country,
+				level, inforIsFull, style);
 		// TODO Auto-generated constructor stub
 	}
 
 	public User(User user, String password, String payPassword,
 			String telephone, String name, String province, String city,
-			String country, String idcard, Short level, Integer cash,
-			Integer usingPoints, Boolean inforIsFull, String imageUrl,
-			Integer style, Set<Address> addresses, Set<User> users,
+			String country, String idcard, Short level, Double cash,
+			Double usingPoints, Boolean inforIsFull, String imageUrl,
+			Integer style, Double icePoints, Double tradePoints,
+			String bankCard, Set<Address> addresses, Set<User> users,
 			Set<Bankcard> bankcards) {
 		super(user, password, payPassword, telephone, name, province, city, country,
 				idcard, level, cash, usingPoints, inforIsFull, imageUrl, style,
-				addresses, users, bankcards);
+				icePoints, tradePoints, bankCard, addresses, users, bankcards);
 		// TODO Auto-generated constructor stub
 	}
+
+
 
 	/** full constructor */
 

@@ -82,7 +82,7 @@ public class IndexAction extends ActionSupport {
 		 * @date : 2017年1月11日 下午3:08:31
 		 * @descripe:进入首页使用的方法
 		 */
-		ActionContext.getContext().put("userID", "1");
+		
 		
 		GoodscategoryDAO categoryDao = new GoodscategoryDAO();
 		GoodsDAO goodsDao = new GoodsDAO();

@@ -38,3 +38,5 @@ border-radius: 3px;padding-left: 10px;font-size: 12px; color: #b2b2b2;}
 .mycity input{border:1px solid #CCC; width:80px;height:25px;}
 .mycity{margin-left:70px;}
 .cityaddr{color:#4c4c4c;font-size:14px;position:absolute;top:295px;}
+.login_btn{background-color:#F00;}
+.login_btn button{background-color:#F00;border:1px solid red; color:white;width:120;height:40;font-weight:500;font-size:18px;}

@@ -161,26 +161,8 @@
 					</div>
 					<div class="accordionContent">
 						<ul class="tree treeFolder">
-							<li><a href="tabsPage.html" target="navTab">super权限管理</a>
-								<ul>
-									<li><a href="main.html" target="navTab" rel="main">我的主页</a></li>
-									<li><a href="http://www.baidu.com" target="navTab"
-										rel="page1">页面一(外部页面)</a></li>
-									<li><a href="demo_page2.html" target="navTab"
-										rel="external" external="true">iframe navTab页面</a></li>
-									<li><a href="demo_page1.html" target="navTab" rel="page1"
-										fresh="false">替换页面一</a></li>
-									<li><a href="demo_page2.html" target="navTab" rel="page2">页面二</a></li>
-									<li><a href="demo_page4.html" target="navTab" rel="page3"
-										title="页面三（自定义标签名）">页面三</a></li>
-									<li><a href="demo_page4.html" target="navTab" rel="page4"
-										fresh="false">测试页面（fresh="false"）</a></li>
-									<li><a href="w_editor.html" target="navTab">表单提交会话超时</a></li>
-									<li><a href="demo/common/ajaxTimeout.html" target="navTab">navTab会话超时</a></li>
-									<li><a href="demo/common/ajaxTimeout.html" target="dialog">dialog会话超时</a></li>
-									<li><a href="index_menu.html" target="_blank">横向导航条</a></li>
-								</ul></li>
-							<li><a href="dwz.frag.xml" target="navTab" external="true">dwz.frag.xml</a></li>
+							<li><a href="tabsPage.html" target="navTab">super权限管理</a></li>
+
 						</ul>
 					</div>
 
@@ -194,11 +176,9 @@
 					<div class="accordionContent">
 						<ul class="tree treeFolder">
 							<li><a href="backShopping_PointsPublish_list"
-								target="navTab" rel="pointsPublish" fresh="true">积分发行</a>
-								</li>
+								target="navTab" rel="pointsPublish" fresh="true">积分发行</a></li>
 							<li><a href="backShopping_PointsBuyRecord_list"
-								target="navTab" rel="points" fresh="true">发行积分售卖记录</a>
-								</li>
+								target="navTab" rel="points" fresh="true">发行积分售卖记录</a></li>
 						</ul>
 					</div>
 
@@ -252,10 +232,8 @@
 					</div>
 					<div class="accordionContent">
 						<ul class="tree treeFolder">
-							<li><a href="tabsPage.html" target="navTab">会员管理</a>
-								<ul>
-
-								</ul></li>
+							<li><a href="backPage/user/list.jsp" target="navTab"
+								rel="userManage" fresh="true">会员管理</a></li>
 						</ul>
 					</div>
 
@@ -342,27 +320,10 @@
 				<div class="navTab-panel tabsPageContent layoutBox">
 					<div class="page unitBox">
 						<div class="accountInfo">
-							<div class="alertInfo">
-								<p>
-									<a href="https://code.csdn.net/dwzteam/dwz_jui/tree/master/doc"
-										target="_blank" style="line-height:19px"><span>DWZ框架使用手册</span></a>
-								</p>
-								<p>
-									<a href="http://pan.baidu.com/s/18Bb8Z" target="_blank"
-										style="line-height:19px">DWZ框架开发视频教材</a>
-								</p>
-							</div>
-							<div class="right">
-								<p style="color:red">
-									DWZ官方微博 <a href="http://weibo.com/dwzui" target="_blank">http://weibo.com/dwzui</a>
-								</p>
-							</div>
-							<p>
-								<span>DWZ富客户端框架</span>
-							</p>
-							<p>
-								DWZ官方微博:<a href="http://weibo.com/dwzui" target="_blank">http://weibo.com/dwzui</a>
-							</p>
+							<div class="alertInfo"></div>
+							<div class="right"></div>
+							<p></p>
+							<p></p>
 						</div>
 
 
@@ -382,8 +343,8 @@
 	</div>
 
 	<div id="footer">
-		Copyright &copy; 2010 <a href="demo_page2.html" target="dialog">DWZ团队</a>
-		京ICP备05019125号-10
+		Copyright &copy; 2016 <a href="javascript:void(0);" target="dialog">沂品电子商务平台&赛捷技术</a>
+		备案号
 	</div>
 
 </body>

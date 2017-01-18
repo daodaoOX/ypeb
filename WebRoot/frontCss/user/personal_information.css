@@ -25,7 +25,7 @@
 /*右侧内容*/
 	/*资产中心*/
 	.right_box{float:left; margin-left: 47px}
-	.asset_Center {margin-top: 73px;}
+	.asset_Center{margin-top:100px;}
 	.property{width:150px; height:150px ; border-radius: 10px;
 	float: left; background:#fff;box-shadow: 1.414px 1.414px 4px 0px rgba(230, 230, 230, 1) ; margin-right:30px; margin-bottom: 13px;}
 	.property_bor{width:148px; height:148px; border: solid 1px #ec1d23;}

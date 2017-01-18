@@ -17,7 +17,7 @@ public class Test {
 		Address address=new Address();
 		User user=new UserDAO().findById(1);
 		address.setUser(user);
-		List<Address> list=new AddressDAO().findByUser(user);
+		List<Address> list=new AddressDAO().findByUser(user,false);
 		System.out.println(list.size());
 
 	}
