@@ -62,7 +62,7 @@
 	</div>
 	<div class="AD_box">
 		<c:forEach items="${advertList }" var="ad">
-			<img src="upload/image/advertisement/${ad.url }">
+			<img src="upload/image/advertisement/${ad.url }" width="435px" height="200px">
 		</c:forEach>
 		<div class="notice">
 			<div>
