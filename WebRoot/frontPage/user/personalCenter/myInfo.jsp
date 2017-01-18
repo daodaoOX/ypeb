@@ -35,7 +35,7 @@
 			<li>市：</li>
 			<li>县（区）：</li>
 		</ul>
-		<ol>
+		<ol style="margin:0;">
 			<li>${user.id }</li>
 			<li>${user.name }</li>			
 			<li>${user.telephone }</li>
@@ -52,7 +52,7 @@
 			<li>${user.country}</li>
 		</ol>
 		<div class="my">
-			<img src="/img/personal_information/touxiang2.png">
+			<img src="img/personal_information/touxiang2.png">
 			<div class="compile">编辑</div>
 		</div>
 		<div class="clearfix"></div>

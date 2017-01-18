@@ -75,7 +75,7 @@ public class GoodsAction extends ActionSupport {
 		double price=setting.getPrice();
 		pointsPrice=order.getTotalprice()*price;
 		
-		addressList=new AddressDAO().findByUser(user);
+		addressList=new AddressDAO().findByUser(user,false);
 		ActionContext.getContext().getSession().put("order", order);
 		destUrl="frontPage/shopping/pay.jsp";
 		return "diyUrl";

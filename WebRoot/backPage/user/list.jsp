@@ -39,26 +39,14 @@
 
 	<form rel="pagerForm" onsubmit="return navTabSearch(this);"
 		class="pageForm required-validate"
-		action="backShopping_GoodsOrder_comprehensiveQuery" method="post">
+		action="backUser_UserManage_queryUser" method="post">
 		<div class="searchBar">
 			<ul class="searchContent">
-			<li><label>订单号：</label> <input type="text"
-					name="id" value="${order.id }" /></li>
-				<li><label>购买人ID：</label> <input type="text"
-					name="uid" value="${order.userId }" /></li>
-				<li><label>商品ID：</label> <input type="text"
-					name="goodsID" value="${order.goodsId }" /></li>
-					</ul>
-			<ul>
-				<li><label>订单状态：</label><select class="combox"
-					name="order.state">
-						<option value="${order.state }">订单状态(${order.state })</option>
-						<option value="1">待发货（1）</option>
-						<option value="2">发货中（2）</option>
-						<option value="3">发货完成（3）</option>
-						<option value="4">确认完成（4）</option>
-				</select></li>
+				<li><label>用户手机号：</label> <input type="text" name="telephone"
+					value="${telephone }" class="phone"/></li>
+				
 			</ul>
+
 
 			<div class="subBar">
 				<ul>
@@ -75,15 +63,13 @@
 </div>
 <div class="pageContent">
 	<div class="panelBar">
-		<ul class="toolBar">
-			<li><a class="add" href="backPage/shopping/order/add.jsp"
-				target="dialog" rel="addCategroy" width="900" height="400"><span>添加</span></a></li>
-			<li><a class="delete"
+		<ul class="toolBar">		
+			<li><a class="edit"
 				href="backShopping_GoodsOrder_delete?uid={sid_user} "
-				target="ajaxTodo" title="确定要删除吗?"><span>删除</span></a></li>
+				target="ajaxTodo" title="确定要删除吗?"><span>升级商城会员</span></a></li>
 			<li><a class="edit"
 				href="backShopping_GoodsOrder_modifyPre?uid={sid_user}"
-				target="dialog" width="900" height="300"><span>修改</span></a></li>
+				target="dialog" width="900" height="300"><span>充值现金</span></a></li>
 		</ul>
 
 	</div>
@@ -91,32 +77,41 @@
 		<thead>
 			<tr>
 
-				<th width="70" align="center">订单号</th>
-				<th width="70" align="center">商品ID</th>
-				<th width="70" align="center">购买人ID</th>
-				<th width="70" align="center">单价</th>
-				<th width="70" align="center">数量</th>
-				<th width="70" align="center">总价</th>
-				<th width="70" align="center">订单状态</th>
-				<th width="70" align="center">订单类型</th>
-				<th width="70" align="center">收货地址ID</th>
+				<th width="70" align="center">用户ID</th>
+				<th width="100" align="center">电话</th>
+				<th width="70" align="center">用户名</th>
+				<th width="70" align="center">省</th>
+				<th width="70" align="center">市</th>
+				<th width="70" align="center">县(区)</th>
+				<th width="70" align="center">用户等级</th>
+				<th width="70" align="center">用户类型</th>
+				<th width="70" align="center">推荐人</th>			
+				<th width="70" align="center">现金余额</th>
+				<th width="70" align="center">购物积分余额</th>
+				<th width="70" align="center">冻结积分余额</th>
+				<th width="70" align="center">交易积分余额</th>
 
 
 			</tr>
 		</thead>
 		<tbody>
 
-			<c:forEach items="${orderList}" var="list">
+			<c:forEach items="${userList}" var="list">
 				<tr target="sid_user" rel="${list.id }">
 					<td>${list.id }</td>
-					<td>${list.goodsId }</td>
-					<td>${list.userId }</td>
-					<td>${list.unitPrice }</td>
-					<td>${list.num }</td>
-					<td>${list.totalprice }</td>
-					<td>${list.state }</td>
+					<td>${list.telephone }</td>
+					<td>${list.name }</td>
+					<td>${list.province }</td>
+					<td>${list.city }</td>
+					<td>${list.country }</td>
+					<td>${list.level}</td>
 					<td>${list.style }</td>
-					<td>${address }</td>
+					<td>${list.user.telepone }</td>
+					<td>${list.cash }</td>
+					<td>${list.usingPoints }</td>
+					<td>${list.icePoints }</td>
+					<td>${list.tradePoints }</td>
+					
 				</tr>
 			</c:forEach>
 		</tbody>

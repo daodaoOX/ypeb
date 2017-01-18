@@ -9,13 +9,13 @@
 	.statistics span{ color:#ec1d23;line-height: 14px; margin-bottom: 20px}
 	/*订单*/
 
-	.list img{float:left;margin: 10px 0;}
-	.list p{ float: left; line-height: 92px; font-size: 14px;color:#4d4d4d}
-	.list_p1{width:200px; margin-left:10px;}
-	.list_p2{width:90px;text-align: center; margin: 0 10px;}
-	.list_p3{width:128px;text-align: center;}
-	.list_p4{width:70px;text-align: center; margin: 0 30px;}
-	.list_p5{width:70px;text-align:right;}
+	.list img{float:left;margin: 10px 10px;width:72px;height:72px;}
+	.list p{ float: left; line-height: 18px; font-size: 14px;color:#4d4d4d}
+	.list_p1{width:200px;margin-left:10px;padding-top:26px;}
+	.list_p2{width:90px;text-align: center;margin-left:10px; padding-top:26px;}
+	.list_p3{width:128px;text-align: center;margin-left:10px;padding-top:26px;}
+	.list_p4{width:70px;text-align: center;margin-left:10px;padding-top:26px;}
+	.list_p5{width:70px;text-align:right;margin-left:10px;padding-top:26px;}
 /*交易明细_翻页按钮*/
 .pagination_box{ margin-left: 126px; margin-top: 45px;}
 .pagination_box span{ display: block; width: 28px; line-height:28px; font-size: 16px;text-align: center;border: solid 1px #bfbfbf; float: left; margin-right: 10px}

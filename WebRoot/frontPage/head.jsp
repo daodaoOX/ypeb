@@ -26,7 +26,7 @@
 			<c:otherwise>
 			<!-- 未登陆用户 -->
 				<h1>
-					<a class="sign_up" href="frontPage/user/login/userLogin.jsp">请登录</a>
+					<a class="sign_up"  href="frontPage/user/login/userLogin.jsp">请登录</a>
 				</h1>
 				<h1>
 					<a class="sign_in" href="frontPage/user/login/simpleRegister.jsp">免费注册</a>

@@ -10,9 +10,9 @@ body{margin:0;}
 h1,h2,h3,h4,h5{margin:0;padding:0;font-weight:normal}
 a{text-decoration:none}
 img{display:block}
-ul,li{margin:0;padding:0;list-style:none;font-weight:normal}
+ul,li,ol{margin:0;padding:0;list-style:none;font-weight:normal}
 input{margin:0;border:none}
-
+.my_mes_box ol{margin:0 !important;}
 /*top*/
 .header_top{width:1200px;margin:0 auto}
 .welcome{font-size:12px;line-height:34px;float:left;margin-right:16px}

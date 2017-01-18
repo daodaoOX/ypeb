@@ -35,8 +35,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<h3>感谢你对沂品商城的支持与厚爱。</h3>
 				<div class="signature">
 					<h4>沂品商城</h4>
-					<h4><span>[<fmt:formatDate value="${news.releaseTime}"
-						pattern="yyyy-MM-dd" /> ]</span></h4>
+					<h4>2017.01.02</h4>
 				</div>
 				<div class="clearfix"></div>
 			</div>

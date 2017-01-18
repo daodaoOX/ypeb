@@ -1,6 +1,7 @@
 #MyEclipse Hibernate Properties
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 #Thu Jan 12 09:52:29 CST 2017
 genBasicCompId=false
 =======
@@ -8,6 +9,9 @@ genBasicCompId=false
 =======
 #Tue Jan 17 03:41:04 CST 2017
 >>>>>>> 3299adf096613fd1725e88358ee80c3f7216472e
+=======
+#Wed Jan 18 03:41:51 CST 2017
+>>>>>>> 31670c83b0d4da2f0af577fd47e996b216300288
 genBasicCompId=true
 >>>>>>> 5a597b79c8e3edac4cda83e7a33c7c689901b4c5
 sessionFactoryName=com.ypeb.model.hibernate.HibernateSessionFactory

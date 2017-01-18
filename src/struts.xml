@@ -72,7 +72,7 @@
 
 		<action name="frontUser_*_*" class="com.ypeb.action.front.user.{1}Action"
 			method="{2}">
-
+<result name="nextAction" type="chain">${destUrl}</result>
 			<result name="diyUrl">${destUrl}</result>
 		</action>
 

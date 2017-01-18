@@ -18,9 +18,13 @@ public class Address extends AbstractAddress implements java.io.Serializable {
 	public Address() {
 	}
 
-	/** full constructor */
-	public Address(User user, String address, String name, String telephone) {
-		super(user, address, name, telephone);
+	public Address(User user, String address, String name, String telephone,
+			Boolean isDelete) {
+		super(user, address, name, telephone, isDelete);
+		// TODO Auto-generated constructor stub
 	}
+
+	/** full constructor */
+	
 
 }

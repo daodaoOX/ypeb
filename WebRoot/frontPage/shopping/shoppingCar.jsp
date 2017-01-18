@@ -73,7 +73,7 @@ String path = request.getContextPath();
 		<div class="assist_box">
 					
 			<a id="dela" href="<%=path %>/frontPage/shopping/pay.jsp" onclick="parentGoTop();" 
-				onclick="document.getElementById('shoppingCarSubmit').submit();" target="index">
+			onclick="document.getElementById('shoppingCarSubmit').submit();" target="index">
 				<div class="divsum" onclick="checksum();">
 					<span type="submit" class="spansum" >结算</span>
 				</div>

@@ -10,9 +10,11 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
 <head>
+<base href="<%=basePath%>">
 <meta charset="utf-8">
-<link type="text/css" rel="stylesheet" href="frontCss/user/change_password.css">
-<link type="text/css" rel="stylesheet" href="frontCss/universal.css">
+<link type="text/css" rel="stylesheet" href="frontCss/user/personal_information.css">
+<link type="text/css" rel="stylesheet" href="frontCss/header_and_footer.css">
+<link type="text/css" rel="stylesheet" href="frontCss/user/changePassw.css">
 <title>无标题文档</title>
 </head>
 

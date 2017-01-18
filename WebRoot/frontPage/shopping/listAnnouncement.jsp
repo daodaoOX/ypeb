@@ -31,25 +31,21 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			</div>
 			<div class="item">
 				<h1 class="title"><a href="frontPage/shopping/dispAnnouncement.jsp">东北地区因雨雪天气延迟发货！</a></h1>
-				<h2><span>[<fmt:formatDate value="${news.releaseTime}"
-						pattern="yyyy-MM-dd" /> ]</span></h2>
+				<h2>2017.01.03</h2>
 				<div class="clearfix"></div>
 			</div>
 			<div class="item">
 				<h1 class="title"><a href="">东北地区因雨雪天气延迟发货！</a></h1>
-				<h2><span>[<fmt:formatDate value="${news.releaseTime}"
-						pattern="yyyy-MM-dd" /> ]</span></h2>
+				<h2>2017.01.03</h2>
 				<div class="clearfix"></div>
 			</div>
 			<div class="item">
 				<h1 class="title"><a href="">东北地区因雨雪天气延迟发货！</a></h1>
-				<h2><span>[<fmt:formatDate value="${news.releaseTime}"
-						pattern="yyyy-MM-dd" /> ]</span></h2>
+				<h2>2017.01.03</h2>
 				<div class="clearfix"></div>
 			</div><div class="item1">
 				<h1 class="title"><a href="">东北地区因雨雪天气延迟发货！</a></h1>
-				<h2><span>[<fmt:formatDate value="${news.releaseTime}"
-						pattern="yyyy-MM-dd" /> ]</span></h2>
+				<h2>2017.01.03</h2>
 				<div class="clearfix"></div>
 			</div>
 			<div class="clearfix"></div>

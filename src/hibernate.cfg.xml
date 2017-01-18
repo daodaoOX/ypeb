@@ -28,6 +28,10 @@
 		<property name="connection.characterEncoding">utf8</property>
 		<property name="show_sql">true</property>
 		<property name="connection.autocommit">true</property>
+
+		<!--//事务隔离级别  -->
+		<property name="connection.isolation">2</property>
+
 		<mapping class="com.ypeb.model.trade.pointsSale.Pointssale" />
 		<mapping class="com.ypeb.model.trade.pointsTrade.Pointtrade" />
 		<mapping class="com.ypeb.model.trade.pointsBuy.Pointsbuy" />
@@ -55,6 +59,7 @@
 		<mapping class="com.ypeb.model.user.message.Message" />
 		<mapping class="com.ypeb.model.points.setting.Setting" />
 		<mapping class="com.ypeb.model.user.award.Award" />
+		<mapping class="com.ypeb.model.user.cash.Cash" />
 	</session-factory>
 
 </hibernate-configuration>
