@@ -145,10 +145,10 @@ public class PointssaleDAO extends BaseHibernateDAO {
 		}
 	}
 
-	public List<Pointssale> findByExample(Pointssale instance) {
+	public List findByExample(Pointssale instance) {
 		log.debug("finding Pointssale instance by example");
 		try {
-			List<Pointssale> results = (List<Pointssale>) getSession()
+			List results = getSession()
 					.createCriteria(
 							"com.ypeb.model.trade.pointsSale.Pointssale")
 					.add(create(instance)).list();

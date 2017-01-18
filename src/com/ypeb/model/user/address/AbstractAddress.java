@@ -27,6 +27,7 @@ public abstract class AbstractAddress implements java.io.Serializable {
 	private String address;
 	private String name;
 	private String telephone;
+	private Boolean isDelete;
 
 	// Constructors
 
@@ -36,11 +37,12 @@ public abstract class AbstractAddress implements java.io.Serializable {
 
 	/** full constructor */
 	public AbstractAddress(User user, String address, String name,
-			String telephone) {
+			String telephone, Boolean isDelete) {
 		this.user = user;
 		this.address = address;
 		this.name = name;
 		this.telephone = telephone;
+		this.isDelete = isDelete;
 	}
 
 	// Property accessors
@@ -90,6 +92,15 @@ public abstract class AbstractAddress implements java.io.Serializable {
 
 	public void setTelephone(String telephone) {
 		this.telephone = telephone;
+	}
+
+	@Column(name = "isDelete", nullable = false)
+	public Boolean getIsDelete() {
+		return this.isDelete;
+	}
+
+	public void setIsDelete(Boolean isDelete) {
+		this.isDelete = isDelete;
 	}
 
 }

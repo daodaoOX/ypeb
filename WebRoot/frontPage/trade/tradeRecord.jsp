@@ -22,7 +22,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
   </head>
   
-  <body>
+  <body onload="window.parent.document.getElementById('mytrade').height=document.body.scrollHeight;">
   <!-- ***************交易记录*****************
   	1.获取pointsTradeList对象其中pointsTrade对象中有buyId和saleId字段。
   	 -->

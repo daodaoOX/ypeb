@@ -39,11 +39,14 @@ public abstract class AbstractUser implements java.io.Serializable {
 	private String country;
 	private String idcard;
 	private Short level;
-	private Integer cash;
-	private Integer usingPoints;
+	private Double cash;
+	private Double usingPoints;
 	private Boolean inforIsFull;
 	private String imageUrl;
 	private Integer style;
+	private Double icePoints;
+	private Double tradePoints;
+	private String bankCard;
 	private Set<Address> addresses = new HashSet<Address>(0);
 	private Set<User> users = new HashSet<User>(0);
 	private Set<Bankcard> bankcards = new HashSet<Bankcard>(0);
@@ -73,9 +76,10 @@ public abstract class AbstractUser implements java.io.Serializable {
 	/** full constructor */
 	public AbstractUser(User user, String password, String payPassword,
 			String telephone, String name, String province, String city,
-			String country, String idcard, Short level, Integer cash,
-			Integer usingPoints, Boolean inforIsFull, String imageUrl,
-			Integer style, Set<Address> addresses, Set<User> users,
+			String country, String idcard, Short level, Double cash,
+			Double usingPoints, Boolean inforIsFull, String imageUrl,
+			Integer style, Double icePoints, Double tradePoints,
+			String bankCard, Set<Address> addresses, Set<User> users,
 			Set<Bankcard> bankcards) {
 		this.user = user;
 		this.password = password;
@@ -92,6 +96,9 @@ public abstract class AbstractUser implements java.io.Serializable {
 		this.inforIsFull = inforIsFull;
 		this.imageUrl = imageUrl;
 		this.style = style;
+		this.icePoints = icePoints;
+		this.tradePoints = tradePoints;
+		this.bankCard = bankCard;
 		this.addresses = addresses;
 		this.users = users;
 		this.bankcards = bankcards;
@@ -200,21 +207,21 @@ public abstract class AbstractUser implements java.io.Serializable {
 		this.level = level;
 	}
 
-	@Column(name = "cash")
-	public Integer getCash() {
+	@Column(name = "cash", precision = 12)
+	public Double getCash() {
 		return this.cash;
 	}
 
-	public void setCash(Integer cash) {
+	public void setCash(Double cash) {
 		this.cash = cash;
 	}
 
-	@Column(name = "usingPoints")
-	public Integer getUsingPoints() {
+	@Column(name = "usingPoints", precision = 12)
+	public Double getUsingPoints() {
 		return this.usingPoints;
 	}
 
-	public void setUsingPoints(Integer usingPoints) {
+	public void setUsingPoints(Double usingPoints) {
 		this.usingPoints = usingPoints;
 	}
 
@@ -243,6 +250,33 @@ public abstract class AbstractUser implements java.io.Serializable {
 
 	public void setStyle(Integer style) {
 		this.style = style;
+	}
+
+	@Column(name = "icePoints", precision = 12)
+	public Double getIcePoints() {
+		return this.icePoints;
+	}
+
+	public void setIcePoints(Double icePoints) {
+		this.icePoints = icePoints;
+	}
+
+	@Column(name = "tradePoints", precision = 12)
+	public Double getTradePoints() {
+		return this.tradePoints;
+	}
+
+	public void setTradePoints(Double tradePoints) {
+		this.tradePoints = tradePoints;
+	}
+
+	@Column(name = "bankCard", length = 45)
+	public String getBankCard() {
+		return this.bankCard;
+	}
+
+	public void setBankCard(String bankCard) {
+		this.bankCard = bankCard;
 	}
 
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "user")

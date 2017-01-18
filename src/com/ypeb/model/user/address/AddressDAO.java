@@ -33,7 +33,22 @@ public class AddressDAO extends BaseHibernateDAO {
 	public static final String ADDRESS = "address";
 	public static final String NAME = "name";
 	public static final String TELEPHONE = "telephone";
+	public static final String IS_DELETE = "isDelete";
 
+
+	public List<Address> findByUser(User user,boolean isDelete) {  
+	    final DetachedCriteria query = DetachedCriteria  
+	            .forClass(Address.class);  
+	    Criteria criteria = query.getExecutableCriteria(getSession());  
+	    criteria.add(Restrictions.eq("user", user));
+	    criteria.add(Restrictions.eq("isDelete", false));
+ 
+	  
+	    @SuppressWarnings("unchecked")  
+	    List<Address> list = criteria.list();  
+	      
+	    return list;  
+	} 
 	public void save(Address transientInstance) {
 		log.debug("saving Address instance");
 		try {
@@ -82,19 +97,6 @@ public class AddressDAO extends BaseHibernateDAO {
 			throw re;
 		}
 	}
-	
-	public List<Address> findByUser(User user) {  
-	    final DetachedCriteria query = DetachedCriteria  
-	            .forClass(Address.class);  
-	    Criteria criteria = query.getExecutableCriteria(getSession());  
-	    criteria.add(Restrictions.eq("user", user));  
- 
-	  
-	    @SuppressWarnings("unchecked")  
-	    List<Address> list = criteria.list();  
-	      
-	    return list;  
-	}  
 
 	public List findByProperty(String propertyName, Object value) {
 		log.debug("finding Address instance with property: " + propertyName
@@ -121,6 +123,10 @@ public class AddressDAO extends BaseHibernateDAO {
 
 	public List<Address> findByTelephone(Object telephone) {
 		return findByProperty(TELEPHONE, telephone);
+	}
+
+	public List<Address> findByIsDelete(Object isDelete) {
+		return findByProperty(IS_DELETE, isDelete);
 	}
 
 	public List findAll() {

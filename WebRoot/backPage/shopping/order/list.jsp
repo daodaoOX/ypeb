@@ -116,7 +116,7 @@
 					<td>${list.totalprice }</td>
 					<td>${list.state }</td>
 					<td>${list.style }</td>
-					<td>${list.address }</td>
+					<td>${address }</td>
 				</tr>
 			</c:forEach>
 		</tbody>

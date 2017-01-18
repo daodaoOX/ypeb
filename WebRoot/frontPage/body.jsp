@@ -31,18 +31,16 @@
 				<ul class="classification_box prosul" id="proinfo"
 					style="margin-top:0px;">
 					<c:forEach var="first" items="${categoryByLevel }">
-						<li><a
+						<li class="liback"><a class="libacka"
 							href="frontShopping_Goods_queryFCategory?categoryID=${first.id }">${first.name }</a>
 							<div class="prosmore hide">
 								<c:forEach var="second" items="${first.secCategoryList  }">
-									<span><a href="">${second.name }</a></span>
+									<span><a class="libackb" href="">${second.name }</a></span>
 								</c:forEach>
 							</div></li>
 					</c:forEach>
-
 				</ul>
 			</div>
-
 			<div class="clearfix"></div>
 		</div>
 	</div>
@@ -59,24 +57,18 @@
 			class="arrow_right"><img
 			src="<%=path%>/img/common/header/right.png"></span>
 		<div class="ctrl_span">
-			<span class="current"></span> <span></span> <span></span> <span></span>
-
+			<span class="current"></span>
 		</div>
 	</div>
-
 	<div class="AD_box">
-
 		<c:forEach items="${advertList }" var="ad">
 			<img src="upload/image/advertisement/${ad.url }">
-
 		</c:forEach>
-
-
 		<div class="notice">
 			<div>
 				<h1 class="headline">商城公告</h1>
 				<h1 class="more">
-					<a href="#">更多></a>
+					<a href="<%=path%>/frontPage/shopping/listAnnouncement.jsp">更多></a>
 				</h1>
 				<div class="clearfix"></div>
 			</div>
@@ -123,44 +115,26 @@
 	</c:forEach>
 	
 <script type="text/javascript">
-
 $(document).ready(function(){
   $(".foot_shopping_cart").click(function(){
-   
-   
 	var shopID = $(this).attr("shopID");
-	
-	
 	$.post("frontShopping_Goods_addShoppingCar",{"shopID":shopID},function(data,status){
-      
-
      	var v2 = $('#shopping_cart_text', window.parent.document);
-     	
 		if(data.statusCode=='200'){
 		alert("添加成功");
 		v2.html("购物车("+data.shopCarNum+")");//要刷新的div,(dates=shopNum+1)购物车中的数量
 		}else{
 			alert("请先登录");
 		}
-      	
- 		
-      	
     });
   });
 });
 
 </script>
 	<script type="text/javascript" language="javascript">
-	
-
-	
-	
-	
 		(function() {
-
 			var $subblock = $(".subpage"), $head = $subblock.find('h2'), $ul = $("#proinfo"), $lis = $ul
 					.find("li"), inter = false;
-
 			$lis.hover(function() {
 				if (!$(this).hasClass('nochild')) {
 					$(this).addClass("prosahover");
@@ -193,7 +167,6 @@ $(document).ready(function(){
 			$(".ctrl_span span").eq(n).addClass("current")
 		}
 		var t1 = setInterval(toFade, 3000)
-
 		$(".arrow_left").click(function() {
 			if (n > 0) {
 				n = n - 1
@@ -230,6 +203,7 @@ $(document).ready(function(){
 			t1 = setInterval(toFade, 3000)
 		})
 	</script>
+	
 	<!-- 解决iframe跳转页面时位置如何返回顶部问题 -->
 <script type="text/javascript">
 	function parentGoTop(){

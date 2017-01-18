@@ -26,7 +26,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<script type="text/javascript" src="bootstrap/js/jquery-2.1.4.min.js"></script>
   </head>
   
-  <body>
+  <body >
    <!-- *********沂品电子商务平台首页--商城首页*************
    	首页包括head.jsp，body.jsp，bottom.jsp三个文件使用iframe布局。body.jsp中菜单栏（商城/交易中心）下面为刷新页面
    	head
@@ -46,10 +46,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    9、底部要有备案信息。其他信息UI设计，不涉及动态。
     -->
     <%@ include file="head.jsp" %>
-
 	<iframe  frameborder=0 name="index" id="index" width=100% marginheight=0 marginwidth=0 scrolling=no src="frontShopping_Index_bodyData"></iframe>
 	<%@ include file="bottom.jsp" %>
-<<<<<<< HEAD
+
 	<script type="text/javascript">
 		function reinitIframe(){
 		var iframe = document.getElementById("index");
@@ -59,8 +58,5 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		}
 		window.setInterval("reinitIframe()", 200);
 	</script>
-=======
-
->>>>>>> 7d4b8964c1bfc8f8f5a4ad9e4ee03106f62f21b5
   </body>
 </html>

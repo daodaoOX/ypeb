@@ -21,11 +21,11 @@
 .input0{width:261px; height:34px;border:1px solid #d9d9d9;position:absolute; left:20%;margin-top:-10px;}
 .input1,.input2,.input3,.input4{position:absolute; left:20%;}
 .input5{float:left; width:238px; height: 34px;border: 1px solid #d9d9d9; margin-left:20px; margin-top:0px; 
-background-image:url(../../img/user/suo.png); background-repeat: no-repeat; background-position:10px 6px; border-radius:3px;padding-left:20px;}
-.input6{float:left; width:238px; height: 34px;border: 1px solid #d9d9d9; margin-left:20px; margin-top:0px;
-background-image:url(../../img/user/suo.png); background-repeat: no-repeat; background-position:10px 6px; border-radius:3px;padding-left:20px;}
+background-image:url(../../img/user/suo.png); background-repeat: no-repeat; background-position:10px 6px; border-radius:3px;padding-left:40px;}
+.input6{float:left; width:238px; height: 34px;border: 1px solid #d9d9d9; margin-left:30px; margin-top:0px;
+background-image:url(../../img/user/suo.png); background-repeat: no-repeat; background-position:10px 6px; border-radius:3px;padding-left:40px;}
 .input7{float:left; width:238px; height: 34px;border: 1px solid #d9d9d9; margin-left: 20px; 
-background-image: url(../../img/user/suo.png); background-repeat: no-repeat; background-position: 10px 6px; border-radius: 3px;padding-left: 20px;}
+background-image: url(../../img/user/suo.png); background-repeat: no-repeat; background-position: 10px 6px; border-radius: 3px;padding-left: 40px;}
 .regsiter input{float:left; width:254px; height: 34px;border: 1px solid #d9d9d9; margin-left: 10px;  
 border-radius: 3px;padding-left: 10px;font-size: 12px; color: #b2b2b2;}
 .regsiter .inputcolor{color:#4c4c4c;}
@@ -38,3 +38,5 @@ border-radius: 3px;padding-left: 10px;font-size: 12px; color: #b2b2b2;}
 .mycity input{border:1px solid #CCC; width:80px;height:25px;}
 .mycity{margin-left:70px;}
 .cityaddr{color:#4c4c4c;font-size:14px;position:absolute;top:295px;}
+.login_btn{background-color:#F00;}
+.login_btn button{background-color:#F00;border:1px solid red; color:white;width:120;height:40;font-weight:500;font-size:18px;}

@@ -22,7 +22,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
   </head>
   
-  <body>
+  <body onload="window.parent.document.getElementById('mytrade').height=document.body.scrollHeight;">
     <!-- ********** 进行积分交易的页面**********
 <<<<<<< HEAD
     1、积分列表，数据类dealRequestList中共12个,boolean值request为1的是售卖对象6个，为0的是购买对象

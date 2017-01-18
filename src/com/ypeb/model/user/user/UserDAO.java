@@ -3,7 +3,7 @@ package com.ypeb.model.user.user;
 import com.ypeb.model.trade.pointsSale.BaseHibernateDAO;
 
 import java.util.List;
-
+import java.util.Set;
 
 import org.hibernate.Criteria;
 import org.hibernate.LockOptions;
@@ -44,7 +44,22 @@ public class UserDAO extends BaseHibernateDAO {
 	public static final String INFOR_IS_FULL = "inforIsFull";
 	public static final String IMAGE_URL = "imageUrl";
 	public static final String STYLE = "style";
+	public static final String ICE_POINTS = "icePoints";
+	public static final String TRADE_POINTS = "tradePoints";
+	public static final String BANK_CARD = "bankCard";
 
+	
+	public List<User> findByUser(User user) {  
+	    final DetachedCriteria query = DetachedCriteria  
+	            .forClass(User.class);  
+	    Criteria criteria = query.getExecutableCriteria(getSession());  
+	    criteria.add(Restrictions.eq("user", user));  
+ 	  
+	    @SuppressWarnings("unchecked")  
+	    List<User> list = criteria.list();  
+	      
+	    return list;  
+	} 
 	public void save(User transientInstance) {
 		log.debug("saving User instance");
 		try {
@@ -93,18 +108,6 @@ public class UserDAO extends BaseHibernateDAO {
 			throw re;
 		}
 	}
-	
-	public List<User> findByUser(User user) {  
-	    final DetachedCriteria query = DetachedCriteria  
-	            .forClass(User.class);  
-	    Criteria criteria = query.getExecutableCriteria(getSession());  
-	    criteria.add(Restrictions.eq("user", user));  
- 	  
-	    @SuppressWarnings("unchecked")  
-	    List<User> list = criteria.list();  
-	      
-	    return list;  
-	} 
 
 	public List findByProperty(String propertyName, Object value) {
 		log.debug("finding User instance with property: " + propertyName
@@ -175,6 +178,18 @@ public class UserDAO extends BaseHibernateDAO {
 
 	public List<User> findByStyle(Object style) {
 		return findByProperty(STYLE, style);
+	}
+
+	public List<User> findByIcePoints(Object icePoints) {
+		return findByProperty(ICE_POINTS, icePoints);
+	}
+
+	public List<User> findByTradePoints(Object tradePoints) {
+		return findByProperty(TRADE_POINTS, tradePoints);
+	}
+
+	public List<User> findByBankCard(Object bankCard) {
+		return findByProperty(BANK_CARD, bankCard);
 	}
 
 	public List findAll() {

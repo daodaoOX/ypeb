@@ -1,17 +1,14 @@
 package com.ypeb.model.trade.pointsSale;
 
 import java.sql.Timestamp;
+
 import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import static javax.persistence.GenerationType.IDENTITY;
-import javax.persistence.Id;
-import javax.persistence.MappedSuperclass;
 
 /**
  * AbstractPointssale entity provides the base persistence definition of the
  * Pointssale entity. @author MyEclipse Persistence Tools
  */
-@MappedSuperclass
+
 public abstract class AbstractPointssale implements java.io.Serializable {
 
 	// Fields
@@ -47,9 +44,7 @@ public abstract class AbstractPointssale implements java.io.Serializable {
 	}
 
 	// Property accessors
-	@Id
-	@GeneratedValue(strategy = IDENTITY)
-	@Column(name = "id", unique = true, nullable = false)
+
 	public Integer getId() {
 		return this.id;
 	}
@@ -58,7 +53,6 @@ public abstract class AbstractPointssale implements java.io.Serializable {
 		this.id = id;
 	}
 
-	@Column(name = "saleID", nullable = false)
 	public Integer getSaleId() {
 		return this.saleId;
 	}
@@ -67,7 +61,6 @@ public abstract class AbstractPointssale implements java.io.Serializable {
 		this.saleId = saleId;
 	}
 
-	@Column(name = "time", nullable = false, length = 19)
 	public Timestamp getTime() {
 		return this.time;
 	}
@@ -76,7 +69,6 @@ public abstract class AbstractPointssale implements java.io.Serializable {
 		this.time = time;
 	}
 
-	@Column(name = "num", nullable = false, precision = 11)
 	public Double getNum() {
 		return this.num;
 	}
@@ -85,7 +77,6 @@ public abstract class AbstractPointssale implements java.io.Serializable {
 		this.num = num;
 	}
 
-	@Column(name = "price", nullable = false, precision = 11)
 	public Double getPrice() {
 		return this.price;
 	}
@@ -94,7 +85,6 @@ public abstract class AbstractPointssale implements java.io.Serializable {
 		this.price = price;
 	}
 
-	@Column(name = "allPrice", nullable = false, precision = 11)
 	public Double getAllPrice() {
 		return this.allPrice;
 	}
@@ -103,7 +93,6 @@ public abstract class AbstractPointssale implements java.io.Serializable {
 		this.allPrice = allPrice;
 	}
 
-	@Column(name = "state", nullable = false)
 	public Short getState() {
 		return this.state;
 	}
@@ -112,7 +101,6 @@ public abstract class AbstractPointssale implements java.io.Serializable {
 		this.state = state;
 	}
 
-	@Column(name = "residue", nullable = false)
 	public Short getResidue() {
 		return this.residue;
 	}
