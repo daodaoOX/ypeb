@@ -10,7 +10,7 @@
 
 /*地址*/
 .site_box{width:1200px;margin:0 auto}
-.site{width:420px;border:1px solid #ec1d23;padding:6px 10px;position:relative}
+.site{width:420px;border:1px solid red;height:90px;padding:6px 10px;position:relative;margin-right:20px;}
 .site h1{font-size:14px;line-height:23px}
 .site input{position:absolute;bottom:0px;right:0}
 .site_box .site,.add_site{float:left}
@@ -44,3 +44,5 @@
 .check_out_box h1{font-size:14px;color:#333;line-height:40px;margin-right:20px}
 .check_out_box input{width:80px;height:40px;background-color:#ec1d23;font-size:18px;color:#fff;border-radius:4px;margin-right:20px}
 .payImg{width:72px;height:72px;}
+.myaddress{color:#272626;}
+.site p{color:#525150; margin:5px}

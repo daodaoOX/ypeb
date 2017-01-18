@@ -15,10 +15,6 @@
 <link type="text/css" rel="stylesheet"
 	href="frontCss/header_and_footer.css">
 <link type="text/css" rel="stylesheet" href="frontCss/user/myInfo.css">
-<meta charset="utf-8">
-<title>个人信息</title>
-<style>
-</style>
 </head>
 
 <body>
@@ -53,9 +49,23 @@
 		</ol>
 		<div class="my">
 			<img src="img/personal_information/touxiang2.png">
-			<div class="compile">编辑</div>
+			<div class="compile"><a href="frontPage/user/personalCenter/updateMyInfo.jsp" target="mytrade">编辑</a></div>
 		</div>
 		<div class="clearfix"></div>
 	</div>
+<div class="addHei"></div>
+		<!-- 解决iframe跳转页面时位置如何返回顶部问题 -->
+<script type="text/javascript">
+	function parentGoTop(){
+	parent.scrollTo(0,0);
+	}
+	function addClick(){
+	var aList=document.getElementsByTagName("a");
+	for(var i=0;i<aList.length;i++){
+	    aList[i].onclick=function(){parentGoTop();}
+	    }
+	}
+	window.onload=function(){addClick();}
+</script>
 </body>
 </html>

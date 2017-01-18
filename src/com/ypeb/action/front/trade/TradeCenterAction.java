@@ -10,7 +10,10 @@ import com.ypeb.dataClass.front.TradeK;
 import com.ypeb.model.trade.pointsTrade.PointtradeDAO;
 
 public class TradeCenterAction extends ActionSupport {
-	private String destUrl;
+	 
+	private static final long serialVersionUID = 1L;
+	
+	private String destURL;
 	private List<TradeK> tradeKList;
 	private List<DealRequest> dealRequestList;
 	private int userId;
@@ -41,9 +44,19 @@ public class TradeCenterAction extends ActionSupport {
 			start.setDate(currentDateDay);
 			end.setDate(currentDateDay);
 			TradeK tradeK = new TradeK();
+			//TradeData tradeData=new ();
+			//tradeData.calcuMonthData(start,end);
+			//TradeK tradeK=new ();
+			//tradeK.setTradeData(tradeData);
+			//new Date().getTimeLong(),
+			//tradeK.setTime(封装start时间为规定格式的String类型);
+			//tradeKlist.add(tradeK);
 			tradeK.calcuMonthK(start, end);
 			tradeKList.add(tradeK);
 		}
+		
+		destURL = "frontPage/trade/tradeGraph.jsp"; 
+		
 		return "diyUrl";
 	}
 	
@@ -76,11 +89,11 @@ public class TradeCenterAction extends ActionSupport {
 	}
 
 	public String getDestUrl() {
-		return destUrl;
+		return destURL;
 	}
 
 	public void setDestUrl(String destUrl) {
-		this.destUrl = destUrl;
+		this.destURL = destUrl;
 	}
 
 	public List<TradeK> getTradeKList() {
@@ -106,8 +119,5 @@ public class TradeCenterAction extends ActionSupport {
 	public void setUserId(int userId) {
 		this.userId = userId;
 	}
-	
-	
-	
 	
 }

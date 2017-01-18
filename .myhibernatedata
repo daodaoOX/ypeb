@@ -1,6 +1,15 @@
 #MyEclipse Hibernate Properties
+
 #Wed Jan 18 14:16:56 CST 2017
+
+
+#Tue Jan 17 03:41:04 CST 2017
+>
+
+#Wed Jan 18 03:41:51 CST 2017
+
 genBasicCompId=true
+
 sessionFactoryName=com.ypeb.model.hibernate.HibernateSessionFactory
 profile=
 daoSFId=
@@ -14,8 +23,10 @@ keyGenerator=
 genVersionTag=false
 sessionFactoryId=
 basePersistenceClass=
+
 genAnnotations=true
 reSettingsFile=/YPEB/hibernate.reveng.xml
+
 configFile=/YPEB/src/hibernate.cfg.xml
 createConfigFile=true
 baseDaoClass=com.ypeb.model.trade.pointsSale.BaseHibernateDAO

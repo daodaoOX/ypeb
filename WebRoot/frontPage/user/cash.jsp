@@ -29,7 +29,7 @@
 			<p>交易项目</p>
 			<p>交易额</p>
 			<p>时间</p>
-			<p>余额${user.cash }</p>
+			<p>余额&nbsp;&nbsp;${user.cash }</p>
 			<div class="clearfix"></div>
 		</div>
 		<c:forEach items="${cashList }" var="list">

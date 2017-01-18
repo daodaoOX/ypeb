@@ -36,7 +36,7 @@ String path = request.getContextPath();
         </div>
 	</div>
     
-<form action="" method="get">
+<form action="" method="get" id="shoppingCarSubmit">
   <div class="one-shop">
       <!--商品--> 
       <c:forEach items="${shopCarList }" var="list">
@@ -192,7 +192,6 @@ String path = request.getContextPath();
       // 计算
     }
   });
-
   // 点击全选按钮
   $("#AllCheck").click(function() {
     if ($(this).prop("checked") == true) { //如果全选按钮被选中
@@ -204,7 +203,6 @@ String path = request.getContextPath();
     }
     $(".ShopCheck").change(); //执行店铺全选的操作
   });
-
   function TotalPrice() {
     var allprice = 0; //总价
     $(".one-shop").each(function() { //循环每个店铺
@@ -231,7 +229,6 @@ String path = request.getContextPath();
 		if(ret){
 			//do something 点确定
 		}
-
 	})
   </script>
   	<!-- 解决iframe跳转页面时位置如何返回顶部问题 -->
@@ -242,3 +239,4 @@ String path = request.getContextPath();
 	</script>
 </body>
 </html>
+

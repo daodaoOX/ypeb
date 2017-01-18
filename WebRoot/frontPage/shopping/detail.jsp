@@ -54,7 +54,8 @@
 				<span id="img4"><img width="72px" height="72px" id="src4"
 					src="upload/image/goods/${goods.imageUrl1 }"></span> 
 				<span id="img5"><img width="72px" height="72px" id="src5"
-					src="upload/image/goods/${goods.imageUrl1 }"></span>			</div>
+					src="upload/image/goods/${goods.imageUrl1 }"></span>			
+			</div>
 		</div>
 		<div class="commodity_information">
 			<h1 class="commodity_name">${goods.name }</h1>
@@ -81,9 +82,7 @@
 					</div>
 				</div>
 				<div class="divbuy">
-					
-						<button type="submit" value="立即购买" style="border:1px solid red;background-color:#ec1d23; color:white;width:120;height:40;font-weight:500">立即购买</button>
-					
+					<button type="submit" value="立即购买" style="border:1px solid red;background-color:#ec1d23; color:white;width:120;height:40;font-weight:500">立即购买</button>
 				</div>
 				<div class="clearfix"></div>
 					<div class="divcart">
@@ -149,9 +148,6 @@ $(document).ready(function(){
 		}else{
 			alert("请先登录");
 		}
-      	
- 		
-      	
     });
   });
 });
@@ -169,7 +165,7 @@ $(document).ready(function(){
 			var box = document.getElementById("box");
 			function fun(imgs, bg) {
 			box.style.backgroundImage = "url("+src1+")";
-				var target = document.getElementById(imgs);
+			var target = document.getElementById(imgs);
 				target.onmouseover = function() {
 					box.style.backgroundImage = bg;
 					//alert(box.style.backgroundImage);

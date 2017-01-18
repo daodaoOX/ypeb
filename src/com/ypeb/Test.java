@@ -67,7 +67,7 @@ public class Test {
 			tradeK.calcuMonthK(start, end);
 			tradeKList.add(tradeK);
 		}
-		System.out.println(tradeKList.get(1).getMinTrade());
+		System.out.println(tradeKList.get(0).getMinTrade());
 		System.out.println(tradeKList.size());
 
 	}

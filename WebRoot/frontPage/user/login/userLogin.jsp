@@ -53,7 +53,8 @@
 				<div class="login1">
 					<span>手机号</span> <input type="text"
 						style="background-image: url(img/user/yonghu.png)" class="input5"
-						name="user.telephone">
+						name="user.telephone" maxlength="11"
+						onkeyup="this.value=this.value.replace(/[^\d]/g,'') " onafterpaste="this.value=this.value.replace(/[^\d]/g,'') " name="f_order" />
 					<div class="clearfix"></div>
 				</div>
 				<div class="login1">
@@ -75,5 +76,16 @@
 				</div>
 			</form>
 		</div>
+		    <!-- 验证手机号格式是否正确 -->
+    <script>
+	function phone(){
+		var phone = $("input[user.telephone]").val();
+		if(phone && /^1[3|4|5|7|8]\d{9}$/.test(phone)){
+			//alert($("input[name='phone']").val());
+		} else{
+			alert("手机号码格式不正确!");
+		}
+	}
+    </script>
 </body>
 </html>

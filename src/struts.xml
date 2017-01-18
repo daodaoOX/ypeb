@@ -11,15 +11,14 @@
 
 		<action name="frontTrade_*_*" class="com.ypeb.action.front.trade.{1}Action"
 			method="{2}">
-
-			<result name="diyUrl">${destUrl}</result>
+			
+			<result name="diyUrl" >${destURL}</result>
 		</action>
 
 
 
 		<action name="backTrade_*_*" class="com.ypeb.action.back.trade.{1}Action"
 			method="{2}">
-
 			<result name="diyUrl">${destUrl}</result>
 
 		</action>

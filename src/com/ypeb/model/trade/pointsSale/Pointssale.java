@@ -8,8 +8,6 @@ import javax.persistence.Table;
 /**
  * Pointssale entity. @author MyEclipse Persistence Tools
  */
-@Entity
-@Table(name = "pointssale", catalog = "ypeb")
 public class Pointssale extends AbstractPointssale implements
 		java.io.Serializable {
 

@@ -44,7 +44,6 @@ public class GoodsAction extends ActionSupport {
 	private List<Shoppingcar> carList=new ArrayList<Shoppingcar>();
 	private List<CarGoodsName> shopCarList=new ArrayList<CarGoodsName>();
 	
-	
 	private String shopID;
 	private String shopCarNum;
 	private String statusCode;
