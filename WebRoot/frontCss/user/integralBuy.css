@@ -30,11 +30,11 @@
 .line_box h1{font-size:14px;color:#ec1d23;line-height:20px;margin:0 11px 0 10px}
 
 .buy{display:block;line-height:36px;width:60px;height:36px;background-color:#ec1d23;font-size:16px;color:#fff;text-align:center; border:1px solid #ec1d23;
-border-radius:4px;margin:30px 200px 0 500px}
+border-radius:4px;margin:30px 200px 0 500px;}
 
 
 .purchase_quantity{margin-left:20px}
-.purchase_quantity,.pay_cash{margin-top:20px}
+.purchase_quantity,.pay_cash{margin-top:-5px}
 .purchase_quantity,.pay_cash,.purchase_quantity p,.purchase_quantity input,.pay_cash p{float:left}
 .purchase_quantity p{font-size:14px;color:#4d4d4d;line-height:24px}
 .purchase_quantity input{width:70px;height:24px;border:1px solid #d4d4d4;padding:0 10px;text-align:right;margin:15px 20px}

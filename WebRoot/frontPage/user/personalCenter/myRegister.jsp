@@ -28,9 +28,8 @@
 		<input type="text" value=""  style="width: 198px;float: left;" placeholder="请输入验证码">
 		<img src="img/user/yzm.png" class="img_yanzheng">
 		<div class="clearfix"></div>
-		<input type="submit" onClick="pwd();" />
 		<!--地址-->
-		<div class="zhuce_btn">
+		<button class="zhuce_btn"  type="submit" onClick="pwd();">注册</button>
 		</div>
 	</div>
 </form>

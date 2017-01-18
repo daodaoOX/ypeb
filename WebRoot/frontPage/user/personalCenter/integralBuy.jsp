@@ -44,7 +44,7 @@
 	<form action="">
 			<div class="purchase_quantity">
 				<p>请输入你要购买的积分数量：</p>
-				<input type="text" onkeyup="this.value=this.value.replace(/[^\d]/g,'') " onafterpaste="this.value=this.value.replace(/[^\d]/g,'') "/>
+				<input type="text" class="num" name="num" value="" onkeyup="this.value=this.value.replace(/[^\d]/g,'') " onafterpaste="this.value=this.value.replace(/[^\d]/g,'') "/>
 				<div class="clearfix"></div>
 			</div>
 			<div class="pay_cash">
@@ -56,5 +56,22 @@
 	</form>
 		</div>
 	</div>
+	
+	<script type="text/javascript">
+$(document).ready(function(){
+  $(".buy").click(function(){
+	var num = $("input[name='num']").val();
+	$.post("front*_*_*",{"num":num},function(data,status){
+     	//var v2 = $('#shopping_cart_text', window.parent.document);
+		if(data.statusCode=='200'){
+		alert("购买成功");
+		//v2.html("购物车("+data.shopCarNum+")");//要刷新的div,(dates=shopNum+1)购物车中的数量
+		}else{
+			alert("超出购买限额!");
+		}
+    });
+  });
+});
+</script>
 </body>
 </html>

@@ -43,7 +43,7 @@
 		<img class="logo" src="image/index/logo.png"> 
 		<input class="search_box">
 		<input class="search_button" type="submit" value="搜索" />
-		<a href="frontPage/shopping/query.jsp" target="index"><span>query</span></a>
+
 		<div class="shopping_cart_box">
 			<img class="shopping_cart" src="image/index/shopping_cart.png">
 			<a href="frontShopping_Goods_listCar" target="index"><h1 

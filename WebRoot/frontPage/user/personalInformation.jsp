@@ -89,7 +89,7 @@
 						target="mytrade">推荐会员</a></li>
 					<li><a href="frontPage/user/personalCenter/myRecommend.jsp"
 						target="mytrade">推荐记录</a></li>
-					<li><a href="frontUser_PersonalCenter_myAward"
+					<li><a href="frontPage/user/personalCenter/bonusRecord.jsp"
 						target="mytrade">奖金记录</a></li>
 					<li><a href="frontPage/user/personalCenter/message.jsp"
 						target="mytrade">我的留言</a></li>

@@ -21,7 +21,7 @@
 <body>
 <form action="">
 	<div class="headline">
-		<p>请输入你的微信昵称：</p>
+		<p>请输入你的提现银行卡：</p>
 		<p>请输入你需要提现的积分：</p>
 	</div>
 	<div class="number">
