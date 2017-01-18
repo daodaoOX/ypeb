@@ -36,8 +36,8 @@
 			<div class="reckoning">
 				<div class="reckoning_line"></div>
 				<p>
-					<c:if test="${list.operate }">充值</c:if>
-					<c:if test="${list.operate }">提现</c:if>
+					<c:if test="${list.operate==true }">充值</c:if>
+					<c:if test="${list.operate==false }">提现</c:if>
 				</p>
 				<p>${list.num }</p>
 				<p><fmt:formatDate value="${list.time}"

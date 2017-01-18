@@ -32,6 +32,7 @@ public class RoleDAO extends BaseHibernateDAO {
 	public static final String MESSAGE = "message";
 	public static final String SEETING = "seeting";
 	public static final String TRADE = "trade";
+	public static final String IS_DELETE = "isDelete";
 
 	public void save(Role transientInstance) {
 		log.debug("saving Role instance");
@@ -131,6 +132,10 @@ public class RoleDAO extends BaseHibernateDAO {
 
 	public List<Role> findByTrade(Object trade) {
 		return findByProperty(TRADE, trade);
+	}
+
+	public List<Role> findByIsDelete(Object isDelete) {
+		return findByProperty(IS_DELETE, isDelete);
 	}
 
 	public List findAll() {

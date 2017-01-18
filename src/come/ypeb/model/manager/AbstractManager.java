@@ -1,6 +1,5 @@
 package come.ypeb.model.manager;
 
-
 import javax.persistence.Column;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -28,6 +27,7 @@ public abstract class AbstractManager implements java.io.Serializable {
 	private String name;
 	private String realName;
 	private String telephone;
+	private String isDelete;
 
 	// Constructors
 
@@ -35,13 +35,23 @@ public abstract class AbstractManager implements java.io.Serializable {
 	public AbstractManager() {
 	}
 
-	/** full constructor */
+	/** minimal constructor */
 	public AbstractManager(Role role, String name, String realName,
 			String telephone) {
 		this.role = role;
 		this.name = name;
 		this.realName = realName;
 		this.telephone = telephone;
+	}
+
+	/** full constructor */
+	public AbstractManager(Role role, String name, String realName,
+			String telephone, String isDelete) {
+		this.role = role;
+		this.name = name;
+		this.realName = realName;
+		this.telephone = telephone;
+		this.isDelete = isDelete;
 	}
 
 	// Property accessors
@@ -91,6 +101,15 @@ public abstract class AbstractManager implements java.io.Serializable {
 
 	public void setTelephone(String telephone) {
 		this.telephone = telephone;
+	}
+
+	@Column(name = "isDelete", length = 45)
+	public String getIsDelete() {
+		return this.isDelete;
+	}
+
+	public void setIsDelete(String isDelete) {
+		this.isDelete = isDelete;
 	}
 
 }

@@ -87,7 +87,7 @@ public class PersonalCenterAction extends ActionSupport {
 			Goods goods=new Goods();
 			goods=null;
 			goods=new GoodsDAO().findById(list.getGoodsId());
-		
+			
 			temp.setImageUrl(goods.getImageUrl1());
 			temp.setGoodsName(goods.getName());
 			orderShowList.add(temp);

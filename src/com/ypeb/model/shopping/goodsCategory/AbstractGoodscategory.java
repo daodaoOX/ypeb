@@ -31,6 +31,7 @@ public abstract class AbstractGoodscategory implements java.io.Serializable {
 	private Short level;
 	private Integer superId;
 	private String url;
+	private Boolean isDelete;
 	private Set<Goods> goodses = new HashSet<Goods>(0);
 
 	// Constructors
@@ -48,12 +49,13 @@ public abstract class AbstractGoodscategory implements java.io.Serializable {
 
 	/** full constructor */
 	public AbstractGoodscategory(String name, Boolean isFloor, Short level,
-			Integer superId, String url, Set<Goods> goodses) {
+			Integer superId, String url, Boolean isDelete, Set<Goods> goodses) {
 		this.name = name;
 		this.isFloor = isFloor;
 		this.level = level;
 		this.superId = superId;
 		this.url = url;
+		this.isDelete = isDelete;
 		this.goodses = goodses;
 	}
 
@@ -112,6 +114,15 @@ public abstract class AbstractGoodscategory implements java.io.Serializable {
 
 	public void setUrl(String url) {
 		this.url = url;
+	}
+
+	@Column(name = "isDelete")
+	public Boolean getIsDelete() {
+		return this.isDelete;
+	}
+
+	public void setIsDelete(Boolean isDelete) {
+		this.isDelete = isDelete;
 	}
 
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "goodscategory")
