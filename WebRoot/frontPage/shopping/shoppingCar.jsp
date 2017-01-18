@@ -47,7 +47,7 @@ String path = request.getContextPath();
 		<img class="shoppingCarImg" src="upload/image/goods/${list.image}"/>
 		<h1>${list.name }</h1>
 		<div class="assist_box">
-			<h2 class="del">删除</h2>
+			<h2 class="del"><button type="button" class="delBut">删除</button></h2>
 			<h2></h2>
 			<div class="quantity">
 				<!-- <img src="<%=path %>/img/detail/minus.png" class="minus"> -->
@@ -83,6 +83,27 @@ String path = request.getContextPath();
 	</div>
   </div>
 </form>
+<!--  默认全选复选框,有bug
+<script>
+	$(".goods-check").trigger("click");
+      var allprice = 0; //总价
+    $(".one-shop").each(function() { //循环每个店铺
+      var oprice = 0; //店铺总价
+      $(this).find(".GoodsCheck").each(function() { //循环店铺里面的商品
+        if ($(this).is(":checked")) { //如果该商品被选中
+          var num = parseInt($(this).parents(".one-goods").find(".am-num-text").val()); //得到商品的数量
+          var price = parseFloat($(this).parents(".one-goods").find(".GoodsPrice").text()); //得到商品的单价
+          var total = price * num; //计算单个商品的总价
+          oprice += total; //计算该店铺的总价
+        }
+        $(this).closest(".one-shop").find(".ShopTotal").text(oprice.toFixed(2)); //显示被选中商品的店铺总价
+      });
+      var oneprice = parseFloat($(this).find(".ShopTotal").text()); //得到每个店铺的总价
+      allprice += oneprice; //计算所有店铺的总价
+    });
+    $("#AllTotal").text(allprice.toFixed(2)); //输出全部总价
+</script> -->
+
 <!-- 判断复选框是否选中,选中商品和数量提交后台操作 -->
 <script>
 	function checksum(){

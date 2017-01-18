@@ -113,18 +113,15 @@
 
 	<!--相关分类  商品详情-->
 	<div class="relative_a_detail">
-		
 			<div class="activity_box">
 				<c:forEach items="${adList }" var="list">
-					<img src="upload/image/advertisement/${list.url }">
+					<img src="upload/image/advertisement/${list.url }" width="220px" height="300px">
 				</c:forEach>
 			</div>
-			
 		<div class="commodity_detail">
 			<h1>规格参数</h1>
 			<p>${goods.specification } </p>
 			<div class="gray_border">
-				
 				${goods.description }
 			</div>
 		</div>
@@ -135,13 +132,9 @@
 
 $(document).ready(function(){
   $(".spancart").click(function(){
-
 	var shopID = $(this).attr("shopID");
-
 	$.post("frontShopping_Goods_addShoppingCar",{"shopID":shopID},function(data,status){
-
      	var v2 = $('#shopping_cart_text', window.parent.document);
-     	
 		if(data.statusCode=='200'){
 		alert("添加成功");
 		v2.html("购物车("+data.shopCarNum+")");//要刷新的div,(dates=shopNum+1)购物车中的数量
@@ -155,7 +148,6 @@ $(document).ready(function(){
 </script>
 	
 <script>
-		
 		window.onload = function() {
 			var src1 = $("#src1").attr('src');
 			var src2 = $("#src2").attr('src');
@@ -165,6 +157,7 @@ $(document).ready(function(){
 			var box = document.getElementById("box");
 			function fun(imgs, bg) {
 			box.style.backgroundImage = "url("+src1+")";
+			box.style.backgroundSize = "400px 400px";
 			var target = document.getElementById(imgs);
 				target.onmouseover = function() {
 					box.style.backgroundImage = bg;
