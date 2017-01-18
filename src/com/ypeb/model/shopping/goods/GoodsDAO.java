@@ -44,6 +44,7 @@ public class GoodsDAO extends BaseHibernateDAO {
 	public static final String TELEPHONE = "telephone";
 	public static final String LINK_MAN = "linkMan";
 	public static final String WEB_CHAT = "webChat";
+	public static final String IS_DELETE = "isDelete";
 
 	public void save(Goods transientInstance) {
 		log.debug("saving Goods instance");
@@ -195,6 +196,10 @@ public class GoodsDAO extends BaseHibernateDAO {
 
 	public List<Goods> findByWebChat(Object webChat) {
 		return findByProperty(WEB_CHAT, webChat);
+	}
+
+	public List<Goods> findByIsDelete(Object isDelete) {
+		return findByProperty(IS_DELETE, isDelete);
 	}
 
 	public List findAll() {

@@ -34,15 +34,15 @@ public class User extends AbstractUser implements java.io.Serializable {
 			String country, String idcard, Short level, Double cash,
 			Double usingPoints, Boolean inforIsFull, String imageUrl,
 			Integer style, Double icePoints, Double tradePoints,
-			String bankCard, Set<Address> addresses, Set<User> users,
-			Set<Bankcard> bankcards) {
+			String bankCard, Boolean isDelete, Set<Address> addresses,
+			Set<User> users, Set<Bankcard> bankcards) {
 		super(user, password, payPassword, telephone, name, province, city, country,
 				idcard, level, cash, usingPoints, inforIsFull, imageUrl, style,
-				icePoints, tradePoints, bankCard, addresses, users, bankcards);
+				icePoints, tradePoints, bankCard, isDelete, addresses, users, bankcards);
 		// TODO Auto-generated constructor stub
 	}
 
-
+	
 
 	/** full constructor */
 

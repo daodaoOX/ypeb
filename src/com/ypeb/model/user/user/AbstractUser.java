@@ -47,6 +47,7 @@ public abstract class AbstractUser implements java.io.Serializable {
 	private Double icePoints;
 	private Double tradePoints;
 	private String bankCard;
+	private Boolean isDelete;
 	private Set<Address> addresses = new HashSet<Address>(0);
 	private Set<User> users = new HashSet<User>(0);
 	private Set<Bankcard> bankcards = new HashSet<Bankcard>(0);
@@ -79,8 +80,8 @@ public abstract class AbstractUser implements java.io.Serializable {
 			String country, String idcard, Short level, Double cash,
 			Double usingPoints, Boolean inforIsFull, String imageUrl,
 			Integer style, Double icePoints, Double tradePoints,
-			String bankCard, Set<Address> addresses, Set<User> users,
-			Set<Bankcard> bankcards) {
+			String bankCard, Boolean isDelete, Set<Address> addresses,
+			Set<User> users, Set<Bankcard> bankcards) {
 		this.user = user;
 		this.password = password;
 		this.payPassword = payPassword;
@@ -99,6 +100,7 @@ public abstract class AbstractUser implements java.io.Serializable {
 		this.icePoints = icePoints;
 		this.tradePoints = tradePoints;
 		this.bankCard = bankCard;
+		this.isDelete = isDelete;
 		this.addresses = addresses;
 		this.users = users;
 		this.bankcards = bankcards;
@@ -277,6 +279,15 @@ public abstract class AbstractUser implements java.io.Serializable {
 
 	public void setBankCard(String bankCard) {
 		this.bankCard = bankCard;
+	}
+
+	@Column(name = "isDelete")
+	public Boolean getIsDelete() {
+		return this.isDelete;
+	}
+
+	public void setIsDelete(Boolean isDelete) {
+		this.isDelete = isDelete;
 	}
 
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "user")

@@ -42,15 +42,15 @@
 		action="backShopping_GoodsOrder_comprehensiveQuery" method="post">
 		<div class="searchBar">
 			<ul class="searchContent">
-			<li><label>订单号：</label> <input type="text"
-					name="id" value="${order.id }" /></li>
-				<li><label>购买人ID：</label> <input type="text"
-					name="uid" value="${order.userId }" /></li>
-				<li><label>商品ID：</label> <input type="text"
-					name="goodsID" value="${order.goodsId }" /></li>
-					</ul>
+				<!--<li><label>订单号：</label> <input type="text" name="id"
+					value="${order.id }" /></li>
+				<li><label>购买人ID：</label> <input type="text" name="uid"
+					value="${order.userId }" /></li>
+				<li><label>商品ID：</label> <input type="text" name="goodsID"
+					value="${order.goodsId }" /></li>  -->
+			</ul>
 			<ul>
-				<li><label>订单状态：</label><select class="combox"
+				<!--  <li><label>订单状态：</label><select class="combox"
 					name="order.state">
 						<option value="${order.state }">订单状态(${order.state })</option>
 						<option value="1">待发货（1）</option>
@@ -58,25 +58,28 @@
 						<option value="3">发货完成（3）</option>
 						<option value="4">确认完成（4）</option>
 				</select></li>
+				-->
 			</ul>
 
 			<div class="subBar">
 				<ul>
-					<li><div class="buttonActive">
+					<!-- <li><div class="buttonActive">
 							<div class="buttonContent">
 								<button type="submit">检索</button>
 							</div>
 						</div></li>
-
+-->
 				</ul>
 			</div>
+			 
 		</div>
+		
 	</form>
 </div>
 <div class="pageContent">
 	<div class="panelBar">
 		<ul class="toolBar">
-			<li><a class="add" href="backPage/shopping/order/add.jsp"
+			<!--<li><a class="add" href="backPage/shopping/order/add.jsp"
 				target="dialog" rel="addCategroy" width="900" height="400"><span>添加</span></a></li>
 			<li><a class="delete"
 				href="backShopping_GoodsOrder_delete?uid={sid_user} "
@@ -84,6 +87,13 @@
 			<li><a class="edit"
 				href="backShopping_GoodsOrder_modifyPre?uid={sid_user}"
 				target="dialog" width="900" height="300"><span>修改</span></a></li>
+				  -->
+				  <a class="delete"
+				href="backShopping_GoodsOrder_sendGoods?uid={sid_user} "
+				target="ajaxTodo" title="确定已经发货吗?"><span>发货</span></a></li>
+				<a class="edit"
+				href="backShopping_GoodsOrder_checkGoods?uid={sid_user} "
+				target="ajaxTodo" title="确定已经发货吗?"><span>查看商品</span></a></li>
 		</ul>
 
 	</div>
@@ -92,31 +102,35 @@
 			<tr>
 
 				<th width="70" align="center">订单号</th>
-				<th width="70" align="center">商品ID</th>
-				<th width="70" align="center">购买人ID</th>
-				<th width="70" align="center">单价</th>
-				<th width="70" align="center">数量</th>
-				<th width="70" align="center">总价</th>
+				
+				<th width="70" align="center">购买人昵称</th>
+				
 				<th width="70" align="center">订单状态</th>
 				<th width="70" align="center">订单类型</th>
-				<th width="70" align="center">收货地址ID</th>
+				<th width="70" align="center">收货人</th>
+				<th width="70" align="center">电话</th>
+				<th width="70" align="center">地址</th>
 
 
 			</tr>
 		</thead>
 		<tbody>
 
-			<c:forEach items="${orderList}" var="list">
-				<tr target="sid_user" rel="${list.id }">
-					<td>${list.id }</td>
-					<td>${list.goodsId }</td>
-					<td>${list.userId }</td>
-					<td>${list.unitPrice }</td>
-					<td>${list.num }</td>
-					<td>${list.totalprice }</td>
-					<td>${list.state }</td>
-					<td>${list.style }</td>
-					<td>${address }</td>
+			<c:forEach items="${orderAddress}" var="list">
+				<tr target="sid_user" rel="${list.order.id }">
+					<td>${list.order.id }</td>
+					
+					<td>${list.userName }</td>
+					
+					<td><c:if test="${list.order.state==0 }">待支付</c:if> <c:if
+							test="${list.order.state==1 }">待发货</c:if> <c:if
+							test="${list.order.state==2 }">已发货</c:if> <c:if
+							test="${list.order.state==3 }">已完成</c:if></td>
+					<td><c:if test="${list.order.style==false }">普通会员订单</c:if>
+						<c:if test="${list.order.style==true }">商城会员订单</c:if></td>
+					<td>${list.consignee }</td>
+					<td>${list.telephone }</td>
+					<td>${list.address }</td>
 				</tr>
 			</c:forEach>
 		</tbody>

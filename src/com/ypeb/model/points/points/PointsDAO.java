@@ -26,6 +26,7 @@ public class PointsDAO extends BaseHibernateDAO {
 	public static final String USER_ID = "userId";
 	public static final String POINT_NUM = "pointNum";
 	public static final String STATE = "state";
+	public static final String IS_DELETE = "isDelete";
 
 	public void save(Points transientInstance) {
 		log.debug("saving Points instance");
@@ -101,6 +102,10 @@ public class PointsDAO extends BaseHibernateDAO {
 
 	public List<Points> findByState(Object state) {
 		return findByProperty(STATE, state);
+	}
+
+	public List<Points> findByIsDelete(Object isDelete) {
+		return findByProperty(IS_DELETE, isDelete);
 	}
 
 	public List findAll() {

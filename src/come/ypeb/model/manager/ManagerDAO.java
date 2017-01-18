@@ -25,6 +25,7 @@ public class ManagerDAO extends BaseHibernateDAO {
 	public static final String NAME = "name";
 	public static final String REAL_NAME = "realName";
 	public static final String TELEPHONE = "telephone";
+	public static final String IS_DELETE = "isDelete";
 
 	public void save(Manager transientInstance) {
 		log.debug("saving Manager instance");
@@ -100,6 +101,10 @@ public class ManagerDAO extends BaseHibernateDAO {
 
 	public List<Manager> findByTelephone(Object telephone) {
 		return findByProperty(TELEPHONE, telephone);
+	}
+
+	public List<Manager> findByIsDelete(Object isDelete) {
+		return findByProperty(IS_DELETE, isDelete);
 	}
 
 	public List findAll() {

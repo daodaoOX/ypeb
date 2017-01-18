@@ -27,6 +27,7 @@ public abstract class AbstractBankcard implements java.io.Serializable {
 	private String cardNum;
 	private String bankName;
 	private String name;
+	private Boolean isDelete;
 
 	// Constructors
 
@@ -34,13 +35,23 @@ public abstract class AbstractBankcard implements java.io.Serializable {
 	public AbstractBankcard() {
 	}
 
-	/** full constructor */
+	/** minimal constructor */
 	public AbstractBankcard(User user, String cardNum, String bankName,
 			String name) {
 		this.user = user;
 		this.cardNum = cardNum;
 		this.bankName = bankName;
 		this.name = name;
+	}
+
+	/** full constructor */
+	public AbstractBankcard(User user, String cardNum, String bankName,
+			String name, Boolean isDelete) {
+		this.user = user;
+		this.cardNum = cardNum;
+		this.bankName = bankName;
+		this.name = name;
+		this.isDelete = isDelete;
 	}
 
 	// Property accessors
@@ -90,6 +101,15 @@ public abstract class AbstractBankcard implements java.io.Serializable {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	@Column(name = "isDelete")
+	public Boolean getIsDelete() {
+		return this.isDelete;
+	}
+
+	public void setIsDelete(Boolean isDelete) {
+		this.isDelete = isDelete;
 	}
 
 }

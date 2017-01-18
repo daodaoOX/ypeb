@@ -35,6 +35,7 @@ public abstract class AbstractRole implements java.io.Serializable {
 	private Boolean message;
 	private Boolean seeting;
 	private Integer trade;
+	private Boolean isDelete;
 	private Set<Manager> managers = new HashSet<Manager>(0);
 
 	// Constructors
@@ -61,7 +62,8 @@ public abstract class AbstractRole implements java.io.Serializable {
 	/** full constructor */
 	public AbstractRole(String name, Boolean super_, Boolean shopWeb,
 			Boolean points, Boolean member, Boolean order, Boolean message,
-			Boolean seeting, Integer trade, Set<Manager> managers) {
+			Boolean seeting, Integer trade, Boolean isDelete,
+			Set<Manager> managers) {
 		this.name = name;
 		this.super_ = super_;
 		this.shopWeb = shopWeb;
@@ -71,6 +73,7 @@ public abstract class AbstractRole implements java.io.Serializable {
 		this.message = message;
 		this.seeting = seeting;
 		this.trade = trade;
+		this.isDelete = isDelete;
 		this.managers = managers;
 	}
 
@@ -165,6 +168,15 @@ public abstract class AbstractRole implements java.io.Serializable {
 
 	public void setTrade(Integer trade) {
 		this.trade = trade;
+	}
+
+	@Column(name = "isDelete")
+	public Boolean getIsDelete() {
+		return this.isDelete;
+	}
+
+	public void setIsDelete(Boolean isDelete) {
+		this.isDelete = isDelete;
 	}
 
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "role")

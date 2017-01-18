@@ -26,6 +26,7 @@ public class BankcardDAO extends BaseHibernateDAO {
 	public static final String CARD_NUM = "cardNum";
 	public static final String BANK_NAME = "bankName";
 	public static final String NAME = "name";
+	public static final String IS_DELETE = "isDelete";
 
 	public void save(Bankcard transientInstance) {
 		log.debug("saving Bankcard instance");
@@ -101,6 +102,10 @@ public class BankcardDAO extends BaseHibernateDAO {
 
 	public List<Bankcard> findByName(Object name) {
 		return findByProperty(NAME, name);
+	}
+
+	public List<Bankcard> findByIsDelete(Object isDelete) {
+		return findByProperty(IS_DELETE, isDelete);
 	}
 
 	public List findAll() {

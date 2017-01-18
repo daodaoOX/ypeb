@@ -27,5 +27,5 @@ public class Points extends AbstractPoints implements java.io.Serializable {
 	}
 
 	/** full constructor */
-	
+
 }
