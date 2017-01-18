@@ -30,6 +30,7 @@ public abstract class AbstractPoints implements java.io.Serializable {
 	private Double pointNum;
 	private Timestamp time;
 	private Boolean state;
+	private Boolean isDelete;
 
 	// Constructors
 
@@ -37,7 +38,7 @@ public abstract class AbstractPoints implements java.io.Serializable {
 	public AbstractPoints() {
 	}
 
-	/** full constructor */
+	/** minimal constructor */
 	public AbstractPoints(Pointspublish pointspublish, Integer userId,
 			Double pointNum, Timestamp time, Boolean state) {
 		this.pointspublish = pointspublish;
@@ -45,6 +46,17 @@ public abstract class AbstractPoints implements java.io.Serializable {
 		this.pointNum = pointNum;
 		this.time = time;
 		this.state = state;
+	}
+
+	/** full constructor */
+	public AbstractPoints(Pointspublish pointspublish, Integer userId,
+			Double pointNum, Timestamp time, Boolean state, Boolean isDelete) {
+		this.pointspublish = pointspublish;
+		this.userId = userId;
+		this.pointNum = pointNum;
+		this.time = time;
+		this.state = state;
+		this.isDelete = isDelete;
 	}
 
 	// Property accessors
@@ -103,6 +115,15 @@ public abstract class AbstractPoints implements java.io.Serializable {
 
 	public void setState(Boolean state) {
 		this.state = state;
+	}
+
+	@Column(name = "isDelete")
+	public Boolean getIsDelete() {
+		return this.isDelete;
+	}
+
+	public void setIsDelete(Boolean isDelete) {
+		this.isDelete = isDelete;
 	}
 
 }

@@ -31,6 +31,8 @@ public class SettingDAO extends BaseHibernateDAO {
 	public static final String SECOND_AWARD = "secondAward";
 	public static final String MAX_POINTS = "maxPoints";
 	public static final String FEEDBACK_AWARD = "feedbackAward";
+	public static final String IS_USING = "isUsing";
+	public static final String IS_DELETE = "isDelete";
 
 	public void save(Setting transientInstance) {
 		log.debug("saving Setting instance");
@@ -130,6 +132,14 @@ public class SettingDAO extends BaseHibernateDAO {
 
 	public List<Setting> findByFeedbackAward(Object feedbackAward) {
 		return findByProperty(FEEDBACK_AWARD, feedbackAward);
+	}
+
+	public List<Setting> findByIsUsing(Object isUsing) {
+		return findByProperty(IS_USING, isUsing);
+	}
+
+	public List<Setting> findByIsDelete(Object isDelete) {
+		return findByProperty(IS_DELETE, isDelete);
 	}
 
 	public List findAll() {

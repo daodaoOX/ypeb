@@ -46,6 +46,7 @@ public abstract class AbstractGoods implements java.io.Serializable {
 	private String telephone;
 	private String linkMan;
 	private String webChat;
+	private String isDelete;
 
 	// Constructors
 
@@ -76,7 +77,7 @@ public abstract class AbstractGoods implements java.io.Serializable {
 			String imageUrl2, String imageUrl3, String imageUrl4,
 			String imageUrl5, String code, Integer secondCateg,
 			Integer thirdCateg, Integer category2, String timeMark,
-			String telephone, String linkMan, String webChat) {
+			String telephone, String linkMan, String webChat, String isDelete) {
 		this.goodscategory = goodscategory;
 		this.name = name;
 		this.specification = specification;
@@ -100,6 +101,7 @@ public abstract class AbstractGoods implements java.io.Serializable {
 		this.telephone = telephone;
 		this.linkMan = linkMan;
 		this.webChat = webChat;
+		this.isDelete = isDelete;
 	}
 
 	// Property accessors
@@ -320,6 +322,15 @@ public abstract class AbstractGoods implements java.io.Serializable {
 
 	public void setWebChat(String webChat) {
 		this.webChat = webChat;
+	}
+
+	@Column(name = "isDelete", length = 45)
+	public String getIsDelete() {
+		return this.isDelete;
+	}
+
+	public void setIsDelete(String isDelete) {
+		this.isDelete = isDelete;
 	}
 
 }

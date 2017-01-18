@@ -33,11 +33,11 @@ public class Goods extends AbstractGoods implements java.io.Serializable {
 			String imageUrl2, String imageUrl3, String imageUrl4,
 			String imageUrl5, String code, Integer secondCateg,
 			Integer thirdCateg, Integer category2, String timeMark,
-			String telephone, String linkMan, String webChat) {
+			String telephone, String linkMan, String webChat, String isDelete) {
 		super(goodscategory, name, specification, description, imageUrl1, price,
 				givePoints, discountPrice, isShow, purchacePrice, attribute, imageUrl2,
 				imageUrl3, imageUrl4, imageUrl5, code, secondCateg, thirdCateg,
-				category2, timeMark, telephone, linkMan, webChat);
+				category2, timeMark, telephone, linkMan, webChat, isDelete);
 		// TODO Auto-generated constructor stub
 	}
 

@@ -26,10 +26,13 @@ public class Goodscategory extends AbstractGoodscategory implements
 		super(name, isFloor, level);
 	}
 
-	/** full constructor */
 	public Goodscategory(String name, Boolean isFloor, Short level,
-			Integer superId, String url, Set<Goods> goodses) {
-		super(name, isFloor, level, superId, url, goodses);
+			Integer superId, String url, Boolean isDelete, Set<Goods> goodses) {
+		super(name, isFloor, level, superId, url, isDelete, goodses);
+		// TODO Auto-generated constructor stub
 	}
+
+	/** full constructor */
+
 
 }

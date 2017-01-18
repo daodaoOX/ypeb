@@ -1,6 +1,10 @@
 =\=\=\=\=\=\=
-<<<<<<<=HEAD
->>>>>>>=3299adf096613fd1725e88358ee80c3f7216472e
+
+eclipse.preferences.version=1
+validator.Checked=WebRoot/backPage/trade/saleInfo.jsp,WebRoot/backPage/shopping/order/list.jsp,WebRoot/xheditor,WebRoot/js,WebRoot/bootstrap
+
+
 eclipse.preferences.version=1
 validator.Checked=WebRoot/backPage/trade/saleInfo.jsp,WebRoot/xheditor,WebRoot/backPage/shopping/category/list.jsp,WebRoot/js,WebRoot/bootstrap
+
 validator.Unchecked=

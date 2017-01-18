@@ -25,6 +25,8 @@ public abstract class AbstractSetting implements java.io.Serializable {
 	private Double secondAward;
 	private Integer maxPoints;
 	private Double feedbackAward;
+	private Boolean isUsing;
+	private Boolean isDelete;
 
 	// Constructors
 
@@ -32,10 +34,11 @@ public abstract class AbstractSetting implements java.io.Serializable {
 	public AbstractSetting() {
 	}
 
-	/** full constructor */
+	/** minimal constructor */
 	public AbstractSetting(Double price, Short month, Short giveDays,
 			Short consumeDays, Double withdrawRate, Double firstAward,
-			Double secondAward, Integer maxPoints, Double feedbackAward) {
+			Double secondAward, Integer maxPoints, Double feedbackAward,
+			Boolean isDelete) {
 		this.price = price;
 		this.month = month;
 		this.giveDays = giveDays;
@@ -45,6 +48,25 @@ public abstract class AbstractSetting implements java.io.Serializable {
 		this.secondAward = secondAward;
 		this.maxPoints = maxPoints;
 		this.feedbackAward = feedbackAward;
+		this.isDelete = isDelete;
+	}
+
+	/** full constructor */
+	public AbstractSetting(Double price, Short month, Short giveDays,
+			Short consumeDays, Double withdrawRate, Double firstAward,
+			Double secondAward, Integer maxPoints, Double feedbackAward,
+			Boolean isUsing, Boolean isDelete) {
+		this.price = price;
+		this.month = month;
+		this.giveDays = giveDays;
+		this.consumeDays = consumeDays;
+		this.withdrawRate = withdrawRate;
+		this.firstAward = firstAward;
+		this.secondAward = secondAward;
+		this.maxPoints = maxPoints;
+		this.feedbackAward = feedbackAward;
+		this.isUsing = isUsing;
+		this.isDelete = isDelete;
 	}
 
 	// Property accessors
@@ -138,6 +160,24 @@ public abstract class AbstractSetting implements java.io.Serializable {
 
 	public void setFeedbackAward(Double feedbackAward) {
 		this.feedbackAward = feedbackAward;
+	}
+
+	@Column(name = "isUsing")
+	public Boolean getIsUsing() {
+		return this.isUsing;
+	}
+
+	public void setIsUsing(Boolean isUsing) {
+		this.isUsing = isUsing;
+	}
+
+	@Column(name = "isDelete", nullable = false)
+	public Boolean getIsDelete() {
+		return this.isDelete;
+	}
+
+	public void setIsDelete(Boolean isDelete) {
+		this.isDelete = isDelete;
 	}
 
 }

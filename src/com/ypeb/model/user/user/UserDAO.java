@@ -47,7 +47,7 @@ public class UserDAO extends BaseHibernateDAO {
 	public static final String ICE_POINTS = "icePoints";
 	public static final String TRADE_POINTS = "tradePoints";
 	public static final String BANK_CARD = "bankCard";
-
+	public static final String IS_DELETE = "isDelete";
 	
 	public List<User> findByUser(User user) {  
 	    final DetachedCriteria query = DetachedCriteria  
@@ -60,6 +60,7 @@ public class UserDAO extends BaseHibernateDAO {
 	      
 	    return list;  
 	} 
+
 	public void save(User transientInstance) {
 		log.debug("saving User instance");
 		try {
@@ -190,6 +191,10 @@ public class UserDAO extends BaseHibernateDAO {
 
 	public List<User> findByBankCard(Object bankCard) {
 		return findByProperty(BANK_CARD, bankCard);
+	}
+
+	public List<User> findByIsDelete(Object isDelete) {
+		return findByProperty(IS_DELETE, isDelete);
 	}
 
 	public List findAll() {
