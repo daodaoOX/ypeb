@@ -40,8 +40,10 @@
 		</div>
 		<div class="clearfix"></div>
 	</div>
+	
 	<form action="frontShopping_Goods_pay">
 		<div class="site_box">
+		<div class="myaddress">收货地址</div>
 			<c:forEach items="${addressList }" var="addr" varStatus="status">
 				<div class="site">
 					<p>${addr.name }</p>

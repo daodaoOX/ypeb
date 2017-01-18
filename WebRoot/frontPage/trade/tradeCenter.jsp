@@ -27,7 +27,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    		右侧为局部刷新。局部刷新页面分别为tradeGraph.jsp,tradeDeal,tradeRecord。
      -->
 	     <div class="trade">
-	    	<a href="frontPage/trade/tradeGraph.jsp"  target="mytrade"><span class="tradeGraph">交易中心</span></a><br />
+	    	<a href="frontTrade_TradeCenter_tradeCenter"  target="mytrade"><span class="tradeGraph">交易中心</span></a><br />
 	        <a href="frontPage/trade/tradeDeal.jsp" target="mytrade"><span class="pointsBuy">积分购买</span></a><br />
 	        <a href="frontPage/trade/tradeRecord.jsp" target="mytrade"><span class="tradeRecord">交易记录</span></a>
 	     </div>
