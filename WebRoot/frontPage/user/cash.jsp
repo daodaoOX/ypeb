@@ -29,15 +29,15 @@
 			<p>交易项目</p>
 			<p>交易额</p>
 			<p>时间</p>
-			<p>余额${user.cash }</p>
+			<p>余额&nbsp;&nbsp;${user.cash }</p>
 			<div class="clearfix"></div>
 		</div>
 		<c:forEach items="${cashList }" var="list">
 			<div class="reckoning">
 				<div class="reckoning_line"></div>
 				<p>
-					<c:if test="${list.operate }">充值</c:if>
-					<c:if test="${list.operate }">提现</c:if>
+					<c:if test="${list.operate==true }">充值</c:if>
+					<c:if test="${list.operate==false }">提现</c:if>
 				</p>
 				<p>${list.num }</p>
 				<p><fmt:formatDate value="${list.time}"

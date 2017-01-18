@@ -69,21 +69,29 @@
 				<img src="img/user/vip.png">
 				<ul class="hove">
 					<span class="click_ul">会员中心</span>
-					<li><a href="frontUser_PersonalCenter_myInfo" target="mytrade"
+					<li><a href="frontUser_PersonalCenter_myInfo" target="mytrade" 
 						class="color">我的信息</a></li>
 					<li><a href="frontPage/user/personalCenter/changePassword.jsp"
 						target="mytrade">修改密码</a></li>
+					<li><a href="frontPage/user/personalCenter/integralBuy.jsp"
+						target="mytrade">购买积分</a></li>
 					<li><a href="frontUser_PersonalCenter_myOrder"
 						target="mytrade">我的订单</a></li>
 					<li><a href="frontUser_PersonalCenter_myAddress"
 						target="mytrade">收货地址</a></li>
+					<li><a href="frontPage/user/personalCenter/bankCard.jsp"
+						target="mytrade">银行卡</a></li>
+					<li><a href="frontPage/user/personalCenter/recharge.jsp"
+						target="mytrade">充值申请</a></li>
+					<li><a href="frontPage/user/personalCenter/withdrawCash.jsp"
+						target="mytrade">提现申请</a></li>
 					<li><a href="frontUser_PersonalCenter_myRegister"
 						target="mytrade">推荐会员</a></li>
-					<li><a href="frontUser_PersonalCenter_myRecommend"
+					<li><a href="frontPage/user/personalCenter/myRecommend.jsp"
 						target="mytrade">推荐记录</a></li>
 					<li><a href="frontUser_PersonalCenter_myAward"
 						target="mytrade">奖金记录</a></li>
-					<li><a href="frontUser_PersonalCenter_myMessage"
+					<li><a href="frontPage/user/personalCenter/message.jsp"
 						target="mytrade">我的留言</a></li>
 				</ul>
 				<div class="clearfix"></div>
@@ -122,11 +130,10 @@
 				</div>
 			</div>
 			<div class="iframe">
-				<iframe name="mytrade" frameborder="no" width="720" height="900"
+				<iframe name="mytrade" id="mytrade" frameborder="no" width="720" 
 					scrolling="no" marginheight="0" marginwidth="0"
 					src="frontUser_PersonalCenter_myInfo"></iframe>
 			</div>
-
 		</div>
 		<div class="clearfix"></div>
 	</div>
@@ -134,12 +141,34 @@
 		$(".hove a").click(function() {
 			$(".hove a").removeClass("color");
 			$(this).addClass("color");
-
 		});
 		$(".property").click(function() {
 			$(".property").removeClass("property_bor");
 			$(this).addClass("property_bor");
 		});
 	</script>
+<!-- iframe自适应高度 -->
+	<script type="text/javascript">
+		function reinitIframe(){
+		var iframe = document.getElementById("mytrade");
+		try{
+		iframe.height = iframe.contentWindow.document.documentElement.scrollHeight;
+		}catch (ex){}
+		}
+		window.setInterval("reinitIframe()", 200);
+	</script>
+	<!-- 解决iframe跳转页面时位置如何返回顶部问题 -->
+<script type="text/javascript">
+	function parentGoTop(){
+	parent.scrollTo(0,0);
+	}
+	function addClick(){
+	var aList=document.getElementsByTagName("a");
+	for(var i=0;i<aList.length;i++){
+	    aList[i].onclick=function(){parentGoTop();}
+	    }
+	}
+	window.onload=function(){addClick();}
+</script>
 </body>
 </html>

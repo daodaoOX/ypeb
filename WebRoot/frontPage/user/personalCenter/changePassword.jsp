@@ -12,14 +12,13 @@
 <head>
 <base href="<%=basePath%>">
 <meta charset="utf-8">
-<link type="text/css" rel="stylesheet" href="frontCss/user/personal_information.css">
-<link type="text/css" rel="stylesheet" href="frontCss/header_and_footer.css">
 <link type="text/css" rel="stylesheet" href="frontCss/user/changePassw.css">
-<title>无标题文档</title>
+<script type="text/javascript" src="bootstrap/js/jquery-2.1.4.min.js"></script>
 </head>
 
 <body>
-	<div>
+<div>
+	<form action="">
 		<div class="change_sign_up">
 			<p class="headline">修改登录密码</p>
 			<div class="box">
@@ -29,36 +28,29 @@
 			</div>
 			<div class="box">
 				<p>请输入新密码：</p>
-				<input type="password">
+				<input type="password" name="pwdo" />
 				<div class="clearfix"></div>
 			</div>
 			<div class="box">
 				<p>请确认新密码：</p>
-				<input type="password">
-				<div class="clearfix"></div>
+				<input type="password" name="pwdt" />
+				<div class="clearfix" ></div>
 			</div>
-			<input class="confirm" type="submit" value="确定修改">
-		</div>
-		<div class="change_sign_up">
-			<p class="headline">修改支付密码</p>
-			<div class="box">
-				<p class="old_password">原支付密码：</p>
-				<input type="text">
-				<div class="clearfix"></div>
-			</div>
-			<div class="box">
-				<p>请输入新密码：</p>
-				<input type="password">
-				<div class="clearfix"></div>
-			</div>
-			<div class="box">
-				<p>请确认新密码：</p>
-				<input type="password">
-				<div class="clearfix"></div>
-			</div>
-			<input class="confirm" type="submit" value="确定修改">
+			<input class="confirm" type="submit" value="确定修改" onClick="pwd();" />
 		</div>
 		<div class="clearfix"></div>
+	</form>
 	</div>
+	
+    <!-- 验证手机号和密码格式是否正确 -->
+  <script>
+function pwd(){
+   	if($("input[name='pwdo']").val()==$("input[name='pwdt']").val()){
+		//alert("yes");
+    }else{
+		alert("重复输入的密码不正确!");		
+  }
+}
+   </script>
 </body>
 </html>

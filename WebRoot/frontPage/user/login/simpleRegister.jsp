@@ -58,17 +58,18 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             </div>
 			<div class="regsiter">
 				<span>手机号</span>
-				<input type="text" value="" name="phone" placeholder="请输入你的手机号" class="input1" />
+				<input type="text" value="" name="phone" placeholder="请输入你的手机号" class="input1" maxlength="11"
+				onkeyup="this.value=this.value.replace(/[^\d]/g,'') " onafterpaste="this.value=this.value.replace(/[^\d]/g,'') " name="f_order"   />
 				<div class="clearfix"></div>
 			</div>
 			<div class="regsiter">
 				<span>设置密码</span>
-				<input type="text" value="" name="pwdo" placeholder="请输入8~16位新密码" class="input2" />
+				<input type="password" value="" name="pwdo" placeholder="请输入8~16位新密码" class="input2" />
 				<div class="clearfix"></div>
 			</div>
 			<div class="regsiter">
 				<span>确认密码</span>
-				<input type="text" value="" name="pwdt" placeholder="请重新输入8~16位新密码" class="input3"/>
+				<input type="password" value="" name="pwdt" placeholder="请重新输入8~16位新密码" class="input3"/>
 				<div class="clearfix"></div>
 			</div>
 			<div class="regsiter">

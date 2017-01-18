@@ -59,11 +59,11 @@
 				<h2 class="classification">全部商品分类</h2>
 				<ul class="classification_box prosul" id="proinfo">
 					<c:forEach var="first" items="${categoryByLevel }">
-						<li><a
+						<li class="liback"><a class="libacka"
 							href="frontShopping_Goods_queryFCategory?categoryID=${first.id }">${first.name }</a>
 							<div class="prosmore hide">
 								<c:forEach var="second" items="${first.secCategoryList  }">
-									<span><a href="">${second.name }</a></span>
+									<span><a class="libackb" href="">${second.name }</a></span>
 								</c:forEach>
 							</div></li>
 					</c:forEach>
@@ -118,6 +118,7 @@
 	}).mouseout(function() {
 		$(".classification_box").hide();
 	});
+	
 </script>
 
 <!-- 解决iframe跳转页面时位置如何返回顶部问题 -->

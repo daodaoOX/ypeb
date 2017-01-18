@@ -9,5 +9,6 @@
 .img_yanzheng{ float:left; margin-left: 20px;}
 /**/
 .fenxiang_box{float:left;}
-.fenxiang{width:135px;padding-left: 40px;font-size:14px;background-color: #ec1d23;line-height:32px;color: #fff;background-image:url(../../img/personal_information/fenxiang.png);background-repeat: no-repeat;background-position:10px 6px; border-radius: 2px;}
+.fenxiang{width:135px;padding-left: 40px;font-size:14px;background-color: #ec1d23;line-height:32px;color: #fff;background-image:url(../../img/Recommended_member/fenxiang.png);background-repeat: no-repeat;background-position:10px 6px; border-radius: 2px;}
 .fenxiang_box p{width:175px;font-size: 12px;color:#b2b2b2;line-height: 20px; margin-top: 6px;}
+.zhuce{background-color: #ec1d23;color:white;border:1px solid #ec1d23;font-size:16px; }

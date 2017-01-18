@@ -12,7 +12,6 @@
 <html>
 <head>
 <base href="<%=basePath%>">
-<title>无标题文档</title>
 <script src="frontJs/jquery.js"></script>
 <link type="text/css" rel="stylesheet"
 	href="frontCss/header_and_footer.css">
@@ -28,7 +27,6 @@
 			<c:forEach items="${addressList }" var="list">
 				<div class="ra">
 					<p>${list.name }（收）</p>
-
 					<p>${list.telephone }</p>
 					<p>${list.address }</p>
 					<div class="ra_img">
@@ -58,8 +56,6 @@
 				<div class="clearfix"></div>
 			</div>
 			<!--收件地址-->
-
-			<!--收件地址-->
 			<textarea class="input-1"></textarea>
 			<input type="button" class="input-2" value="确认添加">
 		</div>
@@ -67,21 +63,20 @@
 		<div class="add_ra_box">
 			<form action="frontUser_PersonalCenter_addAddress" method="post">
 				<div class="change_ra">
-					<p>收件人</p>
-					<input type="text" name="address.name">
+					<p>收件人:</p>
+					<input class="updatePeop" maxlength="8" type="text" name="address.name" placeholder="请输入收件人姓名" >
 					<div class="clearfix"></div>
 				</div>
 				<div class="change_ra">
-					<p>手机号码</p>
-					<input type="text" name="address.telephone">
+					<p>手机号码:</p>
+					<input type="text" name="address.telephone" maxlength="11" placeholder="请输入你的手机号"
+					onkeyup="this.value=this.value.replace(/[^\d]/g,'') " onafterpaste="this.value=this.value.replace(/[^\d]/g,'') " />
 					<div class="clearfix"></div>
 				</div>
 				<!--收件地址-->
-
-				<!--收件地址-->
-				<textarea class="input-1" name="address.address"></textarea>
-				<input type="submit" class="input-2" value="确认更改">
-
+				<div class="fontaddres">地&nbsp;&nbsp;址:</div>
+				<textarea class="input-1" maxlength="45" name="address.address" placeholder="请输入详细地址, 如:街道,小区,楼层,门牌号等"></textarea>
+				<input type="submit" class="input-2" value="确认更改" />
 			</form>
 		</div>
 
