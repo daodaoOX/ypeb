@@ -53,3 +53,6 @@ a:hover{color:#000;text-decoration:none;}
 .addtype{position:absolute;margin-left:-90px;}
 .quantity{position:absolute;margin-left:40px;}
 
+/*删除*/
+.delBut{background-color:#ec1d23;border-radius:4px;border:1px solid #ec1d23;width:60px;height:30px;color:#FFFFFF;}
+
