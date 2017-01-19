@@ -1,10 +1,15 @@
 package com.ypeb.model.shopping.goods;
 
 import com.ypeb.model.trade.pointsSale.BaseHibernateDAO;
+import com.ypeb.util.Page;
+
 import java.util.List;
+
 import org.hibernate.LockOptions;
 import org.hibernate.Query;
+
 import static org.hibernate.criterion.Example.create;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -45,6 +50,39 @@ public class GoodsDAO extends BaseHibernateDAO {
 	public static final String LINK_MAN = "linkMan";
 	public static final String WEB_CHAT = "webChat";
 	public static final String IS_DELETE = "isDelete";
+	public static final String CATEGORY2NAME = "category2name";
+	
+	public List<Goods> findAllByPage(Page page) {
+		log.debug("finding all Goods instances");
+		try {
+			getSession().clear();
+			String queryString = "from Goods where isDelete=0 order by id desc";
+			Query queryObject = getSession().createQuery(queryString);
+			int first = (page.getCurrentPage() - 1) * page.getEveryPage();
+			queryObject.setFirstResult(first);
+			queryObject.setMaxResults(page.getEveryPage());
+			return queryObject.list();
+		} catch (RuntimeException re) {
+			log.error("find all failed", re);
+			throw re;
+		}
+	}
+	
+
+	public int findCount() {
+		log.debug("finding all goods count");
+		try {
+			getSession().clear();
+			String hql = "select count(*) from Goods as inf where isDelete=0";
+			Query query = getSession().createQuery(hql);
+			System.out.println(((Number) query.uniqueResult()).intValue());
+			return  ((Number) query.uniqueResult()).intValue();
+		} catch (RuntimeException re) {
+			log.error("find all failed", re);
+			throw re;
+		}
+	}
+
 
 	public void save(Goods transientInstance) {
 		log.debug("saving Goods instance");
@@ -200,6 +238,10 @@ public class GoodsDAO extends BaseHibernateDAO {
 
 	public List<Goods> findByIsDelete(Object isDelete) {
 		return findByProperty(IS_DELETE, isDelete);
+	}
+
+	public List<Goods> findByCategory2name(Object category2name) {
+		return findByProperty(CATEGORY2NAME, category2name);
 	}
 
 	public List findAll() {

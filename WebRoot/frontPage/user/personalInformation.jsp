@@ -26,7 +26,7 @@
 </style>
 </head>
 
-<body onload="window.parent.document.getElementById('index').height=document.body.scrollHeight;">
+<body>
 	<div class="personal_information_box">
 		<!--左侧内容-->
 		<div class="left_box">
@@ -130,8 +130,8 @@
 				</div>
 			</div>
 			<div class="iframe">
-				<iframe name="mytrade" id="mytrade" frameborder=no width="720" 
-					scrolling="no" marginheight="0" marginwidth="0"
+				<iframe name=mytrade id=mytrade frameborder=no width=720
+					scrolling=no marginheight=0 marginwidth=0 onload="this.height=100"
 					src="frontUser_PersonalCenter_myInfo"></iframe>
 			</div>
 		</div>
@@ -147,15 +147,18 @@
 			$(this).addClass("property_bor");
 		});
 	</script>
-<!-- iframe自适应高度 -->
+	<!-- iframe高度自适应问题 -->
 	<script type="text/javascript">
 		function reinitIframe(){
-		var iframe = document.getElementById("mytrade");
-		try{
-		iframe.height = iframe.contentWindow.document.documentElement.scrollHeight;
-		}catch (ex){}
+		    var iframe = document.getElementById("mytrade");
+		    try{
+		        var bHeight = iframe.contentWindow.document.body.scrollHeight,
+		            dHeight = iframe.contentWindow.document.documentElement.scrollHeight,
+		            height = Math.max(bHeight, dHeight);
+		        iframe.height =  height;
+		    }catch (ex){}
 		}
-		window.setInterval("reinitIframe()", 200);
+		window.setInterval("reinitIframe()", 100);
 	</script>
 	<!-- 解决iframe跳转页面时位置如何返回顶部问题 -->
 <script type="text/javascript">
