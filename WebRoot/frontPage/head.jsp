@@ -9,7 +9,6 @@
 <div class="header">
 	<div class="header_top">
 		<h1 class="welcome">欢迎进入沂品电子商务积分购物商城!</h1>
-
 		<c:choose>
 			<c:when test="${userName!=null}">
 			<!-- 登陆用户 -->
@@ -82,13 +81,10 @@
 	</div>
 </div>
 
-
 <script type="text/javascript">
 	(function() {
-
 		var $subblock = $(".subpage"), $head = $subblock.find('h2'), $ul = $("#proinfo"), $lis = $ul
 				.find("li"), inter = false;
-
 		$lis.hover(function() {
 			if (!$(this).hasClass('nochild')) {
 				$(this).addClass("prosahover");

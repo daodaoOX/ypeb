@@ -74,7 +74,7 @@
 			</div>
 			<c:forEach items="${announList }" var="announcement">
 				<h3>
-					<a href="?id=${announcement.id }">${announcement.title }</a>
+					<a href="<%=path%>/frontPage/shopping/dispAnnouncement.jsp?id=${announcement.id }">${announcement.title }</a>
 				</h3>
 			</c:forEach>
 
@@ -129,7 +129,6 @@ $(document).ready(function(){
     });
   });
 });
-
 </script>
 	<script type="text/javascript" language="javascript">
 		(function() {
@@ -203,7 +202,7 @@ $(document).ready(function(){
 			t1 = setInterval(toFade, 3000)
 		})
 	</script>
-	
+
 	<!-- 解决iframe跳转页面时位置如何返回顶部问题 -->
 <script type="text/javascript">
 	function parentGoTop(){
