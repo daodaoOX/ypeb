@@ -32,7 +32,6 @@ public abstract class AbstractGoodscategory implements java.io.Serializable {
 	private Integer superId;
 	private String url;
 	private Boolean isDelete;
-	private String superName;
 	private Set<Goods> goodses = new HashSet<Goods>(0);
 
 	// Constructors
@@ -42,25 +41,21 @@ public abstract class AbstractGoodscategory implements java.io.Serializable {
 	}
 
 	/** minimal constructor */
-	public AbstractGoodscategory(String name, Boolean isFloor, Short level,
-			Boolean isDelete) {
+	public AbstractGoodscategory(String name, Boolean isFloor, Short level) {
 		this.name = name;
 		this.isFloor = isFloor;
 		this.level = level;
-		this.isDelete = isDelete;
 	}
 
 	/** full constructor */
 	public AbstractGoodscategory(String name, Boolean isFloor, Short level,
-			Integer superId, String url, Boolean isDelete, String superName,
-			Set<Goods> goodses) {
+			Integer superId, String url, Boolean isDelete, Set<Goods> goodses) {
 		this.name = name;
 		this.isFloor = isFloor;
 		this.level = level;
 		this.superId = superId;
 		this.url = url;
 		this.isDelete = isDelete;
-		this.superName = superName;
 		this.goodses = goodses;
 	}
 
@@ -121,22 +116,13 @@ public abstract class AbstractGoodscategory implements java.io.Serializable {
 		this.url = url;
 	}
 
-	@Column(name = "isDelete", nullable = false)
+	@Column(name = "isDelete")
 	public Boolean getIsDelete() {
 		return this.isDelete;
 	}
 
 	public void setIsDelete(Boolean isDelete) {
 		this.isDelete = isDelete;
-	}
-
-	@Column(name = "superName", length = 45)
-	public String getSuperName() {
-		return this.superName;
-	}
-
-	public void setSuperName(String superName) {
-		this.superName = superName;
 	}
 
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "goodscategory")

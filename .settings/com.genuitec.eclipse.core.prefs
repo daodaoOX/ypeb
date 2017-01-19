@@ -1,4 +1,10 @@
 =\=\=\=\=\=\=
+
 eclipse.preferences.version=1
-validator.Checked=WebRoot/backPage/trade/saleInfo.jsp,WebRoot/build,WebRoot/xheditor,WebRoot/frontJs,WebRoot/backPage/shopping/category/list.jsp,WebRoot/js,WebRoot/bootstrap
+validator.Checked=WebRoot/backPage/trade/saleInfo.jsp,WebRoot/backPage/shopping/order/list.jsp,WebRoot/xheditor,WebRoot/js,WebRoot/bootstrap
+
+
+eclipse.preferences.version=1
+validator.Checked=WebRoot/backPage/trade/saleInfo.jsp,WebRoot/xheditor,WebRoot/backPage/shopping/category/list.jsp,WebRoot/js,WebRoot/bootstrap
+
 validator.Unchecked=

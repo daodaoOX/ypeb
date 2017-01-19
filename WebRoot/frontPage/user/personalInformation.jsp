@@ -26,13 +26,13 @@
 </style>
 </head>
 
-<body>
+<body onload="window.parent.document.getElementById('index').height=document.body.scrollHeight;">
 	<div class="personal_information_box">
 		<!--左侧内容-->
 		<div class="left_box">
 			<!--面包屑路径-->
 			<ul class="nav">
-				<li>首页</li>
+				<li><a href="frontShopping_Index_bodyData" target="index">首页</a></li>
 				<img src="img/personal_information/right_jiantou.png">
 				<li>我的信息</li>
 				<div class="clearfix"></div>
@@ -130,7 +130,7 @@
 				</div>
 			</div>
 			<div class="iframe">
-				<iframe name="mytrade" id="mytrade" frameborder="no" width="720" 
+				<iframe name="mytrade" id="mytrade" frameborder=no width="720" 
 					scrolling="no" marginheight="0" marginwidth="0"
 					src="frontUser_PersonalCenter_myInfo"></iframe>
 			</div>

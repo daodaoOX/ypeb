@@ -94,7 +94,7 @@
 				<th width="70" align="center">是否成楼层</th>
 				<th width="70" align="center">等级</th>
 				<th width="70" align="center">上级栏目ID</th>
-				<th width="70" align="center">广告图片</th>
+				<th width="70" align="center">描述</th>
 
 
 			</tr>
@@ -105,8 +105,7 @@
 				<tr target="sid_user" rel="${list.id }">
 					<td>${list.id }</td>
 					<td>${list.name }</td>
-					<td><c:if test="${list.isFloor==false }">不显示</c:if>
-						<c:if test="${list.isFloor==true }" >显示</c:if></td>
+					<td>${list.isFloor }</td>
 					<td>${list.level }</td>
 					<td>${list.superId }</td>
 					<td>${list.url }</td>

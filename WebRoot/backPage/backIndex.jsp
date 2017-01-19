@@ -193,7 +193,7 @@
 						<ul class="tree treeFolder">
 							<li><a>商城订单管理</a>
 								<ul>
-									<li><a href="backShopping_GoodsOrder_listToSend"
+									<li><a href="backShopping_GoodsOrder_list"
 										target="navTab" rel="order" fresh="true">未发货订单</a></li>
 									<li><a href="backShopping_GoodsOrder_list"
 										target="navTab" rel="order" fresh="true">订单查询</a></li>
@@ -203,7 +203,7 @@
 								</ul></li>
 							<li><a>商品管理</a>
 								<ul>
-									<li><a href="backShopping_Goods_queryByPage"
+									<li><a href="backPage/shopping/goods/list.jsp"
 										target="navTab" rel="goods" fresh="true">商品管理</a></li>
 
 								</ul></li>

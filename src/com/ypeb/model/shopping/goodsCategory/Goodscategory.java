@@ -21,22 +21,18 @@ public class Goodscategory extends AbstractGoodscategory implements
 	public Goodscategory() {
 	}
 
-	public Goodscategory(String name, Boolean isFloor, Short level,
-			Boolean isDelete) {
-		super(name, isFloor, level, isDelete);
-		// TODO Auto-generated constructor stub
-	}
-
-	public Goodscategory(String name, Boolean isFloor, Short level,
-			Integer superId, String url, Boolean isDelete, String superName,
-			Set<Goods> goodses) {
-		super(name, isFloor, level, superId, url, isDelete, superName, goodses);
-		// TODO Auto-generated constructor stub
-	}
-
 	/** minimal constructor */
-	
+	public Goodscategory(String name, Boolean isFloor, Short level) {
+		super(name, isFloor, level);
+	}
+
+	public Goodscategory(String name, Boolean isFloor, Short level,
+			Integer superId, String url, Boolean isDelete, Set<Goods> goodses) {
+		super(name, isFloor, level, superId, url, isDelete, goodses);
+		// TODO Auto-generated constructor stub
+	}
 
 	/** full constructor */
+
 
 }

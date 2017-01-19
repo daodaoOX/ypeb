@@ -27,9 +27,9 @@
 </head>
 
 <form id="pagerForm" method="post"
-	action="backShopping_Goods_queryByPage">
-	<input type="hidden" name="pageNum" value="${page.currentPage }" /> <input type="hidden"
-		name="numPerPage" value="${page.everyPage}" /> <input type="hidden"
+	action="backShopping_Goods_comprehensiveQuery">
+	<input type="hidden" name="pageNum" value="1" /> <input type="hidden"
+		name="numPerPage" value="50" /> <input type="hidden"
 		name="orderField" value="${queryCondition.orderField}" /> <input
 		type="hidden" name="orderDirection"
 		value="${queryCondition.orderDirection}" />
@@ -75,7 +75,7 @@
 <div class="pageContent">
 	<div class="panelBar">
 		<ul class="toolBar">
-			<li><a class="add" href="backShopping_Goods_addPre"
+			<li><a class="add" href="backPage/shopping/goods/add.jsp"
 				target="navTab" rel="addGoods" width="900" height="300"><span>添加</span></a></li>
 			<li><a class="delete"
 				href="backShopping_Goods_delete?uid={sid_user} " target="ajaxTodo"
@@ -88,19 +88,19 @@
 		<thead>
 			<tr>
 
-				<th width="70" align="center">id</th>
-				<th width="70" align="center">商品名</th>
-				<th width="70" align="center">商品编码</th>
-				<th width="70" align="center">销售价格</th>
-				<th width="70" align="center">商城会员价格</th>
-				<th width="70" align="center">赠送积分</th>
-				<th width="70" align="center">进货价格</th>	
-				<th width="70" align="center">首页显示</th>
-				<th width="70" align="center">一级栏目</th>
-				<th width="70" align="center">二级栏目</th>
-				<th width="70" align="center">联系人</th>
-				<th width="70" align="center">电话</th>
-				<th width="70" align="center">微博</th>
+				<th width="50" align="center">id</th>
+				<th width="50" align="center">商品名</th>
+				<th width="50" align="center">商品编码</th>
+				<th width="50" align="center">销售价格</th>
+				<th width="50" align="center">商城会员价格</th>
+				<th width="50" align="center">赠送积分</th>
+				<th width="50" align="center">进货价格</th>	
+				<th width="50" align="center">是否在首页显示</th>
+				<th width="50" align="center">一级栏目</th>
+				<th width="50" align="center">二级栏目</th>
+				<th width="50" align="center">联系人</th>
+				<th width="50" align="center">电话</th>
+				<th width="50" align="center">微博</th>
 
 
 			</tr>
@@ -116,10 +116,9 @@
 					<td>${list.discountPrice }</td>
 					<td>${list.givePoints }</td>
 					<td>${list.purchacePrice }</td>
-					<td><c:if test="${list.isShow==false }"> 不显示</c:if>
-						<c:if test="${list.isShow==true }" >显示</c:if></td>
+					<td>${list.isShow}</td>
 					<td>${list.goodscategory.name }</td>
-					<td>${list.category2name }</td>
+					<td>${list.category2 }</td>
 					<td>${list.linkMan }</td>
 					<td>${list.telephone }</td>
 					<td>${list.webChat }</td>

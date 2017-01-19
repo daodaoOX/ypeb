@@ -93,7 +93,7 @@
 				target="ajaxTodo" title="确定已经发货吗?"><span>发货</span></a></li>
 				<a class="edit"
 				href="backShopping_GoodsOrder_checkGoods?uid={sid_user} "
-				target="ajaxTodo" title="确定已经发货吗?"><span>查看商品清单</span></a></li>
+				target="ajaxTodo" title="确定已经发货吗?"><span>查看商品</span></a></li>
 		</ul>
 
 	</div>

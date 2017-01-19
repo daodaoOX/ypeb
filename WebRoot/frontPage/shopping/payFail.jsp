@@ -8,7 +8,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <html>
   <head>
     <base href="<%=basePath%>">
-    <title>支付成功</title>
+    <title>操作失败</title>
 	<link rel="stylesheet" type="text/css" href="<%=path %>/frontCss/shopping/payComplete.css">
   </head>
   <body>
@@ -16,13 +16,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     	<div class="nav_top">
         </div>
         <div class="center">
-        	<img src="<%=path %>/upload/image/error/success.png" width="45px" height="45px" />
-        	<span>支付成功</span>
-            <p>感谢您在本商城购物!您的订单已经提交成功!我们会尽快为您发货!祝您购物愉快!</p>
+        	<img src="<%=path %>/upload/image/error/error.png" width="45px" height="45px" />
+        	<span>操作失败</span>
+            <p>尊敬的用户!本次交易失败,请核对信息重新下单!感谢您的合作!</p>
             <a href="frontShopping_Index_bodyData" target="index"><div class="successdiv"><span>确&nbsp;认</span></div></a>
         </div>
     </div>
-    <div class="addHei"></div>
+     <div class="addHei"></div>
     	<!-- 解决iframe跳转页面时位置如何返回顶部问题 -->
 <script type="text/javascript">
 	function parentGoTop(){
