@@ -82,11 +82,11 @@
 					</div>
 				</div>
 				<div class="divbuy">
-					<button type="submit" value="立即购买" style="border:1px solid red;background-color:#ec1d23; color:white;width:120;height:40;font-weight:500">立即购买</button>
+					<button type="submit" value="立即购买" style="border:1px solid red;background-color:#ec1d23; color:white;width:120;height:40;font-weight:500" onClick="parentGoTop();">立即购买</button>
 				</div>
 				<div class="clearfix"></div>
 					<div class="divcart">
-						<a href="javascritp:void(0)" target="index">
+						<a href="javascript:void(0)" target="index">
 							<span type="submit" class="spancart" shopID="${goods.id }">加入购物车</span>
 						</a>
 					</div>
@@ -191,6 +191,11 @@ $(document).ready(function(){
 		});
 	}
 	</script>
-
+  	<!-- 解决iframe跳转页面时位置返回顶部问题 -->
+	<script type="text/javascript">
+		function parentGoTop(){
+		parent.scrollTo(0,0);
+		}
+	</script>
 </body>
 </html>

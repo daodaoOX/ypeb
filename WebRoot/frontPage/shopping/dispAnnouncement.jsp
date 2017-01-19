@@ -15,7 +15,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     	<!--nav-->
 	<div class="s_classification">
 		<div class="boundary">
-			<h1><a href="<%=path %>/frontPage/body.jsp" target="index">首页&gt;</a></h1>
+			<h1><a href="frontShopping_Index_bodyData" target="index">首页&gt;</a></h1>
 			<h1><a href="<%=path %>/frontPage/shopping/listAnnouncement.jsp" target="index">公告&gt;</a></h1>
 			<h1>东北地区因恶劣天气延迟发货！</h1>
 			<div class="clearfix"></div>
