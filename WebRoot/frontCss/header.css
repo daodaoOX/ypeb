@@ -69,10 +69,10 @@ width:1000px;height:435px}
 .banner{width:12000px;position:absolute;margin-left:50%;left:-1390px}
 .banner img{position:absolute}
 
-.arrow_left,.arrow_right{position:absolute;margin-top:180px}
-.arrow_left{margin-left:570px}
-.arrow_right{margin-left:1500px}
+.arrow{width:1000px;position:absolute;margin-top:180px;margin-left:50%;left:-400px}
+.arrow_left{float:left;margin-left:10px;}
+.arrow_right{float:right;margin-right:10px;}
 
-.ctrl_span{width:122px;height:24px;border-radius:15px;background-color:rgba(255,255,255,0.3);position:absolute;margin-left:50%;bottom:6px;left:39px}
-.ctrl_span span{width:18px;height:18px;border-radius:9px;background-color:rgba(255,255,255,0.6);float:left;margin:3px 0px 0px 10px;}
+.ctrl_span{width:122px;height:24px;border-radius:15px;background-color:rgba(230,230,230,0.3);position:absolute;margin-left:50%;bottom:6px;left:39px}
+.ctrl_span span{width:18px;height:18px;border-radius:9px;background-color:rgba(204,204,204,0.6);float:left;margin:3px 0px 0px 10px;}
 .ctrl_span .current{background-color:#ec1d23;-webkit-transition:background-color 0.7s;}
