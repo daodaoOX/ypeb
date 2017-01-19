@@ -52,12 +52,17 @@
 			</c:forEach>
 			<div class="clearfix"></div>
 		</div>
-		<span class="arrow_left"><img
-			src="<%=path%>/img/common/header/left.png"></span> <span
-			class="arrow_right"><img
-			src="<%=path%>/img/common/header/right.png"></span>
+		<div class="arrow">
+			<span class="arrow_left"><img
+				src="<%=path%>/img/common/header/left.png"></span> 
+			<span class="arrow_right"><img
+				src="<%=path%>/img/common/header/right.png"></span>
+		</div>
 		<div class="ctrl_span">
 			<span class="current"></span>
+			<span></span>
+			<span></span>
+			<span></span>
 		</div>
 	</div>
 	<div class="AD_box">
