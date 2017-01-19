@@ -4,7 +4,7 @@ public class Page {
     //当前页数
     private int currentPage = 1;
     //每页显示数量
-    private int everyPage = 15;
+    private int everyPage = 21;
     //总页数
     private int totalPage;
     //总数量
@@ -16,6 +16,7 @@ public class Page {
         this.everyPage = numPerPage;
     }
 
+    
     public Page(int pagNum) {
         this.currentPage = pagNum;
     }
@@ -36,14 +37,27 @@ public class Page {
     public Page setTotalCount(int totalCount) {
         this.totalCount = totalCount;
         int temp = 0;
+        if(totalCount==0)
+        	totalCount=1;
+      
         if (totalCount % this.everyPage != 0) {
             temp++;
+           
         }
+        
         this.totalPage = totalCount / this.everyPage + temp;
         return this;
     }
 
-    public int getCurrentPage() {
+    public void setCurrentPage(int currentPage) {
+		this.currentPage = currentPage;
+	}
+
+	public void setEveryPage(int everyPage) {
+		this.everyPage = everyPage;
+	}
+
+	public int getCurrentPage() {
         return currentPage;
     }
 

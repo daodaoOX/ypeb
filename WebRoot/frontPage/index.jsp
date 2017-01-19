@@ -46,19 +46,20 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    9、底部要有备案信息。其他信息UI设计，不涉及动态。
     -->
     <%@ include file="head.jsp" %>
-	<iframe  frameborder=0 name="index" id="index" width=100% marginheight=0 marginwidth=0  scrolling=no src="frontShopping_Index_bodyData"></iframe>
+	<iframe  frameborder=0 name="index" id="index" width=100% marginheight=0 marginwidth=0  onload="this.height=500"  scrolling=no src="frontShopping_Index_bodyData"></iframe>
 	<%@ include file="bottom.jsp" %>
 	<!-- iframe高度自适应问题 -->
 	<script type="text/javascript">
 		function reinitIframe(){
-		var iframe = document.getElementById("index");
-		try{
-		iframe.height = iframe.contentWindow.document.documentElement.scrollHeight;
-		}catch (ex){}
+		    var iframe = document.getElementById("index");
+		    try{
+		        var bHeight = iframe.contentWindow.document.body.scrollHeight,
+		            dHeight = iframe.contentWindow.document.documentElement.scrollHeight,
+		            height = Math.max(bHeight, dHeight);
+		        iframe.height =  height;
+		    }catch (ex){}
 		}
 		window.setInterval("reinitIframe()", 200);
 	</script>
-	
-
   </body>
 </html>

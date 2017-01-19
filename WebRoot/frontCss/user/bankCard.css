@@ -15,6 +15,7 @@ p{margin:0}
 .bankcard{width:200px;height:60px;border:1px solid #d4d4d4;border-radius:6px;position:relative;margin:20px 0;}
 .bankcard p{font-size:14px;color:#808080;position:absolute;line-height:60px;left:10px}
 .bankcard img{position:absolute;right:20px;top:21px;}
+.bankcard img:hover{transform: translateY(-1px)}
 
 .add_bankcard{width:100px;height:36px;border:1px solid #ec1d23;border-radius:3px;background-color:#ec1d23;color:#fff;margin-top:100px}
 .add_bankcard:hover{transform: translateY(-2px)}

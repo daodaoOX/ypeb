@@ -39,7 +39,9 @@ public class CategoryAction extends ActionSupport {
 		 * @date : 2017年1月13日 上午11:40:28
 		 * @descripe:查询所有栏目
 		 */
-		categoryList = new GoodscategoryDAO().findAll();
+		category=new Goodscategory();
+		category.setIsDelete(false);
+		categoryList = new GoodscategoryDAO().findByExample(category);
 		destUrl = "backPage/shopping/category/list.jsp";
 		return "diyUrl";
 	}
@@ -48,6 +50,7 @@ public class CategoryAction extends ActionSupport {
 		try {
 			if (category.getName().isEmpty())
 				category.setName(null);
+			category.setIsDelete(false);
 			categoryList = new GoodscategoryDAO().findByExample(category);
 
 		} catch (Exception e) {
@@ -79,8 +82,12 @@ public class CategoryAction extends ActionSupport {
 			category.setUrl(imageFileName);
 			if (category.getLevel() == 1) {
 				category.setSuperId(null);
+			}else{
+				category.setSuperName(new GoodscategoryDAO().findById(category.getSuperId()).getName());
 			}
+			category.setIsDelete(false);
 			tx = HibernateSessionFactory.getSession().beginTransaction();
+			
 			new GoodscategoryDAO().save(category);
 			tx.commit();
 			statusCode = "200";
@@ -119,9 +126,9 @@ public class CategoryAction extends ActionSupport {
 			category = dao.findById(id.intValue());
 			File file = new File(ServletActionContext.getServletContext()
 					.getRealPath(getSavePath() + category.getUrl()));
-
+			category.setIsDelete(true);
 			file.delete();
-			dao.delete(category);
+			dao.merge(category);
 			statusCode = "200";
 			message = "删除成功";
 			navTabId = "category";

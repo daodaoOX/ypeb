@@ -24,7 +24,7 @@
 <script type="text/javascript"
 	src="<%=path%>/bootstrap/js/jquery-2.1.4.min.js"></script>
 </head>
-<body>
+<body >
 	<div class="">
 		<div class="header_bottom">
 			<div class="pros">
