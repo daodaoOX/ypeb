@@ -9,7 +9,6 @@
 <div class="header">
 	<div class="header_top">
 		<h1 class="welcome">欢迎进入沂品电子商务积分购物商城!</h1>
-
 		<c:choose>
 			<c:when test="${userName!=null}">
 			<!-- 登陆用户 -->
@@ -47,14 +46,13 @@
 		<div class="shopping_cart_box">
 			<img class="shopping_cart" src="image/index/shopping_cart.png">
 			<a href="frontShopping_Goods_listCar" target="index"><h1 
-					class="shopping_cart_text" id="shopping_cart_text" num="${shoppingCarNum }">购物车(${shoppingCarNum })</h1></a>
+					class="shopping_cart_text" id="shopping_cart_text" num="${shoppingCarNum }">购物车(${shoppingCarNum })&nbsp;</h1></a>
 			<div class="classfix"></div>
 		</div>
 		<div class="clearfix"></div>
 	</div>
 	<div class="header_bottom_bg">
 		<div class="header_bottom">
-
 			<div class="pros">
 				<h2 class="classification">全部商品分类</h2>
 				<ul class="classification_box prosul" id="proinfo">
@@ -82,13 +80,10 @@
 	</div>
 </div>
 
-
 <script type="text/javascript">
 	(function() {
-
 		var $subblock = $(".subpage"), $head = $subblock.find('h2'), $ul = $("#proinfo"), $lis = $ul
 				.find("li"), inter = false;
-
 		$lis.hover(function() {
 			if (!$(this).hasClass('nochild')) {
 				$(this).addClass("prosahover");

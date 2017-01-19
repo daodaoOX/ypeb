@@ -45,15 +45,15 @@
 			<dl>
 				<dt>电话：</dt>
 				<dd>
-					<input name="goods.telephone" type="text" size="100" alt="请输入联系人电话"
-						class=" phone" />
+					<input name="goods.telephone" type="text" size="100"
+						alt="请输入联系人电话" class=" phone" />
 				</dd>
 			</dl>
 			<dl>
 				<dt>微信号：</dt>
 				<dd>
-					<input name="goods.webChat" type="text" size="100" alt="请输入联系人微信号"
-						class="" />
+					<input name="goods.webChat" type="text" size="100"
+						alt="请输入联系人微信号" class="" />
 				</dd>
 			</dl>
 			<dl>
@@ -61,7 +61,6 @@
 				<dd>
 					<input type="file" name="image" class="required" />
 				</dd>
-				
 				<span class="info">图片名不要有汉字</span>
 			</dl>
 			<dl>
@@ -82,8 +81,7 @@
 			<dl>
 				<dt>进货价格：</dt>
 				<dd>
-					<input type="text" name="goods.purchacePrice"
-						class="number required" />
+					<input type="text" name="goods.purchacePrice" class="number required" />
 				</dd>
 			</dl>
 
@@ -93,7 +91,7 @@
 					<input type="text" name="goods.givePoints" class="number" />
 				</dd>
 			</dl>
-
+			
 
 			<dl>
 				<dt>商品属性：</dt>
@@ -108,47 +106,21 @@
 					<input type="text" name="goods.code" class="digits required" />
 				</dd>
 			</dl>
-			
-				<dl class="nowrap">
-					<dt>一级栏目分类：</dt>
-					<dd>
-						<input class="required" name="district.cate1" type="text"
-							readonly /><input name="district.id1" value="" type="hidden" />
-					</dd>
-				</dl>
 
-				<dl class="nowrap">
-					<dt>二级栏目分类：</dt>
-					<dd>
-						<input name="district.id2" value="" type="hidden" /> <input
-							class="required" name="district.cate2" type="text"
-							readonly /> <a class="btnLook"
-							href="backShopping_Goods_queryCategory2" lookupGroup="district" >查找带回</a>
-					</dd>
-					<span class="info"  >点击左边放大镜即可选择栏目</span>
-				</dl>
-			
-			<%-- 	<dl>
-				<dt>商品一级分类栏目：</dt>
+			<dl>
+				<dt>商品一级分类栏目ID：</dt>
 				<dd>
-					<select class="combox required" name="goods.goodscategory.id"
-						ref="category2" refUrl="backShopping_Goods_queryCategory2?uid={value}">">
-						<c:forEach items="${categoryList}" var="category1">
-							<option value="${category1.id}">${category1.name }</option>
-						</c:forEach>
-					</select>
+					<input type="text" name="goods.goodscategory.id"
+						class="digits required" />
 				</dd>
 			</dl>
 
 			<dl>
-				<dt>商品二级分类栏目：</dt>
+				<dt>商品二级分类栏目ID：</dt>
 				<dd>
-					<select class="combox required" name="goods.category2" id="category2"
-						ref="w_combox_area" refUrl="backShopping_Goods_queryCategory2?uid={value}">
-						
-					</select>
+					<input type="text" name="goods.category2" class="required digits" />
 				</dd>
-			</dl> --%>
+			</dl>
 
 			<dl>
 				<dt>是否在首页显示：</dt>
@@ -164,8 +136,7 @@
 				<dd>
 					<textarea class="editor" name="goods.description" rows="50"
 						cols="128" upImgUrl="backShopping_GoodsUpload_uploadImage"
-						upImgExt="jpg,jpeg,gif,bmp,png"><base
-							href="<%=basePath%>">如果内容编辑器中上传过图片，但想取消编辑或，请不要直接点击取消，先点击保存，再删除该记录</textarea>
+						upImgExt="jpg,jpeg,gif,bmp,png"><base href="<%=basePath%>">如果内容编辑器中上传过图片，但想取消编辑或，请不要直接点击取消，先点击保存，再删除该记录</textarea>
 				</dd>
 			</dl>
 

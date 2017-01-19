@@ -14,7 +14,7 @@
 			jdbc:mysql://localhost:3306/ypeb
 		</property>
 		<property name="connection.username">root</property>
-		<property name="connection.password">260715</property>
+		<property name="connection.password">123456</property>
 		<property name="connection.driver_class">
 			com.mysql.jdbc.Driver
 		</property>
@@ -60,7 +60,6 @@
 		<mapping class="com.ypeb.model.points.setting.Setting" />
 		<mapping class="com.ypeb.model.user.award.Award" />
 		<mapping class="com.ypeb.model.user.cash.Cash" />
-		<mapping class="com.ypeb.model.shopping.orderGoods.Ordergoods" />
 
 	</session-factory>
 

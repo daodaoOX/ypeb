@@ -25,12 +25,12 @@
 <script src="frontJs/shopping/layer/layer.js"></script>
 </head>
 
-<body>
+<body onload="window.parent.document.getElementById('index').height=document.body.scrollHeight;">
 	<!---->
 	<div class="nav_box">
 		<div class="nav">
 			<h1>
-				<a href="frontPage/body.jsp" target="index">首页</a> &gt;
+				<a href="frontShopping_Index_bodyData" target="index">首页</a> &gt;
 			</h1>
 			<h1>
 				<a href="frontPage/shopping/shoppingCar.jsp" target="index">购物车</a>&gt;
@@ -62,8 +62,6 @@
 		<!-- 	<input class="add_site" type="button" id="parentIframe" value="添加新地址">
 		 -->	<div class="clearfix"></div>
 		</div>
-
-
 		<!--商品-->
 		<div class="shoppingcart_box">
 			<div>
@@ -102,7 +100,7 @@
 				<h1>积分余额</h1>
 				<h1>共计￥${order.totalprice }</h1>
 				<h1>需支付<input type="hidden" readonly="true" name="order.totalprice" value="${order.totalprice }"> ${pointsPrice }积分</h1>
-				<input type="submit" value="去支付">
+				<input type="submit" value="去支付" />
 			</div>
 			<div class="clearfix"></div>
 		</div>

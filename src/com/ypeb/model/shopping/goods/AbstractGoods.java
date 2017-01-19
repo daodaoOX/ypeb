@@ -46,8 +46,7 @@ public abstract class AbstractGoods implements java.io.Serializable {
 	private String telephone;
 	private String linkMan;
 	private String webChat;
-	private Boolean isDelete;
-	private String category2name;
+	private String isDelete;
 
 	// Constructors
 
@@ -58,8 +57,7 @@ public abstract class AbstractGoods implements java.io.Serializable {
 	/** minimal constructor */
 	public AbstractGoods(Goodscategory goodscategory, String name,
 			Double price, String givePoints, Double discountPrice,
-			Boolean isShow, Double purchacePrice, String attribute,
-			String code, Boolean isDelete) {
+			Boolean isShow, Double purchacePrice, String attribute, String code) {
 		this.goodscategory = goodscategory;
 		this.name = name;
 		this.price = price;
@@ -69,7 +67,6 @@ public abstract class AbstractGoods implements java.io.Serializable {
 		this.purchacePrice = purchacePrice;
 		this.attribute = attribute;
 		this.code = code;
-		this.isDelete = isDelete;
 	}
 
 	/** full constructor */
@@ -80,8 +77,7 @@ public abstract class AbstractGoods implements java.io.Serializable {
 			String imageUrl2, String imageUrl3, String imageUrl4,
 			String imageUrl5, String code, Integer secondCateg,
 			Integer thirdCateg, Integer category2, String timeMark,
-			String telephone, String linkMan, String webChat, Boolean isDelete,
-			String category2name) {
+			String telephone, String linkMan, String webChat, String isDelete) {
 		this.goodscategory = goodscategory;
 		this.name = name;
 		this.specification = specification;
@@ -106,7 +102,6 @@ public abstract class AbstractGoods implements java.io.Serializable {
 		this.linkMan = linkMan;
 		this.webChat = webChat;
 		this.isDelete = isDelete;
-		this.category2name = category2name;
 	}
 
 	// Property accessors
@@ -329,22 +324,13 @@ public abstract class AbstractGoods implements java.io.Serializable {
 		this.webChat = webChat;
 	}
 
-	@Column(name = "isDelete", nullable = false)
-	public Boolean getIsDelete() {
+	@Column(name = "isDelete", length = 45)
+	public String getIsDelete() {
 		return this.isDelete;
 	}
 
-	public void setIsDelete(Boolean isDelete) {
+	public void setIsDelete(String isDelete) {
 		this.isDelete = isDelete;
-	}
-
-	@Column(name = "category2Name", length = 45)
-	public String getCategory2name() {
-		return this.category2name;
-	}
-
-	public void setCategory2name(String category2name) {
-		this.category2name = category2name;
 	}
 
 }

@@ -30,7 +30,6 @@ public class GoodscategoryDAO extends BaseHibernateDAO {
 	public static final String SUPER_ID = "superId";
 	public static final String URL = "url";
 	public static final String IS_DELETE = "isDelete";
-	public static final String SUPER_NAME = "superName";
 
 	public void save(Goodscategory transientInstance) {
 		log.debug("saving Goodscategory instance");
@@ -119,10 +118,6 @@ public class GoodscategoryDAO extends BaseHibernateDAO {
 
 	public List<Goodscategory> findByIsDelete(Object isDelete) {
 		return findByProperty(IS_DELETE, isDelete);
-	}
-
-	public List<Goodscategory> findBySuperName(Object superName) {
-		return findByProperty(SUPER_NAME, superName);
 	}
 
 	public List findAll() {
