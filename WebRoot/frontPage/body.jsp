@@ -52,17 +52,12 @@
 			</c:forEach>
 			<div class="clearfix"></div>
 		</div>
-		<div class="arrow">
-			<span class="arrow_left"><img
-				src="<%=path%>/img/common/header/left.png"></span> 
-			<span class="arrow_right"><img
-				src="<%=path%>/img/common/header/right.png"></span>
-		</div>
+		<span class="arrow_left"><img
+			src="<%=path%>/img/common/header/left.png"></span> <span
+			class="arrow_right"><img
+			src="<%=path%>/img/common/header/right.png"></span>
 		<div class="ctrl_span">
 			<span class="current"></span>
-			<span></span>
-			<span></span>
-			<span></span>
 		</div>
 	</div>
 	<div class="AD_box">
@@ -79,7 +74,7 @@
 			</div>
 			<c:forEach items="${announList }" var="announcement">
 				<h3>
-					<a href="<%=path%>/frontPage/shopping/dispAnnouncement.jsp?id=${announcement.id }">${announcement.title }</a>
+					<a href="?id=${announcement.id }">${announcement.title }</a>
 				</h3>
 			</c:forEach>
 
@@ -134,6 +129,7 @@ $(document).ready(function(){
     });
   });
 });
+
 </script>
 	<script type="text/javascript" language="javascript">
 		(function() {
@@ -207,7 +203,7 @@ $(document).ready(function(){
 			t1 = setInterval(toFade, 3000)
 		})
 	</script>
-
+	
 	<!-- 解决iframe跳转页面时位置如何返回顶部问题 -->
 <script type="text/javascript">
 	function parentGoTop(){

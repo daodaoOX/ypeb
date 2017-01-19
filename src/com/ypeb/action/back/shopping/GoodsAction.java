@@ -4,16 +4,24 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.struts2.ServletActionContext;
 import org.hibernate.Transaction;
 
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
+import com.ypeb.action.front.shopping.District;
+import com.ypeb.dataClass.front.CategoryByLevel;
 import com.ypeb.model.hibernate.HibernateSessionFactory;
 import com.ypeb.model.shopping.goods.Goods;
 import com.ypeb.model.shopping.goods.GoodsDAO;
+import com.ypeb.model.shopping.goodsCategory.Goodscategory;
+import com.ypeb.model.shopping.goodsCategory.GoodscategoryDAO;
+import com.ypeb.model.user.user.User;
+import com.ypeb.util.Page;
 
 public class GoodsAction extends ActionSupport {
 	private Goods goods;
@@ -32,9 +40,82 @@ public class GoodsAction extends ActionSupport {
 	private File image;// 封装上传文件域的属性
 	private String imageContentType;// 封装上传文件类型
 	private String imageFileName;// 封装上传文件名
+
+	private Page page;
+
+	private int pageNum = 1;// dwz分页使用
+	private int numPerPage;
+
+	private Map<String, Object> dataMap;// 级联查询 json
+
+	private List<Goodscategory> categoryList = new ArrayList<Goodscategory>();
+	private District district;
+
 	private static String savePath = "upload/image/goods/";
 
 	private String diyContentType = "jpg/png/gif";
+	private List<Goodscategory> firstCategoryList = new ArrayList<Goodscategory>();
+	private ArrayList<CategoryByLevel> categoryByLevel = new ArrayList<CategoryByLevel>();
+
+	public GoodsAction() {
+		// 初始化Map对象
+		dataMap = new HashMap<String, Object>();
+	}
+
+	public String queryCategory2() {
+		/**
+		 * @author jilin
+		 * @date : 2017年1月19日 上午2:21:38
+		 * @descripe:dwz级联查询商品分类
+		 */
+
+		GoodscategoryDAO categoryDao = new GoodscategoryDAO();
+		short level = 1;
+		firstCategoryList = categoryDao.findByLevel(level);
+		for (Goodscategory first : firstCategoryList) {
+			Goodscategory category = new Goodscategory();
+			CategoryByLevel cate = new CategoryByLevel();
+			cate.setId(first.getId());
+			cate.setName(first.getName());
+			category.setSuperId(first.getId());
+			cate.setSecCategoryList(categoryDao.findBySuperId(first.getId()));
+			categoryByLevel.add(cate);
+		}
+		destUrl = "backPage/shopping/goods/bringBack.jsp";
+		return "diyUrl";
+	}
+
+	public String queryByPage() {
+		try {
+			GoodsDAO dao = new GoodsDAO();
+			if (numPerPage == 0)
+				numPerPage = 17;
+			System.out.println(pageNum);
+
+			page = new Page(pageNum, numPerPage);
+
+			page.setTotalCount((Integer) dao.findCount());
+			
+			goodsList = dao.findAllByPage(page);
+		} catch (Exception e) {
+			e.printStackTrace();
+			// TODO: handle exception
+		}
+		destUrl = "backPage/shopping/goods/list.jsp";
+		return "diyUrl";
+	}
+
+	public String addPre() {
+		Goodscategory category = new Goodscategory();
+		category.setIsDelete(false);
+		short tem = 1;
+		category.setLevel(tem);
+
+		categoryList = new GoodscategoryDAO().findByExample(category);
+
+		destUrl = "backPage/shopping/goods/add.jsp";
+		return "diyUrl";
+	}
 
 	public String comprehensiveQuery() {
 		try {
@@ -42,7 +123,7 @@ public class GoodsAction extends ActionSupport {
 				goods.setName(null);
 			if (goods.getCode().isEmpty())
 				goods.setCode(null);
-
+			goods.setIsDelete(false);
 			goodsList = new GoodsDAO().findByExample(goods);
 
 		} catch (Exception e) {
@@ -60,12 +141,10 @@ public class GoodsAction extends ActionSupport {
 				goods.setTimeMark((String) ActionContext.getContext()
 						.getSession().get("timeMark"));
 			}
-			System.out.println(ActionContext.getContext().getSession()
-					.get("timeMark"));
+			
 			ServletActionContext.getContext().getSession()
 					.put("timeMark", null);
-			System.out.println(ActionContext.getContext().getSession()
-					.get("timeMark"));
+			
 			setImageFileName(System.currentTimeMillis() + getImageFileName());
 
 			FileOutputStream fos = new FileOutputStream(ServletActionContext
@@ -80,7 +159,14 @@ public class GoodsAction extends ActionSupport {
 				fos.write(buffer, 0, len);
 			}
 			goods.setImageUrl1(imageFileName);
-
+			Integer tem=new Integer(district.getId2());
+			
+			goods.setCategory2(tem.intValue());
+			tem=new Integer(district.getId1());
+			Goodscategory temp=new GoodscategoryDAO().findById(tem.intValue());
+			goods.setGoodscategory(temp);
+			goods.setIsDelete(false);
+			goods.setCategory2name(district.getCate2());
 			tx = HibernateSessionFactory.getSession().beginTransaction();
 			goods.setSecondCateg(goods.getGoodscategory().getId());
 			dao.save(goods);
@@ -115,11 +201,8 @@ public class GoodsAction extends ActionSupport {
 			Transaction tx = HibernateSessionFactory.getSession()
 					.beginTransaction();
 			try {
-				File file = new File(ServletActionContext.getServletContext()
-						.getRealPath(getSavePath() + goods.getImageUrl1()));
-
-				file.delete();
-				new GoodsDAO().delete(goods);
+				goods.setIsDelete(true);
+				new GoodsDAO().merge(goods);
 
 				tx.commit();
 				if (goods.getTimeMark() != null) {
@@ -129,8 +212,7 @@ public class GoodsAction extends ActionSupport {
 							+ goods.getTimeMark();
 					this.deleteFile(new File(saveRealFilePath));
 				}
-				System.out.println(goods.getId());
-
+			
 				HibernateSessionFactory.getSession().flush();
 				HibernateSessionFactory.getSession().close();
 				statusCode = "200";
@@ -139,8 +221,8 @@ public class GoodsAction extends ActionSupport {
 				forwardUrl = "";
 			} catch (Exception e) {
 				e.printStackTrace();
-				statusCode = "200";
-				message = "记录删除成功，图片删除失败";
+				statusCode = "300";
+				message = "删除失败";
 				navTabId = "goods";
 				forwardUrl = "";
 			}
@@ -341,6 +423,72 @@ public class GoodsAction extends ActionSupport {
 
 	public void setCategory2(String category2) {
 		this.category2 = category2;
+	}
+
+	public Page getPage() {
+		return page;
+	}
+
+	public void setPage(Page page) {
+		this.page = page;
+	}
+
+	public int getPageNum() {
+		return pageNum;
+	}
+
+	public void setPageNum(int pageNum) {
+		this.pageNum = pageNum;
+	}
+
+	public int getNumPerPage() {
+		return numPerPage;
+	}
+
+	public void setNumPerPage(int numPerPage) {
+		this.numPerPage = numPerPage;
+	}
+
+	public List<Goodscategory> getCategoryList() {
+		return categoryList;
+	}
+
+	public void setCategoryList(List<Goodscategory> categoryList) {
+		this.categoryList = categoryList;
+	}
+
+	public Map<String, Object> getDataMap() {
+		return dataMap;
+	}
+
+	public void setDataMap(Map<String, Object> dataMap) {
+		this.dataMap = dataMap;
+	}
+
+	
+
+	public District getDistrict() {
+		return district;
+	}
+
+	public void setDistrict(District district) {
+		this.district = district;
+	}
+
+	public List<Goodscategory> getFirstCategoryList() {
+		return firstCategoryList;
+	}
+
+	public void setFirstCategoryList(List<Goodscategory> firstCategoryList) {
+		this.firstCategoryList = firstCategoryList;
+	}
+
+	public ArrayList<CategoryByLevel> getCategoryByLevel() {
+		return categoryByLevel;
+	}
+
+	public void setCategoryByLevel(ArrayList<CategoryByLevel> categoryByLevel) {
+		this.categoryByLevel = categoryByLevel;
 	}
 
 }
