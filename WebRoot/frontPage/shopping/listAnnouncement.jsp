@@ -15,7 +15,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <!--nav-->
 	<div class="nav_box">
 		<div class="nav">
-			<h1><a href="frontShopping_Index_bodyData" target="index">首页</a> &gt;</h1>
+			<h1><a href="<%=path %>/frontPage/body.jsp" target="index">首页</a> &gt;</h1>
 			<h1>公告</h1>
 			<h1></h1>
 		</div>

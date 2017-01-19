@@ -12,7 +12,7 @@ String path = request.getContextPath();
 		<link rel="stylesheet" type="text/css" href="<%=path %>/frontCss/header_and_footer.css">
 		<script type="text/javascript" src="<%=path %>/bootstrap/js/jquery-2.1.4.min.js"></script>
 	</head>
-<body onload="window.parent.document.getElementById('index').height=document.body.scrollHeight;">
+<body>
     <div class="nav_box">
 		<div class="nav">
 			<h1><a href="<%=path %>/frontPage/body.jsp" target="index">首页</a> &gt;</h1>
@@ -71,6 +71,7 @@ String path = request.getContextPath();
 	<div class="check_out_box">
 		<h1>共计￥<span class="shop-total-amount ShopTotal">0</span></h1>
 		<div class="assist_box">
+					
 			<a id="dela" href="<%=path %>/frontPage/shopping/pay.jsp" onclick="parentGoTop();" 
 			onclick="document.getElementById('shoppingCarSubmit').submit();" target="index">
 				<div class="divsum" onclick="checksum();">

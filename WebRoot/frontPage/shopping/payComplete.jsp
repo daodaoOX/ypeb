@@ -8,33 +8,21 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <html>
   <head>
     <base href="<%=basePath%>">
+    
     <title>支付成功</title>
-	<link rel="stylesheet" type="text/css" href="<%=path %>/frontCss/shopping/payComplete.css">
+    
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="cache-control" content="no-cache">
+	<meta http-equiv="expires" content="0">    
+	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+	<meta http-equiv="description" content="This is my page">
+	<!--
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	-->
+
   </head>
+  
   <body>
-	<div class="box">
-    	<div class="nav_top">
-        </div>
-        <div class="center">
-        	<img src="<%=path %>/upload/image/error/success.png" width="45px" height="45px" />
-        	<span>支付成功</span>
-            <p>感谢您在本商城购物!您的订单已经提交成功!我们会尽快为您发货!祝您购物愉快!</p>
-            <a href="frontShopping_Index_bodyData" target="index"><div class="successdiv"><span>确&nbsp;认</span></div></a>
-        </div>
-    </div>
-    <div class="addHei"></div>
-    	<!-- 解决iframe跳转页面时位置如何返回顶部问题 -->
-<script type="text/javascript">
-	function parentGoTop(){
-	parent.scrollTo(0,0);
-	}
-	function addClick(){
-	var aList=document.getElementsByTagName("a");
-	for(var i=0;i<aList.length;i++){
-	    aList[i].onclick=function(){parentGoTop();}
-	    }
-	}
-	window.onload=function(){addClick();}
-</script>
+   <h1 align="center"> 支付成功!</h1>
   </body>
 </html>
